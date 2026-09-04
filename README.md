@@ -1,37 +1,130 @@
 <div align="center">
 
-<img src="https://avatars.githubusercontent.com/u/301923276?v=4" width="150" height="150" style="border-radius:50%" alt="Arad Zabeti" />
+<img src="https://avatars.githubusercontent.com/u/301923276?v=4" width="150" height="150" alt="Arad Zabeti" />
 
 # Arad Zabeti
 
 ### `Developer` · `AI & Automation Builder` · `Music Technology` · `Trumpet Player`
 
-**I build useful things where code, AI, automation, and music meet.**
+**Building useful products where code, AI, automation, and music meet.**
 
 <p>
-  <a href="https://github.com/AradZabeti"><img src="https://img.shields.io/badge/GitHub-AradZabeti-111111?style=for-the-badge&logo=github&logoColor=white" /></a>
-  <a href="https://aradzabeti.github.io/AradZabeti/"><img src="https://img.shields.io/badge/Portfolio-Live-7c3aed?style=for-the-badge&logo=googlechrome&logoColor=white" /></a>
-  <a href="https://kooktools.netlify.app"><img src="https://img.shields.io/badge/KookTools-Live-00b894?style=for-the-badge&logo=netlify&logoColor=white" /></a>
-  <a href="https://t.me/KindButSelective"><img src="https://img.shields.io/badge/Telegram-Project-229ED9?style=for-the-badge&logo=telegram&logoColor=white" /></a>
+<a href="https://github.com/AradZabeti"><img src="https://img.shields.io/badge/GitHub-AradZabeti-111111?style=for-the-badge&logo=github&logoColor=white" /></a>
+<a href="https://aradzabeti.github.io/AradZabeti/"><img src="https://img.shields.io/badge/Portfolio-Live-7c3aed?style=for-the-badge&logo=googlechrome&logoColor=white" /></a>
+<a href="https://kooktools.netlify.app"><img src="https://img.shields.io/badge/KookTools-Live-00b894?style=for-the-badge&logo=netlify&logoColor=white" /></a>
+<a href="https://t.me/KindButSelective"><img src="https://img.shields.io/badge/Telegram-Project-229ED9?style=for-the-badge&logo=telegram&logoColor=white" /></a>
 </p>
 
 </div>
 
 ---
 
-## ⚡ About Me
+## 👋 About Me
 
-I'm **Arad**, a developer interested in building real products rather than just experimenting with technologies.
+I'm **Arad**, a developer focused on turning ideas into real, usable products.
 
-My work sits around **Python, backend systems, AI agents, automation, web experiences, and music technology**. I enjoy taking an idea from a rough concept to a working product — then making it faster, cleaner, and better looking.
+I work across **Python, backend engineering, AI agents, automation, web interfaces, and music technology**. I enjoy connecting systems, simplifying complex workflows, and polishing prototypes until they feel like products.
 
-🎺 Music is a big part of what I build, especially around **trumpet practice, music tools, audio, theory, and intelligent practice systems**.
+🎺 Music is a major part of my direction — especially **trumpet practice, audio tools, music theory, intelligent practice systems, and AI × music**.
 
 > **Build useful things. Automate the boring parts. Make the result beautiful.**
 
 ---
 
-## 🧰 Tech Stack
+# ⭐ Important Projects
+
+> The projects below are the ones that best represent what I want to build: **useful software, intelligent systems, and technology for musicians.**
+
+<table>
+<tr>
+<td width="50%" valign="top">
+
+## 🎵 KookTools
+
+**Music Toolkit for Musicians**
+
+A growing web platform bringing essential music tools into one place.
+
+**Core:**
+- 🎛️ Professional tuner
+- 🥁 Metronome & rhythm training
+- 🎹 Piano & music tools
+- 🎼 Scales, chords & circle of fifths
+- 👂 Ear training
+- 🎙️ Recording & audio tools
+- 📚 Practice system
+- 🤖 AI-powered features
+
+**Stack:** `Web` `Audio` `JavaScript` `AI`
+
+**[→ Open KookTools](https://kooktools.netlify.app)**
+
+</td>
+<td width="50%" valign="top">
+
+## 🎺 Arad Music OS
+
+**A Digital Practice Environment for Musicians**
+
+A product vision designed around the complete practice journey.
+
+**Vision:**
+- 🎯 Personalized practice plans
+- 📈 Progress tracking
+- 🎼 Sheet music library
+- 🎹 MIDI support
+- 🎧 Audio & practice tools
+- 🧠 Intelligent assistance
+- 🏆 Long-term musician development
+
+**Focus:** `Music Tech` `AI` `Product Design`
+
+</td>
+</tr>
+<tr>
+<td width="50%" valign="top">
+
+## 🤖 AI & Automation Systems
+
+**Connected systems that actually do the work.**
+
+I build bots, agents, APIs and workflows that connect services together instead of leaving them isolated.
+
+```text
+API → AI → Database → Queue → Automation → User
+```
+
+**Typical stack:**
+`FastAPI` · `PostgreSQL` · `Redis` · `Celery` · `Docker` · `n8n`
+
+**Focus:** `AI Agents` `Automation` `APIs` `Bots` `Backend`
+
+</td>
+<td width="50%" valign="top">
+
+## 🌐 Arad Portfolio
+
+**A product-style developer portfolio**
+
+An animated personal site built around projects, experiments, technical interests, and interactive UI.
+
+**Features:**
+- ✨ Motion-driven interface
+- 🧪 Interactive Lab
+- 💻 Developer Terminal
+- 🎨 Dynamic visual effects
+- 📱 Responsive design
+- ⌘ Command Palette
+
+**[→ Visit Portfolio](https://aradzabeti.github.io/AradZabeti/)**
+
+</td>
+</tr>
+</table>
+
+---
+
+## 🛠️ Tech Stack
 
 ### Languages & Web
 
@@ -54,87 +147,33 @@ My work sits around **Python, backend systems, AI agents, automation, web experi
 ![Linux](https://img.shields.io/badge/Linux-FCC624?style=flat-square&logo=linux&logoColor=black)
 ![Git](https://img.shields.io/badge/Git-F05032?style=flat-square&logo=git&logoColor=white)
 ![n8n](https://img.shields.io/badge/n8n-EA4B71?style=flat-square&logo=n8n&logoColor=white)
-![Telegram](https://img.shields.io/badge/Telegram-26A5E4?style=flat-square&logo=telegram&logoColor=white)
 
 ---
 
-## 🚀 Featured Projects
-
-<table>
-<tr>
-<td width="50%" valign="top">
-
-### 🎵 KookTools
-
-A growing music toolkit for musicians.
-
-**Includes:** tuner · metronome · piano · recorder · music theory · ear training · rhythm training · practice tools · AI features
-
-**Stack:** Web · Audio · JavaScript · AI
-
-**[→ Open KookTools](https://kooktools.netlify.app)**
-
-</td>
-<td width="50%" valign="top">
-
-### 🎺 Arad Music OS
-
-A complete digital practice environment concept for musicians.
-
-**Vision:** professional practice tools · progress tracking · MIDI · sheet music · intelligent assistance · personalized training
-
-**Focus:** Music Tech · AI · Product Design
-
-</td>
-</tr>
-<tr>
-<td width="50%" valign="top">
-
-### 🤖 AI & Automation Systems
-
-Bots and automation architectures connecting APIs, databases, AI services, messaging platforms, and scheduled workflows.
-
-`FastAPI` → `PostgreSQL` → `Redis` → `Celery` → `Docker` → `n8n`
-
-</td>
-<td width="50%" valign="top">
-
-### 🌐 Personal Portfolio
-
-An animated product-style portfolio built to showcase my projects, experiments, and technical direction.
-
-**[→ Visit Portfolio](https://aradzabeti.github.io/AradZabeti/)**
-
-</td>
-</tr>
-</table>
-
----
-
-## 🧠 What I'm Building
+## 🧠 What I Like Building
 
 ```text
-AI Agents              ████████████████████  100%
-Automation             ███████████████████░   95%
-Python / Backend       ██████████████████░░   90%
-Music Technology       █████████████████░░░   85%
-Web / UI               ████████████████░░░░   80%
+AI Agents               ████████████████████  100%
+Automation              ███████████████████░   95%
+Python / Backend        ██████████████████░░   90%
+Music Technology        █████████████████░░░   85%
+Web / UI                ████████████████░░░░   80%
 DevOps / Infrastructure ███████████████░░░░░   75%
 ```
 
-*These are areas I'm actively exploring and building in — not formal skill ratings.*
+*These represent the areas I'm actively exploring and building in — not formal skill ratings.*
 
 ---
 
-## 🔭 Current Focus
+## 🔭 Current Mission
 
-- 🧠 AI-assisted applications and agents
-- ⚙️ Reliable automation architectures
-- 🎵 Music technology and musician-focused tools
-- 🌐 Better UI/UX and frontend motion
-- 🐍 Stronger Python backend engineering
-- 🐳 Deployment and infrastructure
-- 📦 Turning prototypes into polished products
+```text
+01  Build smarter AI-assisted products
+02  Create reliable automation systems
+03  Push music technology forward
+04  Turn prototypes into polished products
+05  Keep learning. Keep shipping.
+```
 
 ---
 
