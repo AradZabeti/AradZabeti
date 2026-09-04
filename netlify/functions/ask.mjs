@@ -1,3 +1,5 @@
+export const config = { path: "/api/ask" };
+
 export default async (req) => {
   if (req.method !== "POST") {
     return new Response(JSON.stringify({ error: "Method not allowed" }), {
@@ -17,7 +19,7 @@ export default async (req) => {
       });
     }
 
-    const apiKey = process.env.GEMINI_API_KEY;
+    const apiKey = Netlify.env.get("GEMINI_API_KEY");
     if (!apiKey) {
       return new Response(JSON.stringify({ error: "Gemini API is not configured" }), {
         status: 500,
@@ -32,12 +34,10 @@ export default async (req) => {
         "content-type": "application/json"
       },
       body: JSON.stringify({
-        contents: [
-          {
-            role: "user",
-            parts: [{ text: message }]
-          }
-        ],
+        contents: [{
+          role: "user",
+          parts: [{ text: message }]
+        }],
         systemInstruction: {
           parts: [{
             text: "You are Arad's portfolio AI assistant. Be concise, technical, helpful, and friendly. You know the portfolio projects, skills, AI automation, software engineering, and music technology context. Answer in the user's language when possible."
@@ -61,7 +61,7 @@ export default async (req) => {
       status: 200,
       headers: { "content-type": "application/json" }
     });
-  } catch (error) {
+  } catch {
     return new Response(JSON.stringify({ error: "Invalid request or server error" }), {
       status: 500,
       headers: { "content-type": "application/json" }
