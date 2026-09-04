@@ -1,0 +1,67 @@
+name: Spotify Now Playing
+
+on:
+  schedule:
+    - cron: '*/15 * * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  spotify:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Update Spotify card
+        env:
+          SPOTIFY_CLIENT_ID: ${{ secrets.SPOTIFY_CLIENT_ID }}
+          SPOTIFY_CLIENT_SECRET: ${{ secrets.SPOTIFY_CLIENT_SECRET }}
+          SPOTIFY_REFRESH_TOKEN: ${{ secrets.SPOTIFY_REFRESH_TOKEN }}
+        run: |
+          python - <<'PY'
+          import os, base64, json, urllib.request, urllib.parse, html
+
+          out='assets/spotify.svg'
+          os.makedirs('assets', exist_ok=True)
+
+          def write_card(title, subtitle, status):
+              title=html.escape(title); subtitle=html.escape(subtitle)
+              svg=f'''<svg xmlns="http://www.w3.org/2000/svg" width="900" height="180" viewBox="0 0 900 180">
+              <defs><linearGradient id="g" x1="0" x2="1"><stop stop-color="#1DB954"/><stop offset="1" stop-color="#7c3aed"/></linearGradient></defs>
+              <rect width="900" height="180" rx="24" fill="#0d1117" stroke="#30363d"/>
+              <circle cx="88" cy="90" r="48" fill="#1DB954"/><text x="88" y="106" text-anchor="middle" font-size="48" fill="white">♪</text>
+              <text x="160" y="62" font-family="Arial,sans-serif" font-size="18" fill="#1DB954" font-weight="700">{status}</text>
+              <text x="160" y="98" font-family="Arial,sans-serif" font-size="26" fill="white" font-weight="700">{title}</text>
+              <text x="160" y="130" font-family="Arial,sans-serif" font-size="18" fill="#8b949e">{subtitle}</text>
+              <rect x="160" y="148" width="650" height="5" rx="3" fill="url(#g)"/></svg>'''
+              open(out,'w',encoding='utf-8').write(svg)
+
+          if not all([os.getenv('SPOTIFY_CLIENT_ID'), os.getenv('SPOTIFY_CLIENT_SECRET'), os.getenv('SPOTIFY_REFRESH_TOKEN')]):
+              write_card('Connect Spotify to see live playback','Add repository secrets to enable Now Playing','SPOTIFY • READY')
+              raise SystemExit(0)
+
+          auth=base64.b64encode((os.environ['SPOTIFY_CLIENT_ID']+':'+os.environ['SPOTIFY_CLIENT_SECRET']).encode()).decode()
+          data=urllib.parse.urlencode({'grant_type':'refresh_token','refresh_token':os.environ['SPOTIFY_REFRESH_TOKEN']}).encode()
+          req=urllib.request.Request('https://accounts.spotify.com/api/token',data=data,headers={'Authorization':'Basic '+auth})
+          token=json.load(urllib.request.urlopen(req))['access_token']
+          req=urllib.request.Request('https://api.spotify.com/v1/me/player',headers={'Authorization':'Bearer '+token})
+          try:
+              item=json.load(urllib.request.urlopen(req))
+          except Exception:
+              item=None
+          if not item or not item.get('item'):
+              write_card('Nothing playing right now','Spotify is connected — press play and this card will update','SPOTIFY • IDLE')
+          else:
+              track=item['item']; artists=', '.join(a['name'] for a in track['artists'])
+              write_card(track['name'],artists,'SPOTIFY • NOW PLAYING')
+          PY
+
+      - name: Commit card
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add assets/spotify.svg
+          git diff --cached --quiet || git commit -m 'chore: update Spotify now playing'
+          git push
