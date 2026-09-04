@@ -1,12 +1,14 @@
 <div align="center">
 
-<img src="https://avatars.githubusercontent.com/u/301923276?v=4" width="150" height="150" alt="Arad Zabeti" />
+<img src="https://capsule-render.vercel.app/api?type=waving&height=220&section=header&text=ARAD%20ZABETI&fontSize=54&fontColor=ffffff&animation=fadeIn&fontAlignY=38&desc=CODE%20%C2%B7%20AI%20%C2%B7%20AUTOMATION%20%C2%B7%20MUSIC%20TECH&descAlignY=60&descSize=16" width="100%" alt="Arad Zabeti header" />
 
-# Arad Zabeti
+<img src="https://avatars.githubusercontent.com/u/301923276?v=4" width="145" height="145" alt="Arad Zabeti" />
 
-### `Developer` · `AI & Automation Builder` · `Music Technology` · `Trumpet Player`
+# `Arad Zabeti`
 
-**Building useful products where code, AI, automation, and music meet.**
+### Developer · AI & Automation Builder · Music Technology · 🎺 Trumpet Player
+
+<img src="https://readme-typing-svg.demolab.com?font=JetBrains+Mono&size=20&duration=2800&pause=900&color=7C3AED&center=true&vCenter=true&width=760&lines=Building+useful+products.;Connecting+AI+%2B+automation+%2B+code.;Designing+tools+for+musicians.;Prototype+%E2%86%92+Build+%E2%86%92+Ship." alt="Typing animation" />
 
 <p>
 <a href="https://github.com/AradZabeti"><img src="https://img.shields.io/badge/GitHub-AradZabeti-111111?style=for-the-badge&logo=github&logoColor=white" /></a>
@@ -19,11 +21,11 @@
 
 ---
 
-## 👋 About Me
+## ⚡ About Me
 
-I'm **Arad**, a developer focused on turning ideas into real, usable products.
+I'm **Arad**, a developer who likes turning ideas into real products.
 
-I work across **Python, backend engineering, AI agents, automation, web interfaces, and music technology**. I enjoy connecting systems, simplifying complex workflows, and polishing prototypes until they feel like products.
+I build across **Python, backend systems, AI agents, automation, web interfaces, and music technology**. My favorite projects sit at the intersection of useful software, intelligent workflows, and great UX.
 
 🎺 Music is a major part of my direction — especially **trumpet practice, audio tools, music theory, intelligent practice systems, and AI × music**.
 
@@ -31,92 +33,60 @@ I work across **Python, backend engineering, AI agents, automation, web interfac
 
 ---
 
-# ⭐ Important Projects
-
-> The projects below are the ones that best represent what I want to build: **useful software, intelligent systems, and technology for musicians.**
+## 🚀 Featured Projects
 
 <table>
 <tr>
 <td width="50%" valign="top">
 
-## 🎵 KookTools
+### 🎵 KookTools
 
 **Music Toolkit for Musicians**
 
 A growing web platform bringing essential music tools into one place.
 
-**Core:**
-- 🎛️ Professional tuner
-- 🥁 Metronome & rhythm training
-- 🎹 Piano & music tools
-- 🎼 Scales, chords & circle of fifths
-- 👂 Ear training
-- 🎙️ Recording & audio tools
-- 📚 Practice system
-- 🤖 AI-powered features
+`Tuner` `Metronome` `Piano` `Scales` `Chords` `Ear Training` `Recording` `AI`
 
-**Stack:** `Web` `Audio` `JavaScript` `AI`
-
-**[→ Open KookTools](https://kooktools.netlify.app)**
+**→ [Open KookTools](https://kooktools.netlify.app)**
 
 </td>
 <td width="50%" valign="top">
 
-## 🎺 Arad Music OS
+### 🎺 Arad Music OS
 
-**A Digital Practice Environment for Musicians**
+**Digital Practice Environment**
 
-A product vision designed around the complete practice journey.
+A product vision built around the complete musician practice journey.
 
-**Vision:**
-- 🎯 Personalized practice plans
-- 📈 Progress tracking
-- 🎼 Sheet music library
-- 🎹 MIDI support
-- 🎧 Audio & practice tools
-- 🧠 Intelligent assistance
-- 🏆 Long-term musician development
+`Practice Plans` `Progress` `Sheets` `MIDI` `Audio` `AI`
 
-**Focus:** `Music Tech` `AI` `Product Design`
+**→ In active development**
 
 </td>
 </tr>
 <tr>
 <td width="50%" valign="top">
 
-## 🤖 AI & Automation Systems
+### 🤖 AI & Automation Systems
 
-**Connected systems that actually do the work.**
+**Connected systems that do the work**
 
-I build bots, agents, APIs and workflows that connect services together instead of leaving them isolated.
+Bots, agents, APIs and workflows designed to connect services and automate real tasks.
 
-```text
-API → AI → Database → Queue → Automation → User
-```
-
-**Typical stack:**
-`FastAPI` · `PostgreSQL` · `Redis` · `Celery` · `Docker` · `n8n`
-
-**Focus:** `AI Agents` `Automation` `APIs` `Bots` `Backend`
+`FastAPI` `PostgreSQL` `Redis` `Celery` `Docker` `n8n`
 
 </td>
 <td width="50%" valign="top">
 
-## 🌐 Arad Portfolio
+### 🌐 Arad Portfolio
 
-**A product-style developer portfolio**
+**Interactive developer portfolio**
 
-An animated personal site built around projects, experiments, technical interests, and interactive UI.
+A product-style site with motion, terminal interactions, experiments and a command palette.
 
-**Features:**
-- ✨ Motion-driven interface
-- 🧪 Interactive Lab
-- 💻 Developer Terminal
-- 🎨 Dynamic visual effects
-- 📱 Responsive design
-- ⌘ Command Palette
+`HTML` `CSS` `JavaScript` `Motion` `UI`
 
-**[→ Visit Portfolio](https://aradzabeti.github.io/AradZabeti/)**
+**→ [Visit Portfolio](https://aradzabeti.github.io/AradZabeti/)**
 
 </td>
 </tr>
@@ -124,29 +94,64 @@ An animated personal site built around projects, experiments, technical interest
 
 ---
 
-## 🛠️ Tech Stack
+## 🧰 Tech Stack
 
-### Languages & Web
+<p align="center">
+<img src="https://skillicons.dev/icons?i=python,javascript,html,css,fastapi,postgres,redis,docker,linux,git,github,nginx&perline=6" alt="Tech stack" />
+</p>
 
-![Python](https://img.shields.io/badge/Python-3776AB?style=flat-square&logo=python&logoColor=white)
-![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=flat-square&logo=javascript&logoColor=black)
-![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=flat-square&logo=html5&logoColor=white)
-![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=flat-square&logo=css3&logoColor=white)
+<p align="center">
+<img src="https://img.shields.io/badge/AI%20Agents-7c3aed?style=for-the-badge" />
+<img src="https://img.shields.io/badge/Automation-00b894?style=for-the-badge" />
+<img src="https://img.shields.io/badge/Music%20Tech-ff6b6b?style=for-the-badge" />
+<img src="https://img.shields.io/badge/Backend-2563eb?style=for-the-badge" />
+</p>
 
-### Backend & Data
+---
 
-![FastAPI](https://img.shields.io/badge/FastAPI-009688?style=flat-square&logo=fastapi&logoColor=white)
-![PostgreSQL](https://img.shields.io/badge/PostgreSQL-4169E1?style=flat-square&logo=postgresql&logoColor=white)
-![Redis](https://img.shields.io/badge/Redis-DC382D?style=flat-square&logo=redis&logoColor=white)
-![Celery](https://img.shields.io/badge/Celery-37814A?style=flat-square&logo=celery&logoColor=white)
+## 🎧 Music Corner
 
-### Infrastructure & Automation
+<div align="center">
 
-![Docker](https://img.shields.io/badge/Docker-2496ED?style=flat-square&logo=docker&logoColor=white)
-![Nginx](https://img.shields.io/badge/Nginx-009639?style=flat-square&logo=nginx&logoColor=white)
-![Linux](https://img.shields.io/badge/Linux-FCC624?style=flat-square&logo=linux&logoColor=black)
-![Git](https://img.shields.io/badge/Git-F05032?style=flat-square&logo=git&logoColor=white)
-![n8n](https://img.shields.io/badge/n8n-EA4B71?style=flat-square&logo=n8n&logoColor=white)
+### 🎺 Currently: Building at the intersection of music × technology
+
+```text
+🎼 Practice       →   🎺 Trumpet
+🎛️ Tools          →   Tuner · Metronome · Audio
+🧠 Intelligence   →   AI-assisted practice
+💻 Engineering    →   Music software
+```
+
+**My music stack:** Trumpet · Music Theory · Ear Training · Practice Systems · Audio Technology
+
+</div>
+
+> 🎵 **Spotify integration ready:** this section is structured so a live “Now Playing” card can be connected later without putting private API credentials in the README.
+
+---
+
+## 🐍 Contribution Snake
+
+<div align="center">
+
+<img src="https://raw.githubusercontent.com/AradZabeti/AradZabeti/output/github-contribution-grid-snake.svg" alt="GitHub contribution snake animation" />
+
+</div>
+
+---
+
+## 📊 GitHub Analytics
+
+<div align="center">
+
+<img src="https://github-readme-stats.vercel.app/api?username=AradZabeti&show_icons=true&hide_border=true&theme=transparent&rank_icon=github" height="165" alt="Arad's GitHub stats" />
+<img src="https://github-readme-stats.vercel.app/api/top-langs/?username=AradZabeti&layout=compact&hide_border=true&theme=transparent" height="165" alt="Arad's top languages" />
+
+<br/>
+
+<img src="https://github-readme-streak-stats.herokuapp.com/?user=AradZabeti&hide_border=true&theme=transparent" alt="Arad's contribution streak" />
+
+</div>
 
 ---
 
@@ -191,14 +196,23 @@ DevOps / Infrastructure ███████████████░░░�
 
 ---
 
-## 📊 GitHub Activity
+## 🧪 Builder Mindset
 
-<div align="center">
+```text
+IDEA
+  ↓
+PROTOTYPE
+  ↓
+BUILD
+  ↓
+AUTOMATE
+  ↓
+POLISH
+  ↓
+SHIP 🚀
+```
 
-<img src="https://github-readme-stats.vercel.app/api?username=AradZabeti&show_icons=true&hide_border=true&theme=transparent&rank_icon=github" height="165" alt="Arad's GitHub stats" />
-<img src="https://github-readme-stats.vercel.app/api/top-langs/?username=AradZabeti&layout=compact&hide_border=true&theme=transparent" height="165" alt="Arad's top languages" />
-
-</div>
+I care about the whole loop — not just writing code, but making something people can actually use.
 
 ---
 
@@ -210,6 +224,8 @@ DevOps / Infrastructure ███████████████░░░�
 
 📫 **arad23426@gmail.com**
 
-### Build · Automate · Create · Repeat 🚀
+### `Build · Automate · Create · Repeat` 🚀
+
+<img src="https://capsule-render.vercel.app/api?type=waving&height=120&section=footer&animation=fadeIn" width="100%" alt="Footer" />
 
 </div>
