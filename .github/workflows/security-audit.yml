@@ -1,0 +1,45 @@
+name: Frontend Security Audit
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Checkout
+        uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+        with:
+          fetch-depth: 1
+
+      - name: Audit tracked source
+        shell: bash
+        run: |
+          set -euo pipefail
+          echo '== Secret pattern audit =='
+          if git grep -nEI '(AIzaSy[A-Za-z0-9_-]{20,}|ghp_[A-Za-z0-9]{30,}|github_pat_[A-Za-z0-9_]{20,}|sk-[A-Za-z0-9]{20,}|-----BEGIN (RSA|OPENSSH|EC|DSA|PRIVATE) KEY-----)' -- ':!*.lock' ':!security-audit.yml'; then
+            echo 'Potential credential material found in tracked source.'
+            exit 1
+          fi
+
+          echo '== Dangerous URL audit =='
+          if git grep -nEI 'javascript:[[:space:]]*|vbscript:[[:space:]]*' -- '*.html' '*.js' '*.css'; then
+            echo 'Potential executable URL found.'
+            exit 1
+          fi
+
+          echo '== Repository hygiene =='
+          if find . -type f \( -name '.env' -o -name '.env.*' \) -not -path './.git/*' | grep -q .; then
+            echo 'Environment file detected in repository.'
+            exit 1
+          fi
+
+          echo 'Security audit passed.'
