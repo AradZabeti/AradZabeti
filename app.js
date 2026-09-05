@@ -37,6 +37,33 @@ const sections=$$('main section[id]'),nav=$$('.navlinks a');addEventListener('sc
  .project .project-stack span{padding:5px 7px;border:1px solid #272c36;border-radius:6px;color:#727c8c;font:500 8px 'DM Mono'}
  .project .project-status{color:#4ade80!important}
  @media(max-width:800px){.hero-copy .hero-metrics{margin-top:18px}.hero-art .orb-label{display:none}}
+ 
+ .lab2-shell{display:grid;grid-template-columns:1.2fr .8fr;gap:12px;margin-top:22px}
+ .lab2-card{border:1px solid #242832;background:#0b0d12;border-radius:14px;padding:18px;min-height:230px;position:relative;overflow:hidden}
+ .lab2-card h3{margin:0 0 7px;font:600 12px 'Space Grotesk';color:#e9edf4}
+ .lab2-card p{margin:0;color:#747e8e;font:500 9px 'DM Mono';line-height:1.7}
+ .lab2-kicker{color:#687386;font:500 8px 'DM Mono';letter-spacing:.14em;text-transform:uppercase;margin-bottom:9px}
+ .lab2-controls{display:flex;flex-wrap:wrap;gap:8px;margin-top:15px;align-items:center}
+ .lab2-btn,.lab2-select{border:1px solid #2a303b;background:#10131a;color:#dfe4ec;border-radius:8px;padding:8px 10px;font:500 9px 'DM Mono';cursor:pointer}
+ .lab2-btn:hover{border-color:#596273;transform:translateY(-1px)}
+ .lab2-btn.active{border-color:#e4e8ef;box-shadow:0 0 0 1px #e4e8ef inset}
+ .lab2-range{width:150px;accent-color:#d9dee7}
+ .lab2-bpm{font:600 18px 'DM Mono';color:#f0f2f6;min-width:62px}
+ .lab2-beats{display:flex;gap:7px;margin-top:18px;align-items:end;height:56px}
+ .lab2-beat{width:13px;height:13px;border-radius:50%;background:#252b35;border:1px solid #3a424f;transition:.12s}
+ .lab2-beat.on{background:#e7ebf2;box-shadow:0 0 20px rgba(235,240,248,.45);transform:scale(1.35)}
+ .lab2-note{font:600 27px 'Space Grotesk';color:#f1f3f7;margin-top:18px}
+ .lab2-sub{font:500 8px 'DM Mono';color:#626c7b;margin-top:3px}
+ .flow{display:flex;gap:7px;align-items:center;flex-wrap:wrap;margin-top:25px}
+ .flow-node{padding:10px 9px;border:1px solid #29303a;border-radius:9px;background:#0e1117;color:#b9c0cb;font:600 8px 'DM Mono';transition:.2s}
+ .flow-node.live{border-color:#eef1f6;color:#fff;box-shadow:0 0 22px rgba(255,255,255,.12);transform:translateY(-2px)}
+ .flow-arrow{color:#4e5868;font:700 11px 'DM Mono'}
+ .flow-status{margin-top:20px;color:#697384;font:500 9px 'DM Mono';min-height:18px}
+ .arch{display:grid;grid-template-columns:repeat(3,1fr);gap:7px;margin-top:20px}
+ .arch-node{padding:12px 8px;border:1px solid #252b35;border-radius:9px;background:#0e1117;text-align:center;color:#9aa3b1;font:600 8px 'DM Mono';cursor:pointer;transition:.2s}
+ .arch-node:hover,.arch-node.active{border-color:#e6eaf0;color:#fff;transform:translateY(-2px)}
+ .arch-detail{margin-top:13px;padding:10px;border-left:2px solid #4a5361;color:#717b8b;font:500 8px 'DM Mono';line-height:1.6;min-height:38px}
+ @media(max-width:800px){.lab2-shell{grid-template-columns:1fr}.arch{grid-template-columns:repeat(2,1fr)}}
  `;
  document.head.appendChild(style);
  const hero=document.querySelector('.hero-copy');
@@ -62,4 +89,43 @@ const sections=$$('main section[id]'),nav=$$('.navlinks a');addEventListener('sc
   ['Telegram Systems',['Bots','FastAPI','Automation'],'BUILDING']
  ];
  cards.forEach((card,i)=>{const title=card.querySelector('h3')?.textContent?.trim()||'';const m=meta.find(x=>title.toLowerCase().includes(x[0].split(' ')[0].toLowerCase()))||meta[i];if(!m)return;const head=card.querySelector('.project-head');if(head){const s=head.querySelector('span');if(s){s.textContent=m[2];s.classList.toggle('project-status',m[2]==='LIVE')}}let stack=card.querySelector('.project-stack');if(!stack){stack=document.createElement('div');stack.className='project-stack';const p=card.querySelector('p');p?.insertAdjacentElement('afterend',stack)}stack.innerHTML=m[1].map(x=>`<span>${x}</span>`).join('')});
+
+ /* Interactive Lab 2.0: generated entirely in JS so the existing static HTML remains intact. */
+ const lab=document.querySelector('#lab');
+ if(lab&&!document.querySelector('#lab2')){
+   const wrap=document.createElement('div');wrap.id='lab2';wrap.className='lab2-shell';
+   wrap.innerHTML=`
+    <article class="lab2-card">
+      <div class="lab2-kicker">01 · Music Lab</div><h3>Pulse Engine</h3><p>A browser-native metronome and pitch playground. Audio starts only after interaction.</p>
+      <div class="lab2-controls"><button class="lab2-btn" id="lab2Play">START</button><span class="lab2-bpm" id="lab2Bpm">96</span><span class="lab2-sub">BPM</span><input class="lab2-range" id="lab2Range" type="range" min="40" max="220" value="96" aria-label="Tempo"></div>
+      <div class="lab2-beats" id="lab2Beats">${Array.from({length:8},(_,i)=>`<span class="lab2-beat" data-beat="${i}"></span>`).join('')}</div>
+      <div class="lab2-note" id="lab2Note">C4</div><div class="lab2-sub">Trumpet practice pulse · 261.63 Hz</div>
+      <div class="lab2-controls"><select class="lab2-select" id="lab2Wave"><option value="sine">Sine</option><option value="triangle">Triangle</option><option value="square">Square</option><option value="sawtooth">Saw</option></select><button class="lab2-btn" data-note="C4">C4</button><button class="lab2-btn" data-note="G4">G4</button><button class="lab2-btn" data-note="Bb4">Bb4</button><button class="lab2-btn" data-note="C5">C5</button></div>
+    </article>
+    <article class="lab2-card">
+      <div class="lab2-kicker">02 · AI Workflow</div><h3>Agent Pipeline</h3><p>Watch a request travel through a simplified AI automation architecture.</p>
+      <div class="flow" id="lab2Flow"><span class="flow-node">INPUT</span><span class="flow-arrow">→</span><span class="flow-node">PROMPT</span><span class="flow-arrow">→</span><span class="flow-node">MODEL</span><span class="flow-arrow">→</span><span class="flow-node">TOOL</span><span class="flow-arrow">→</span><span class="flow-node">OUTPUT</span></div>
+      <div class="lab2-controls"><button class="lab2-btn" id="lab2Run">RUN WORKFLOW</button><button class="lab2-btn" id="lab2Reset">RESET</button></div><div class="flow-status" id="lab2Status">READY · waiting for input</div>
+    </article>
+    <article class="lab2-card" style="grid-column:1/-1;min-height:210px">
+      <div class="lab2-kicker">03 · System Architecture</div><h3>Click the stack</h3><p>Explore how the pieces of a production-style system connect.</p>
+      <div class="arch" id="lab2Arch"><button class="arch-node active" data-detail="Browser UI — interaction, visuals and Web Audio.">FRONTEND</button><button class="arch-node" data-detail="API layer — routes requests and coordinates services.">API</button><button class="arch-node" data-detail="AI layer — agents, prompts and model orchestration.">AI</button><button class="arch-node" data-detail="Redis — fast state, queues and caching.">REDIS</button><button class="arch-node" data-detail="PostgreSQL — durable application data.">POSTGRES</button><button class="arch-node" data-detail="Worker — background jobs and automation.">WORKER</button></div>
+      <div class="arch-detail" id="lab2Detail">Browser UI — interaction, visuals and Web Audio.</div>
+    </article>`;
+   lab.appendChild(wrap);
+
+   let audioCtx=null, timer=null, beat=0, bpm=96;
+   const frequencies={C4:261.63,G4:392,Bb4:466.16,C5:523.25};
+   const ensureAudio=async()=>{if(!audioCtx)audioCtx=new (window.AudioContext||window.webkitAudioContext)();if(audioCtx.state==='suspended')await audioCtx.resume()};
+   const tone=(freq,duration=.07)=>{if(!audioCtx)return;const osc=audioCtx.createOscillator(),gain=audioCtx.createGain();osc.type=$('#lab2Wave').value;osc.frequency.value=freq;gain.gain.setValueAtTime(.0001,audioCtx.currentTime);gain.gain.exponentialRampToValueAtTime(.12,audioCtx.currentTime+.005);gain.gain.exponentialRampToValueAtTime(.0001,audioCtx.currentTime+duration);osc.connect(gain).connect(audioCtx.destination);osc.start();osc.stop(audioCtx.currentTime+duration+.01)};
+   const pulse=()=>{document.querySelectorAll('.lab2-beat').forEach((x,i)=>x.classList.toggle('on',i===beat));tone(beat===0?880:660,.055);beat=(beat+1)%8};
+   const restart=()=>{clearInterval(timer);timer=null;beat=0;document.querySelectorAll('.lab2-beat').forEach(x=>x.classList.remove('on'))};
+   $('#lab2Range').oninput=e=>{bpm=+e.target.value;$('#lab2Bpm').textContent=bpm;if(timer){clearInterval(timer);timer=setInterval(pulse,60000/bpm)}};
+   $('#lab2Play').onclick=async()=>{await ensureAudio();if(timer){restart();$('#lab2Play').textContent='START';return}pulse();timer=setInterval(pulse,60000/bpm);$('#lab2Play').textContent='STOP'};
+   $$('[data-note]').forEach(b=>b.onclick=async()=>{await ensureAudio();const n=b.dataset.note;$('#lab2Note').textContent=n;tone(frequencies[n],.18)});
+   const nodes=[...document.querySelectorAll('#lab2Flow .flow-node')];
+   $('#lab2Run').onclick=()=>{let i=0;$('#lab2Status').textContent='RUNNING · processing pipeline';nodes.forEach(n=>n.classList.remove('live'));const step=()=>{nodes.forEach(n=>n.classList.remove('live'));if(i<nodes.length){nodes[i].classList.add('live');i++;setTimeout(step,430)}else $('#lab2Status').textContent='COMPLETE · output generated successfully'};step()};
+   $('#lab2Reset').onclick=()=>{nodes.forEach(n=>n.classList.remove('live'));$('#lab2Status').textContent='READY · waiting for input'};
+   $$('#lab2Arch .arch-node').forEach(n=>n.onclick=()=>{$$('#lab2Arch .arch-node').forEach(x=>x.classList.remove('active'));n.classList.add('active');$('#lab2Detail').textContent=n.dataset.detail});
+ }
 })();
