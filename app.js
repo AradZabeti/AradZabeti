@@ -21,3 +21,45 @@ const hue=$('#hue'),orb=$('#colorOrb'),value=$('#colorValue');function updateCol
 addEventListener('pointermove',e=>{document.documentElement.style.setProperty('--mx',`${e.clientX}px`);document.documentElement.style.setProperty('--my',`${e.clientY}px`)},{passive:true});
 addEventListener('scroll',()=>{const max=document.documentElement.scrollHeight-innerHeight;$('#progress').style.width=(max?(scrollY/max)*100:0)+'%'},{passive:true});
 const sections=$$('main section[id]'),nav=$$('.navlinks a');addEventListener('scroll',()=>{let id='';sections.forEach(s=>{if(scrollY>=s.offsetTop-180)id=s.id});nav.forEach(a=>a.classList.toggle('active',a.hash==='#'+id))},{passive:true});
+
+/* Portfolio 2.0 — sharper positioning, richer hero and project metadata. */
+(()=>{
+ const style=document.createElement('style');
+ style.textContent=`
+ .hero-copy .hero-role{display:block;margin-top:16px;color:#c5cbd6;font:500 11px 'DM Mono';letter-spacing:.08em;text-transform:uppercase}
+ .hero-copy .hero-blurb{max-width:620px}
+ .hero-copy .hero-metrics{display:flex;flex-wrap:wrap;gap:8px;margin-top:24px}
+ .hero-copy .hero-metric{padding:8px 10px;border:1px solid #252934;background:#0c0e14;border-radius:9px;color:#7f8999;font:500 9px 'DM Mono'}
+ .hero-copy .hero-metric strong{color:#e6e9ef;font-weight:500}
+ .hero-art .orb{position:relative}
+ .hero-art .orb-label{position:absolute;inset:auto 0 -54px;text-align:center;color:#667081;font:500 9px 'DM Mono';letter-spacing:.16em;text-transform:uppercase}
+ .project .project-stack{display:flex;flex-wrap:wrap;gap:6px;margin-top:17px}
+ .project .project-stack span{padding:5px 7px;border:1px solid #272c36;border-radius:6px;color:#727c8c;font:500 8px 'DM Mono'}
+ .project .project-status{color:#4ade80!important}
+ @media(max-width:800px){.hero-copy .hero-metrics{margin-top:18px}.hero-art .orb-label{display:none}}
+ `;
+ document.head.appendChild(style);
+ const hero=document.querySelector('.hero-copy');
+ if(hero){
+   const h1=hero.querySelector('h1');
+   if(h1) h1.innerHTML='<span class="grad">ARAD</span><br>ZABETI';
+   let role=hero.querySelector('.hero-role');
+   if(!role){role=document.createElement('span');role.className='hero-role';h1?.insertAdjacentElement('afterend',role)}
+   role.textContent='Developer · AI & Automation Builder · Music Technology · 🎺 Trumpet';
+   const p=hero.querySelector('p');
+   if(p){p.classList.add('hero-blurb');p.textContent='I build software, AI-powered automation and music technology — turning ideas into fast, useful and interactive systems.'}
+   let metrics=hero.querySelector('.hero-metrics');
+   if(!metrics){metrics=document.createElement('div');metrics.className='hero-metrics';hero.appendChild(metrics)}
+   metrics.innerHTML='<span class="hero-metric"><strong>AI</strong> automation</span><span class="hero-metric"><strong>Music</strong> technology</span><span class="hero-metric"><strong>Python</strong> · JS · APIs</span><span class="hero-metric"><strong>Building</strong> in public</span>';
+ }
+ const orb=document.querySelector('.orb');
+ if(orb&&!orb.querySelector('.orb-label')){const label=document.createElement('span');label.className='orb-label';label.textContent='software × ai × music';orb.appendChild(label)}
+ const cards=[...document.querySelectorAll('.project')];
+ const meta=[
+  ['KookTools',['Web Audio','JavaScript','Music Tech'],'LIVE'],
+  ['Arad Music OS',['Python','AI','Practice Systems'],'BUILDING'],
+  ['AI & Automation',['Agents','n8n','APIs'],'LAB'],
+  ['Telegram Systems',['Bots','FastAPI','Automation'],'BUILDING']
+ ];
+ cards.forEach((card,i)=>{const title=card.querySelector('h3')?.textContent?.trim()||'';const m=meta.find(x=>title.toLowerCase().includes(x[0].split(' ')[0].toLowerCase()))||meta[i];if(!m)return;const head=card.querySelector('.project-head');if(head){const s=head.querySelector('span');if(s){s.textContent=m[2];s.classList.toggle('project-status',m[2]==='LIVE')}}let stack=card.querySelector('.project-stack');if(!stack){stack=document.createElement('div');stack.className='project-stack';const p=card.querySelector('p');p?.insertAdjacentElement('afterend',stack)}stack.innerHTML=m[1].map(x=>`<span>${x}</span>`).join('')});
+})();
