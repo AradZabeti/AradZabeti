@@ -1,0 +1,69 @@
+/* Mobile Optimization 2.0 — progressive enhancement */
+html,body{max-width:100%;overflow-x:hidden}
+img,svg,video,canvas{max-width:100%;height:auto}
+button,a,input,select,textarea{touch-action:manipulation}
+
+@media (width < 900px){
+  .wrap{width:min(100% - 28px,1180px)}
+  .nav{height:68px}
+  .navlinks{display:none}
+  .hero{min-height:auto;grid-template-columns:1fr;padding:76px 0 110px;gap:10px}
+  .hero h1{font-size:clamp(58px,17vw,92px);margin:24px 0}
+  .hero p{font-size:16px;line-height:1.7}
+  .hero-art{height:410px;margin-top:8px}
+  .hero-grid{inset:20px}
+  .orb{width:260px;height:260px;font-size:78px}
+  .ring{width:350px;height:145px}
+  .ring.two{width:310px;height:310px}
+  .ring.three{width:390px;height:390px}
+  .f1{right:0;top:45px}.f2{left:0;bottom:35px}.f3{right:0;bottom:75px}
+  .scrollcue{bottom:15px}
+  .section{padding:82px 0}
+  .about,.nowgrid{grid-template-columns:1fr;gap:20px}
+  .projects{grid-template-columns:1fr}
+  .featured{grid-column:auto}
+  .labgrid{grid-template-columns:1fr}
+  .stats{grid-template-columns:repeat(2,1fr)}
+  .project{min-height:280px}.featured{min-height:320px}
+  .project h3{margin-top:35px}
+  .contact{align-items:flex-start;flex-direction:column}
+  .termout{height:300px}
+  .arch{flex-wrap:wrap;margin:30px 0}
+}
+
+@media (width < 600px){
+  .wrap{width:calc(100% - 22px)}
+  .logo{font-size:22px}
+  .cmd{padding:10px 12px;min-height:42px}
+  .hero{padding-top:52px;padding-bottom:80px}
+  .hero h1{font-size:clamp(52px,18vw,76px);letter-spacing:-.09em}
+  .hero-art{height:330px}
+  .orb{width:205px;height:205px;font-size:62px}
+  .ring{width:285px;height:115px}.ring.two{width:250px;height:250px}.ring.three{width:320px;height:320px}
+  .float{font-size:8px;padding:8px 9px}.f1{top:30px}.f2{bottom:18px}.f3{bottom:55px}
+  .section{padding:66px 0}
+  .section h2{font-size:clamp(39px,13vw,55px);margin-bottom:30px}
+  .about p,.lead{font-size:15px}
+  .panel,.project,.lab,.nowcard{padding:20px;border-radius:18px}
+  .stats{gap:7px}.stat{padding:14px}.stat b{font-size:18px}
+  .project h3,.nowcard h3{font-size:27px}
+  .featured{min-height:300px}
+  .actions .btn{flex:1;justify-content:center;min-height:46px}
+  .termout{height:260px;padding:14px;font-size:11px}
+  .termform{min-height:52px;padding:10px 13px}
+  .termform input{font-size:11px}
+  .modal{padding:4vh 10px}
+  .window{border-radius:15px}
+  .footer{gap:15px;flex-direction:column}
+}
+
+@media (pointer:coarse){
+  .btn,.project-action,.mini-btn,.cmd{min-height:44px}
+  .tag{min-height:38px;display:inline-flex;align-items:center}
+  .navlinks a{padding:8px 2px}
+}
+
+@media (prefers-reduced-motion:reduce){
+  .orb,.ring,.ring.two,.ring.three,.dot,.scrollcue span{animation:none!important}
+  *,*:before,*:after{scroll-behavior:auto!important;transition-duration:.01ms!important}
+}
