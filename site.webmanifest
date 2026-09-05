@@ -1,0 +1,19 @@
+{
+  "name": "Arad Zabeti — Developer / Builder",
+  "short_name": "Arad",
+  "description": "Arad Zabeti — Developer, AI & Automation Builder, Music Technology and Trumpet Player.",
+  "start_url": "/AradZabeti/",
+  "scope": "/AradZabeti/",
+  "display": "standalone",
+  "background_color": "#07090d",
+  "theme_color": "#07090d",
+  "prefer_related_applications": false,
+  "icons": [
+    {
+      "src": "assets/icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}
