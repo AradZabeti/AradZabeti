@@ -1,0 +1,49 @@
+name: Add security runtime
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'security.js'
+      - 'index.html'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  inject:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Checkout
+        uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+
+      - name: Inject security runtime
+        shell: python
+        run: |
+          from pathlib import Path
+          p = Path('index.html')
+          s = p.read_text(encoding='utf-8')
+          marker = '<script src="security.js"></script>'
+          if marker not in s:
+              anchor = '<script src="app.js"></script>'
+              if anchor in s:
+                  s = s.replace(anchor, anchor + '\n' + marker, 1)
+              else:
+                  s = s.replace('</body>', marker + '\n</body>', 1)
+              p.write_text(s, encoding='utf-8')
+
+      - name: Commit if changed
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add index.html
+          if git diff --cached --quiet; then
+            echo 'No changes needed.'
+            exit 0
+          fi
+          git commit -m 'chore: load frontend security runtime'
+          git push
