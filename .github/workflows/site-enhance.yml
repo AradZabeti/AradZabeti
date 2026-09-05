@@ -1,0 +1,69 @@
+name: Enhance portfolio metadata and PWA
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'pwa.js'
+      - 'site.webmanifest'
+      - 'sw.js'
+      - 'assets/icon.svg'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  enhance:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+
+      - name: Patch HTML metadata and PWA hooks
+        shell: python
+        run: |
+          from pathlib import Path
+          p = Path('index.html')
+          s = p.read_text(encoding='utf-8')
+          marker = '<!-- ARAD_SITE_ENHANCE -->'
+          block = '''<!-- ARAD_SITE_ENHANCE -->
+          <link rel="canonical" href="https://aradzabeti.github.io/AradZabeti/">
+          <meta name="robots" content="index,follow">
+          <meta name="author" content="Arad Zabeti">
+          <meta property="og:type" content="website">
+          <meta property="og:title" content="Arad Zabeti — Developer / Builder">
+          <meta property="og:description" content="Developer, AI & Automation Builder, Music Technology and Trumpet Player.">
+          <meta property="og:url" content="https://aradzabeti.github.io/AradZabeti/">
+          <meta property="og:image" content="https://aradzabeti.github.io/AradZabeti/assets/icon.svg">
+          <meta name="twitter:card" content="summary">
+          <meta name="twitter:title" content="Arad Zabeti — Developer / Builder">
+          <meta name="twitter:description" content="Developer, AI & Automation Builder, Music Technology and Trumpet Player.">
+          <meta name="twitter:image" content="https://aradzabeti.github.io/AradZabeti/assets/icon.svg">
+          <meta name="mobile-web-app-capable" content="yes">
+          <meta name="apple-mobile-web-app-capable" content="yes">
+          <meta name="apple-mobile-web-app-title" content="Arad">
+          <link rel="icon" href="assets/icon.svg" type="image/svg+xml">
+          <link rel="preconnect" href="https://fonts.googleapis.com">
+          <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+          <script src="pwa.js" defer></script>'''
+          if marker in s:
+              start = s.index(marker)
+              end = s.index('</head>', start)
+              s = s[:start] + block + '\n          ' + s[end:]
+          else:
+              s = s.replace('</head>', block + '\n        </head>', 1)
+          p.write_text(s, encoding='utf-8')
+
+      - name: Commit generated site metadata
+        shell: bash
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add index.html
+          if git diff --cached --quiet; then
+            echo "No changes"
+          else
+            git commit -m "chore: optimize SEO metadata and PWA"
+            git push
+          fi
