@@ -17,44 +17,41 @@
   <header class="bar">
     <span class="dot r"></span><span class="dot y"></span><span class="dot g"></span>
     <span class="title">arad@profile: ~/identity</span>
-    <nav class="toplinks"><a href="./index.html">portfolio</a><a href="./resume.html">resume</a><a href="https://github.com/AradZabeti" target="_blank" rel="noopener noreferrer">github</a></nav>
+    <nav class="toplinks"><a href="./index.html">portfolio</a><a href="./os.html">arados</a><a href="./resume.html">resume</a><a href="https://github.com/AradZabeti" target="_blank" rel="noopener noreferrer">github</a></nav>
   </header>
   <main class="screen" id="screen" aria-live="polite">
     <div class="line"><span class="cyan">ARAD ZABETI // INTERACTIVE PROFILE TERMINAL</span></div>
-    <div class="line muted">Type <span class="purple">help</span> to see available commands.</div>
+    <div class="line muted">This is a profile shell — commands are simulated client-side, no OS shell is exposed.</div>
+    <div class="line muted">Type <span class="purple">help</span> to explore.</div>
     <div id="output"></div>
     <div class="cmdline"><span class="promptmark">arad@profile:~$</span><input id="input" class="input" autocomplete="off" autocapitalize="off" spellcheck="false" aria-label="Terminal command"><span class="cursor" aria-hidden="true"></span></div>
   </main>
   <footer class="hint"><kbd>↑</kbd> history · <kbd>Tab</kbd> autocomplete · <kbd>Enter</kbd> run · <kbd>Ctrl</kbd> + <kbd>L</kbd> clear</footer>
 </div>
 <script>
-const out=document.getElementById('output');
-const input=document.getElementById('input');
-const screen=document.getElementById('screen');
-const history=[];let historyIndex=0;
+const out=document.getElementById('output');const input=document.getElementById('input');const screen=document.getElementById('screen');const history=[];let historyIndex=0;
 const commands={
- help:()=>[
-  ['cyan','Available commands:'],
-  ['muted','  about     who I am and what I build'],
-  ['muted','  projects  selected projects + links'],
-  ['muted','  stack     technologies and tools'],
-  ['muted','  music     music technology + trumpet'],
-  ['muted','  resume    open the full CV'],
-  ['muted','  contact   links + email'],
-  ['muted','  clear     clear terminal'],
- ],
+ help:()=>[['cyan','Available commands:'],['muted','  about       who I am and what I build'],['muted','  whoami      identity summary'],['muted','  neofetch    profile system card'],['muted','  projects    selected projects + links'],['muted','  stack       technologies and tools'],['muted','  music       music technology + trumpet'],['muted','  pwd         current virtual path'],['muted','  ls          virtual profile files'],['muted','  cat about.txt  read profile notes'],['muted','  coffee      developer fuel'],['muted','  matrix      enter the profile matrix'],['muted','  sudo hire-arad  open collaboration prompt'],['muted','  resume      open the full CV'],['muted','  contact     links + email'],['muted','  clear       clear terminal']],
  about:()=>[['cyan','Arad Zabeti'],['muted','Developer · AI & Automation Builder · Music Technology · Trumpet Player'],['muted','I build software systems, automation workflows and creative tools.'],['muted','Focus: Python, backend systems, APIs, AI automation, web and music technology.']],
- projects:()=>[['cyan','Selected projects'],['muted','→ KookTools — music-focused toolkit'],['muted','  https://kooktools.netlify.app'],['muted','→ Arad Music OS — music technology workspace concept'],['muted','→ PracticeHub — practice planning workflow'],['muted','→ Arghanoon Academy Platform — Persian RTL academy platform concept'],['muted','→ AI Automation Lab — AI + Telegram + n8n experiments']],
+ whoami:()=>[['cyan','ARAD ZABETI'],['muted','developer / builder / trumpet player'],['muted','building software, automation and music technology']],
+ neofetch:()=>[['cyan','        ARAD ZABETI'],['muted','────────────────────────────────────'],['muted','OS        ARAD OS / static web'],['muted','Focus     Python · AI · Automation'],['muted','Creative  Music Technology · 🎺 Trumpet'],['muted','Projects  KookTools · Music OS · PracticeHub'],['muted','Status    Building in public'],['muted','────────────────────────────────────']],
+ projects:()=>[['cyan','Selected projects'],['muted','01  KookTools — music-focused toolkit'],['muted','    https://kooktools.netlify.app'],['muted','02  Arad Music OS — music technology workspace'],['muted','03  PracticeHub — practice planning workflow'],['muted','04  Arghanoon Academy Platform — Persian RTL platform concept'],['muted','05  AI Automation Lab — AI + Telegram + n8n experiments']],
  stack:()=>[['cyan','Engineering stack'],['muted','Python · JavaScript · HTML · CSS'],['muted','FastAPI · PostgreSQL · Redis · Celery'],['muted','n8n · Telegram Bots · REST APIs · Webhooks'],['muted','Git · GitHub · Linux · Docker · Nginx · WSL'],['muted','Web Audio · MIDI · VS Code · PyCharm']],
  music:()=>[['cyan','Music technology'],['muted','Trumpet player · music software builder'],['muted','Practice tools · Web Audio · MIDI · interactive music workflows'],['muted','Music is one of the systems I like to turn into software.']],
+ pwd:()=>[['cyan','/home/arad/profile']],
+ ls:()=>[['cyan','assets/  docs/  index.html  terminal.html  os.html  resume.html  404.html'],['muted','README.md  SECURITY.md  CONTRIBUTING.md  CHANGELOG.md']],
+ 'cat about.txt':()=>[['cyan','ABOUT.TXT'],['muted','Build things that are useful, inspectable and fun to interact with.'],['muted','Prefer evidence over claims. Prototype quickly, then refine.']],
+ coffee:()=>[['purple','☕ coffee.exe'],['muted','fuel level: acceptable'],['muted','shipping level: increasing']],
+ matrix:()=>[['purple','Wake up, Arad…'],['muted','There is no matrix here. Just a very dramatic portfolio.']],
+ 'sudo hire-arad':()=>[['cyan','COLLABORATION MODE'],['muted','Permission granted for good ideas.'],['muted','Open GitHub / Resume / Email to start a conversation.']],
  resume:()=>{window.location.href='./resume.html';return [['muted','Opening resume…']]},
- contact:()=>[['cyan','Contact'],['muted','GitHub  → https://github.com/AradZabeti'],['muted','Portfolio → https://aradzabeti.github.io/AradZabeti/'],['muted','Email    → arad23426@gmail.com'],['muted','KookTools→ https://kooktools.netlify.app']],
+ contact:()=>[['cyan','Contact'],['muted','GitHub  → https://github.com/AradZabeti'],['muted','Portfolio → https://aradzabeti.github.io/AradZabeti/'],['muted','ARAD OS → https://aradzabeti.github.io/AradZabeti/os.html'],['muted','Email    → arad23426@gmail.com'],['muted','KookTools→ https://kooktools.netlify.app']],
  clear:()=>{out.innerHTML='';return []}
 };
 function printCommand(cmd){const row=document.createElement('div');row.className='line';row.innerHTML='<span class="prompt">arad@profile:~$</span> '+escapeHtml(cmd);out.appendChild(row)}
 function printRows(rows){for(const [cls,text] of rows){const row=document.createElement('div');row.className='line '+cls;row.textContent=text;out.appendChild(row)}}
 function escapeHtml(s){return s.replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]))}
-function run(raw){const cmd=raw.trim().toLowerCase();if(!cmd)return;history.push(raw);historyIndex=history.length;printCommand(raw);if(commands[cmd])printRows(commands[cmd]());else printRows([['error','command not found: '+raw],['muted','type "help" for available commands']]);screen.scrollTop=screen.scrollHeight}
+function run(raw){const trimmed=raw.trim();const cmd=trimmed.toLowerCase();if(!cmd)return;history.push(raw);historyIndex=history.length;printCommand(raw);if(commands[cmd])printRows(commands[cmd]());else printRows([['error','command not found: '+raw],['muted','type "help" for available commands']]);screen.scrollTop=screen.scrollHeight}
 input.addEventListener('keydown',e=>{if(e.key==='Enter'){run(input.value);input.value=''}else if(e.key==='ArrowUp'){e.preventDefault();if(historyIndex>0){historyIndex--;input.value=history[historyIndex]}}else if(e.key==='ArrowDown'){e.preventDefault();if(historyIndex<history.length-1){historyIndex++;input.value=history[historyIndex]}else{historyIndex=history.length;input.value=''}}else if(e.key==='Tab'){e.preventDefault();const value=input.value.toLowerCase();const match=Object.keys(commands).find(c=>c.startsWith(value));if(match)input.value=match}else if(e.ctrlKey&&e.key.toLowerCase()==='l'){e.preventDefault();out.innerHTML=''}});
 document.body.addEventListener('click',()=>input.focus());input.focus();
 </script>
