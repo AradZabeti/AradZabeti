@@ -161,7 +161,7 @@ switch ($command) {
             'pdo' => extension_loaded('PDO'),
             'session' => function_exists('session_status'),
             'api_directory_readable' => is_readable(__DIR__),
-            'api_directory_writable' => is_writable(__DIR__),
+            'temp_directory_writable' => is_writable(sys_get_temp_dir()),
         ];
         $passed = count(array_filter($checks));
         $totalChecks = count($checks);
@@ -212,7 +212,7 @@ switch ($command) {
 
     case 'status':
         $d = $disk();
-        $healthChecks = [function_exists('json_encode'), extension_loaded('openssl'), is_readable(__DIR__), is_writable(__DIR__)];
+        $healthChecks = [function_exists('json_encode'), extension_loaded('openssl'), is_readable(__DIR__), is_writable(sys_get_temp_dir())];
         respond(['ok' => true, 'command' => $command, 'data' => [
             'status' => 'ONLINE',
             'health' => count(array_filter($healthChecks)) === count($healthChecks) ? 'HEALTHY' : 'CHECK',
