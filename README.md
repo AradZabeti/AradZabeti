@@ -8,7 +8,6 @@
 [![Resume](https://img.shields.io/badge/RESUME-OPEN%20CV-0B0D12?style=for-the-badge&logo=readthedocs&logoColor=4ADE80)](https://aradzabeti.github.io/AradZabeti/resume.html)
 [![GitHub](https://img.shields.io/badge/GITHUB-ARADZABETI-0B0D12?style=for-the-badge&logo=github&logoColor=FFFFFF)](https://github.com/AradZabeti)
 [![KookTools](https://img.shields.io/badge/KOOKTOOLS-MUSIC%20TOOLKIT-0B0D12?style=for-the-badge&logo=musicbrainz&logoColor=A78BFA)](https://kooktools.netlify.app)
-[![Quality](https://img.shields.io/github/actions/workflow/status/AradZabeti/AradZabeti/quality.yml?branch=main&style=for-the-badge&label=QUALITY)](https://github.com/AradZabeti/AradZabeti/actions/workflows/quality.yml)
 
 </div>
 
@@ -196,7 +195,7 @@ The public portfolio and technical résumé layer of this profile.
 
 ## `05 / REPOSITORY ENGINEERING`
 
-This repository is maintained as more than a profile page. It includes a dedicated portfolio, a printable CV, documentation, security guidance, contribution standards and automated quality checks.
+This repository is maintained as more than a profile page. It includes a dedicated portfolio, a printable CV, documentation, security guidance, contribution standards and a clean project history.
 
 | Surface | Purpose |
 | --- | --- |
@@ -205,13 +204,16 @@ This repository is maintained as more than a profile page. It includes a dedicat
 | `resume.html` | One-page CV with print/PDF layout |
 | `assets/` | Branded SVG visual system |
 | `docs/ARCHITECTURE.md` | Repository structure and design principles |
-| `.github/` | CI, issue templates and PR standards |
+| `.github/` | Issue and pull-request standards |
 | `SECURITY.md` | Security reporting and public-site rules |
 | `CHANGELOG.md` | Human-readable project history |
+| `.editorconfig` | Consistent editor formatting |
+| `.gitignore` | Local-only files and secret-safe defaults |
 
 → [Read the repository architecture](./docs/ARCHITECTURE.md)  
 → [Read contribution guidelines](./CONTRIBUTING.md)  
-→ [Read security policy](./SECURITY.md)
+→ [Read security policy](./SECURITY.md)  
+→ [Read changelog](./CHANGELOG.md)
 
 <img src="./assets/neon-divider.svg" alt="divider" width="100%" />
 
@@ -233,7 +235,7 @@ security-minded handling
 working GitHub Pages output
 ```
 
-The repository quality workflow checks required files, basic HTML structure, XML validity, internal file references and several obvious secret patterns before changes are treated as healthy.
+The repository keeps a deliberately lightweight toolchain: static web files, local visual assets, documentation and GitHub Pages. The goal is to keep the public surface easy to inspect and maintain.
 
 <img src="./assets/neon-divider.svg" alt="divider" width="100%" />
 
