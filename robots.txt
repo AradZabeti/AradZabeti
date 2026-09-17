@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://aradzabeti.github.io/AradZabeti/sitemap.xml
