@@ -5,6 +5,7 @@
 <br>
 
 [![Portfolio](https://img.shields.io/badge/PORTFOLIO-ARADZABETI.GITHUB.IO-0B0D12?style=for-the-badge&logo=googlechrome&logoColor=67E8F9)](https://aradzabeti.github.io/AradZabeti/)
+[![ARAD OS](https://img.shields.io/badge/ARAD%20OS-OPEN%20SYSTEM-0B0D12?style=for-the-badge&logo=electron&logoColor=A78BFA)](https://aradzabeti.github.io/AradZabeti/os.html)
 [![Terminal](https://img.shields.io/badge/TERMINAL-OPEN%20SHELL-0B0D12?style=for-the-badge&logo=gnubash&logoColor=4ADE80)](https://aradzabeti.github.io/AradZabeti/terminal.html)
 [![Resume](https://img.shields.io/badge/RESUME-OPEN%20CV-0B0D12?style=for-the-badge&logo=readthedocs&logoColor=4ADE80)](https://aradzabeti.github.io/AradZabeti/resume.html)
 [![GitHub](https://img.shields.io/badge/GITHUB-ARADZABETI-0B0D12?style=for-the-badge&logo=github&logoColor=FFFFFF)](https://github.com/AradZabeti)
@@ -91,22 +92,52 @@ motto: "Less claiming. More evidence."
 ```text
 arad@profile:~$ help
 
-about      who I am and what I build
-projects   selected projects + links
-stack      technologies and tools
-music      music technology + trumpet
-resume     open the full CV
-contact    links + email
-clear      clear terminal
+about          who I am and what I build
+whoami         identity summary
+neofetch       profile system card
+projects       selected projects + links
+stack          technologies and tools
+music          music technology + trumpet
+pwd / ls       virtual profile shell
+cat about.txt  read profile notes
+coffee         developer fuel
+matrix         profile matrix easter egg
+sudo hire-arad collaboration mode
+resume         open the full CV
+contact        links + email
+clear          clear terminal
 ```
 
-A dedicated interactive shell-style interface for exploring the profile, projects, stack and contact links.
+A dedicated interactive shell-style interface with history, Tab completion, keyboard controls and profile-focused Easter eggs.
 
 </div>
 
 <img src="./assets/neon-divider.svg" alt="divider" width="100%" />
 
-## `03 / WHAT I BUILD`
+## `03 / ARAD OS`
+
+<div align="center">
+
+### <a href="https://aradzabeti.github.io/AradZabeti/os.html">OPEN ARAD OS ↗</a>
+
+```text
+ARAD OS
+│
+├── Project Explorer
+├── Filesystem Map
+├── Live GitHub Signal
+├── Music Mode
+├── Command Palette  (Ctrl/Cmd + K)
+└── Terminal Bridge
+```
+
+ARAD OS is the interactive operating layer of the profile: a single place to explore projects, inspect the repository surface, view public GitHub activity and switch into the music-technology mode.
+
+</div>
+
+<img src="./assets/neon-divider.svg" alt="divider" width="100%" />
+
+## `04 / WHAT I BUILD`
 
 <table>
 <tr>
@@ -153,7 +184,7 @@ Small laboratories for testing ideas quickly, then turning the useful ones into 
 
 <img src="./assets/neon-divider.svg" alt="divider" width="100%" />
 
-## `04 / FEATURED WORK`
+## `05 / FEATURED WORK`
 
 <table>
 <tr>
@@ -205,7 +236,7 @@ The public portfolio and technical résumé layer of this profile.
 
 <img src="./assets/neon-divider.svg" alt="divider" width="100%" />
 
-## `05 / ENGINEERING STACK`
+## `06 / ENGINEERING STACK`
 
 | Layer | Tools |
 | --- | --- |
@@ -218,16 +249,18 @@ The public portfolio and technical résumé layer of this profile.
 
 <img src="./assets/neon-divider.svg" alt="divider" width="100%" />
 
-## `06 / REPOSITORY ENGINEERING`
+## `07 / REPOSITORY ENGINEERING`
 
-This repository is maintained as more than a profile page. It includes a dedicated portfolio, a printable CV, an interactive terminal, documentation, security guidance, contribution standards and a clean project history.
+This repository is maintained as more than a profile page. It includes a dedicated portfolio, a printable CV, an interactive terminal, an ARAD OS layer, documentation, security guidance, contribution standards and a clean project history.
 
 | Surface | Purpose |
 | --- | --- |
 | `README.md` | Public identity, projects, stack and links |
 | `index.html` | Interactive portfolio |
 | `terminal.html` | Interactive shell-style profile |
+| `os.html` | ARAD OS project explorer + signal hub |
 | `resume.html` | One-page CV with print/PDF layout |
+| `404.html` | Interactive recovery page |
 | `assets/` | Branded SVG visual system |
 | `docs/ARCHITECTURE.md` | Repository structure and design principles |
 | `.github/` | Issue and pull-request standards |
@@ -236,7 +269,9 @@ This repository is maintained as more than a profile page. It includes a dedicat
 | `.editorconfig` | Consistent editor formatting |
 | `.gitignore` | Local-only files and secret-safe defaults |
 
+→ [Open ARAD OS](./os.html)  
 → [Open terminal](./terminal.html)  
+→ [Open 404 surface](./404.html)  
 → [Read the repository architecture](./docs/ARCHITECTURE.md)  
 → [Read contribution guidelines](./CONTRIBUTING.md)  
 → [Read security policy](./SECURITY.md)  
@@ -244,7 +279,7 @@ This repository is maintained as more than a profile page. It includes a dedicat
 
 <img src="./assets/neon-divider.svg" alt="divider" width="100%" />
 
-## `07 / QUALITY STANDARD`
+## `08 / QUALITY STANDARD`
 
 Every meaningful change should aim for:
 
@@ -266,7 +301,7 @@ The repository keeps a deliberately lightweight toolchain: static web files, loc
 
 <img src="./assets/neon-divider.svg" alt="divider" width="100%" />
 
-## `08 / GITHUB SIGNAL`
+## `09 / GITHUB SIGNAL`
 
 <div align="center">
 
@@ -285,7 +320,7 @@ The repository keeps a deliberately lightweight toolchain: static web files, loc
 
 <img src="./assets/neon-divider.svg" alt="divider" width="100%" />
 
-## `09 / BUILDING PHILOSOPHY`
+## `10 / BUILDING PHILOSOPHY`
 
 > **Make the idea visible. Make the system useful. Make the evidence speak.**
 
@@ -302,7 +337,7 @@ I care about the full chain: **concept → implementation → interface → auto
 
 <img src="./assets/neon-divider.svg" alt="divider" width="100%" />
 
-## `10 / RESUME`
+## `11 / RESUME`
 
 <div align="center">
 
@@ -314,7 +349,7 @@ A dedicated CV covering profile, capabilities, selected projects, engineering st
 
 <img src="./assets/neon-divider.svg" alt="divider" width="100%" />
 
-## `11 / CURRENT DIRECTION`
+## `12 / CURRENT DIRECTION`
 
 <table>
 <tr>
@@ -333,11 +368,12 @@ A dedicated CV covering profile, capabilities, selected projects, engineering st
 
 <img src="./assets/neon-divider.svg" alt="divider" width="100%" />
 
-## `12 / CONTACT`
+## `13 / CONTACT`
 
 <div align="center">
 
 <a href="https://aradzabeti.github.io/AradZabeti/">🌐 Portfolio</a> ·
+<a href="https://aradzabeti.github.io/AradZabeti/os.html">◈ ARAD OS</a> ·
 <a href="https://aradzabeti.github.io/AradZabeti/terminal.html">⌨️ Terminal</a> ·
 <a href="https://github.com/AradZabeti">💻 GitHub</a> ·
 <a href="https://kooktools.netlify.app">🎵 KookTools</a> ·
