@@ -14,7 +14,7 @@ Public diagnostics:
 
 - `server` — PHP/SAPI/OS/kernel/web/HTTPS/time/disk/API version
 - `status` — compact operational snapshot
-- `health` — capability and filesystem health checks
+- `health` — capability and filesystem/runtime health checks
 - `runtime` — PHP runtime limits and timezone
 - `capabilities` — common PHP extensions/features
 - `php` — PHP, SAPI and Zend versions
@@ -32,7 +32,7 @@ Private diagnostics:
 
 ## Rate limiting and request limits
 
-The bridge has a lightweight per-IP rate limit of 45 requests per 60 seconds and rejects request bodies larger than 2 KB. The API also sends `X-Content-Type-Options: nosniff` and locks browser CORS to the GitHub Pages origin by default.
+The bridge has a lightweight per-IP rate limit of 45 requests per 60 seconds and rejects request bodies larger than 2 KB. The API also sends `X-Content-Type-Options: nosniff`, a restrictive referrer policy and locks browser CORS to the GitHub Pages origin by default.
 
 ## cPanel deployment
 
@@ -54,12 +54,21 @@ connect https://arghanounacademy.ir/api/terminal.php
 
 ## Optional private key
 
-For personal/private diagnostics, create `public_html/api/terminal-config.php` on cPanel. **Do not commit this file to GitHub.**
+For personal/private diagnostics, create the config **outside `public_html`** when possible. On a normal cPanel layout, that means the account home directory next to `public_html`:
+
+```text
+/home/ACCOUNT/terminal-config.php
+/home/ACCOUNT/public_html/api/terminal.php
+```
+
+Use:
 
 ```php
 <?php
 const ARAD_TERMINAL_KEY = 'replace-with-a-long-random-value';
 ```
+
+The bridge also supports a same-directory `public_html/api/terminal-config.php` for compatibility, but the outside-`public_html` location is preferred.
 
 When the key is configured, send it from the browser terminal with:
 
@@ -96,7 +105,7 @@ cwd      # private key required
 
 ## Security model
 
-- The API has an allowlist; unknown commands are rejected.
+- The API has a strict allowlist; unknown commands are rejected.
 - No `shell_exec`, `exec`, `system`, `passthru` or user-controlled command runner is used.
 - Never put cPanel passwords, SSH private keys or secrets in `terminal.html`.
 - Keep `terminal-config.php` out of the public Git repository.
