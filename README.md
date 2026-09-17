@@ -5,10 +5,10 @@
 <br>
 
 [![Portfolio](https://img.shields.io/badge/PORTFOLIO-ARADZABETI.GITHUB.IO-0B0D12?style=for-the-badge&logo=googlechrome&logoColor=67E8F9)](https://aradzabeti.github.io/AradZabeti/)
+[![Resume](https://img.shields.io/badge/RESUME-OPEN%20CV-0B0D12?style=for-the-badge&logo=readthedocs&logoColor=4ADE80)](https://aradzabeti.github.io/AradZabeti/resume.html)
 [![GitHub](https://img.shields.io/badge/GITHUB-ARADZABETI-0B0D12?style=for-the-badge&logo=github&logoColor=FFFFFF)](https://github.com/AradZabeti)
 [![KookTools](https://img.shields.io/badge/KOOKTOOLS-MUSIC%20TOOLKIT-0B0D12?style=for-the-badge&logo=musicbrainz&logoColor=A78BFA)](https://kooktools.netlify.app)
-[![Telegram](https://img.shields.io/badge/TELEGRAM-KIND_BUT_SELECTIVE-0B0D12?style=for-the-badge&logo=telegram&logoColor=67E8F9)](https://t.me/KindButSelective)
-[![Resume](https://img.shields.io/badge/RESUME-OPEN%20CV-0B0D12?style=for-the-badge&logo=readthedocs&logoColor=4ADE80)](https://aradzabeti.github.io/AradZabeti/resume.html)
+[![Quality](https://img.shields.io/github/actions/workflow/status/AradZabeti/AradZabeti/quality.yml?branch=main&style=for-the-badge&label=QUALITY)](https://github.com/AradZabeti/AradZabeti/actions/workflows/quality.yml)
 
 </div>
 
@@ -110,7 +110,7 @@ AI-assisted workflows that connect models, messaging platforms, APIs and automat
 
 ### 🎵 Music Technology
 
-Software inspired by the way musicians actually practice, create and interact with sound.
+Software inspired by the way musicians practice, create and interact with sound.
 
 **Typical territory:** `Web Audio` · `MIDI` · `Practice Tools` · `Interactive Music`
 
@@ -137,7 +137,7 @@ Small laboratories for testing ideas quickly, then turning the useful ones into 
 
 ### 🎵 KookTools
 
-A music-focused toolkit concept for practical musician utilities and interactive workflows.
+A music-focused toolkit for practical musician utilities and interactive workflows.
 
 **Focus**  
 `music tools` `web audio` `practice` `interactive UX`
@@ -171,7 +171,7 @@ Experiments connecting AI, APIs, messaging platforms and workflow automation int
 
 ### 🌐 Personal Portfolio
 
-This repository powers the public portfolio experience and acts as the technical résumé layer of the profile.
+The public portfolio and technical résumé layer of this profile.
 
 <a href="https://aradzabeti.github.io/AradZabeti/">↗ Visit portfolio</a>
 
@@ -194,7 +194,50 @@ This repository powers the public portfolio experience and acts as the technical
 
 <img src="./assets/neon-divider.svg" alt="divider" width="100%" />
 
-## `05 / GITHUB SIGNAL`
+## `05 / REPOSITORY ENGINEERING`
+
+This repository is maintained as more than a profile page. It includes a dedicated portfolio, a printable CV, documentation, security guidance, contribution standards and automated quality checks.
+
+| Surface | Purpose |
+| --- | --- |
+| `README.md` | Public identity, projects, stack and links |
+| `index.html` | Interactive portfolio |
+| `resume.html` | One-page CV with print/PDF layout |
+| `assets/` | Branded SVG visual system |
+| `docs/ARCHITECTURE.md` | Repository structure and design principles |
+| `.github/` | CI, issue templates and PR standards |
+| `SECURITY.md` | Security reporting and public-site rules |
+| `CHANGELOG.md` | Human-readable project history |
+
+→ [Read the repository architecture](./docs/ARCHITECTURE.md)  
+→ [Read contribution guidelines](./CONTRIBUTING.md)  
+→ [Read security policy](./SECURITY.md)
+
+<img src="./assets/neon-divider.svg" alt="divider" width="100%" />
+
+## `06 / QUALITY STANDARD`
+
+Every meaningful change should aim for:
+
+```text
+accurate content
+      +
+responsive UI
+      +
+accessible interaction
+      +
+clean repository structure
+      +
+security-minded handling
+      +
+working GitHub Pages output
+```
+
+The repository quality workflow checks required files, basic HTML structure, XML validity, internal file references and several obvious secret patterns before changes are treated as healthy.
+
+<img src="./assets/neon-divider.svg" alt="divider" width="100%" />
+
+## `07 / GITHUB SIGNAL`
 
 <div align="center">
 
@@ -213,13 +256,11 @@ This repository powers the public portfolio experience and acts as the technical
 
 <img src="./assets/neon-divider.svg" alt="divider" width="100%" />
 
-## `06 / BUILDING PHILOSOPHY`
+## `08 / BUILDING PHILOSOPHY`
 
 > **Make the idea visible. Make the system useful. Make the evidence speak.**
 
 I care about the full chain: **concept → implementation → interface → automation → deployment → iteration**.
-
-That is why I prefer projects that can be explored, tested, measured or extended — not just described.
 
 ```text
 01  THINK       →  define the real problem
@@ -232,7 +273,19 @@ That is why I prefer projects that can be explored, tested, measured or extended
 
 <img src="./assets/neon-divider.svg" alt="divider" width="100%" />
 
-## `07 / CURRENT DIRECTION`
+## `09 / RESUME`
+
+<div align="center">
+
+### <a href="https://aradzabeti.github.io/AradZabeti/resume.html">OPEN THE FULL RESUME ↗</a>
+
+A dedicated CV covering profile, capabilities, selected projects, engineering stack and current direction.
+
+</div>
+
+<img src="./assets/neon-divider.svg" alt="divider" width="100%" />
+
+## `10 / CURRENT DIRECTION`
 
 <table>
 <tr>
@@ -251,19 +304,7 @@ That is why I prefer projects that can be explored, tested, measured or extended
 
 <img src="./assets/neon-divider.svg" alt="divider" width="100%" />
 
-## `08 / RESUME`
-
-<div align="center">
-
-### <a href="https://aradzabeti.github.io/AradZabeti/resume.html">OPEN THE FULL RESUME ↗</a>
-
-A dedicated one-page CV covering profile, capabilities, selected projects, technology stack and current direction.
-
-</div>
-
-<img src="./assets/neon-divider.svg" alt="divider" width="100%" />
-
-## `09 / CONTACT`
+## `11 / CONTACT`
 
 <div align="center">
 
