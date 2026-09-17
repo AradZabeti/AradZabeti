@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#07080d">
+<meta name="description" content="Arad Zabeti — interactive terminal profile.">
+<title>Arad Zabeti — Terminal</title>
+<style>
+:root{--bg:#07080d;--panel:#0b0f16;--line:#202734;--text:#e7edf5;--muted:#758096;--green:#4ade80;--cyan:#67e8f9;--purple:#a78bfa;--red:#fb7185}
+*{box-sizing:border-box}html,body{height:100%}body{margin:0;background:radial-gradient(circle at 15% 5%,#20133a 0,transparent 34%),radial-gradient(circle at 90% 95%,#07323b 0,transparent 30%),var(--bg);color:var(--text);font-family:ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,"Liberation Mono",monospace;display:grid;place-items:center;padding:22px;overflow:hidden}.shell{width:min(1050px,100%);height:min(720px,calc(100vh - 44px));border:1px solid #2a3240;border-radius:18px;background:#090c12e8;box-shadow:0 40px 120px #000b,0 0 80px #8b5cf612;backdrop-filter:blur(18px);overflow:hidden;display:flex;flex-direction:column}.bar{height:44px;display:flex;align-items:center;gap:9px;padding:0 14px;border-bottom:1px solid var(--line);background:#0b0f16}.dot{width:10px;height:10px;border-radius:50%}.r{background:#fb7185}.y{background:#facc15}.g{background:#4ade80}.title{margin-left:7px;color:#7d8799;font-size:11px}.toplinks{margin-left:auto;display:flex;gap:10px}.toplinks a{color:#7d8799;font-size:10px;text-decoration:none}.toplinks a:hover{color:#fff}.screen{flex:1;overflow:auto;padding:22px 20px 30px;scroll-behavior:smooth}.line{white-space:pre-wrap;line-height:1.8;font-size:13px}.prompt{color:var(--green)}.cyan{color:var(--cyan)}.purple{color:var(--purple)}.muted{color:var(--muted)}.error{color:var(--red)}.cmdline{display:flex;align-items:center;margin-top:8px}.promptmark{color:var(--green);margin-right:8px}.input{flex:1;background:transparent;border:0;outline:0;color:var(--text);font:inherit;font-size:13px}.cursor{display:inline-block;width:8px;height:15px;background:var(--green);animation:blink 1s steps(1) infinite;margin-left:2px}.hint{padding:14px 20px;border-top:1px solid var(--line);color:#667187;font-size:10px;background:#080b10}.hint kbd{border:1px solid #27303d;border-bottom-color:#394454;border-radius:5px;padding:2px 5px;color:#aeb8c8;background:#0c1119}@keyframes blink{50%{opacity:0}}@media(max-width:650px){body{padding:10px}.shell{height:calc(100vh - 20px);border-radius:14px}.screen{padding:16px}.line,.input{font-size:12px}.toplinks{display:none}}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;scroll-behavior:auto!important}}
+</style>
+</head>
+<body>
+<div class="shell">
+  <header class="bar">
+    <span class="dot r"></span><span class="dot y"></span><span class="dot g"></span>
+    <span class="title">arad@profile: ~/identity</span>
+    <nav class="toplinks"><a href="./index.html">portfolio</a><a href="./resume.html">resume</a><a href="https://github.com/AradZabeti" target="_blank" rel="noopener noreferrer">github</a></nav>
+  </header>
+  <main class="screen" id="screen" aria-live="polite">
+    <div class="line"><span class="cyan">ARAD ZABETI // INTERACTIVE PROFILE TERMINAL</span></div>
+    <div class="line muted">Type <span class="purple">help</span> to see available commands.</div>
+    <div id="output"></div>
+    <div class="cmdline"><span class="promptmark">arad@profile:~$</span><input id="input" class="input" autocomplete="off" autocapitalize="off" spellcheck="false" aria-label="Terminal command"><span class="cursor" aria-hidden="true"></span></div>
+  </main>
+  <footer class="hint"><kbd>↑</kbd> history · <kbd>Tab</kbd> autocomplete · <kbd>Enter</kbd> run · <kbd>Ctrl</kbd> + <kbd>L</kbd> clear</footer>
+</div>
+<script>
+const out=document.getElementById('output');
+const input=document.getElementById('input');
+const screen=document.getElementById('screen');
+const history=[];let historyIndex=0;
+const commands={
+ help:()=>[
+  ['cyan','Available commands:'],
+  ['muted','  about     who I am and what I build'],
+  ['muted','  projects  selected projects + links'],
+  ['muted','  stack     technologies and tools'],
+  ['muted','  music     music technology + trumpet'],
+  ['muted','  resume    open the full CV'],
+  ['muted','  contact   links + email'],
+  ['muted','  clear     clear terminal'],
+ ],
+ about:()=>[['cyan','Arad Zabeti'],['muted','Developer · AI & Automation Builder · Music Technology · Trumpet Player'],['muted','I build software systems, automation workflows and creative tools.'],['muted','Focus: Python, backend systems, APIs, AI automation, web and music technology.']],
+ projects:()=>[['cyan','Selected projects'],['muted','→ KookTools — music-focused toolkit'],['muted','  https://kooktools.netlify.app'],['muted','→ Arad Music OS — music technology workspace concept'],['muted','→ PracticeHub — practice planning workflow'],['muted','→ Arghanoon Academy Platform — Persian RTL academy platform concept'],['muted','→ AI Automation Lab — AI + Telegram + n8n experiments']],
+ stack:()=>[['cyan','Engineering stack'],['muted','Python · JavaScript · HTML · CSS'],['muted','FastAPI · PostgreSQL · Redis · Celery'],['muted','n8n · Telegram Bots · REST APIs · Webhooks'],['muted','Git · GitHub · Linux · Docker · Nginx · WSL'],['muted','Web Audio · MIDI · VS Code · PyCharm']],
+ music:()=>[['cyan','Music technology'],['muted','Trumpet player · music software builder'],['muted','Practice tools · Web Audio · MIDI · interactive music workflows'],['muted','Music is one of the systems I like to turn into software.']],
+ resume:()=>{window.location.href='./resume.html';return [['muted','Opening resume…']]},
+ contact:()=>[['cyan','Contact'],['muted','GitHub  → https://github.com/AradZabeti'],['muted','Portfolio → https://aradzabeti.github.io/AradZabeti/'],['muted','Email    → arad23426@gmail.com'],['muted','KookTools→ https://kooktools.netlify.app']],
+ clear:()=>{out.innerHTML='';return []}
+};
+function printCommand(cmd){const row=document.createElement('div');row.className='line';row.innerHTML='<span class="prompt">arad@profile:~$</span> '+escapeHtml(cmd);out.appendChild(row)}
+function printRows(rows){for(const [cls,text] of rows){const row=document.createElement('div');row.className='line '+cls;row.textContent=text;out.appendChild(row)}}
+function escapeHtml(s){return s.replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]))}
+function run(raw){const cmd=raw.trim().toLowerCase();if(!cmd)return;history.push(raw);historyIndex=history.length;printCommand(raw);if(commands[cmd])printRows(commands[cmd]());else printRows([['error','command not found: '+raw],['muted','type "help" for available commands']]);screen.scrollTop=screen.scrollHeight}
+input.addEventListener('keydown',e=>{if(e.key==='Enter'){run(input.value);input.value=''}else if(e.key==='ArrowUp'){e.preventDefault();if(historyIndex>0){historyIndex--;input.value=history[historyIndex]}}else if(e.key==='ArrowDown'){e.preventDefault();if(historyIndex<history.length-1){historyIndex++;input.value=history[historyIndex]}else{historyIndex=history.length;input.value=''}}else if(e.key==='Tab'){e.preventDefault();const value=input.value.toLowerCase();const match=Object.keys(commands).find(c=>c.startsWith(value));if(match)input.value=match}else if(e.ctrlKey&&e.key.toLowerCase()==='l'){e.preventDefault();out.innerHTML=''}});
+document.body.addEventListener('click',()=>input.focus());input.focus();
+</script>
+</body>
+</html>
