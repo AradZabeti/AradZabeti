@@ -1,49 +1,134 @@
 <div align="center">
-  <img src="./assets/profile-hero.svg" alt="Arad Zabeti — GitHub profile hero" width="100%" />
+
+<img src="./assets/profile-hero.svg" alt="Arad Zabeti profile hero" width="100%" />
+
+<br>
+
+[![Portfolio](https://img.shields.io/badge/PORTFOLIO-ARADZABETI.GITHUB.IO-0B0D12?style=for-the-badge&logo=googlechrome&logoColor=67E8F9)](https://aradzabeti.github.io/AradZabeti/)
+[![GitHub](https://img.shields.io/badge/GITHUB-ARADZABETI-0B0D12?style=for-the-badge&logo=github&logoColor=FFFFFF)](https://github.com/AradZabeti)
+[![KookTools](https://img.shields.io/badge/KOOKTOOLS-MUSIC%20TOOLKIT-0B0D12?style=for-the-badge&logo=musicbrainz&logoColor=A78BFA)](https://kooktools.netlify.app)
+[![Telegram](https://img.shields.io/badge/TELEGRAM-KIND_BUT_SELECTIVE-0B0D12?style=for-the-badge&logo=telegram&logoColor=67E8F9)](https://t.me/KindButSelective)
+
 </div>
+
+<img src="./assets/neon-divider.svg" alt="divider" width="100%" />
+
+## `ARAD / DEVELOPER PROFILE`
+
+<table>
+<tr>
+<td width="58%" valign="top">
+
+### I build systems, not just screens.
+
+I work at the intersection of **software engineering, AI automation, developer tooling and music technology**.
+
+The pattern behind most of my projects is simple:
+
+```text
+idea
+  ↓
+prototype
+  ↓
+code + interface
+  ↓
+APIs + automation
+  ↓
+test + refine
+  ↓
+useful product
+```
+
+I like taking an idea from a rough concept to something people can actually interact with.
+
+</td>
+<td width="42%" valign="top">
+
+### Current signal
+
+```yaml
+name: Arad Zabeti
+role: Developer
+focus:
+  - AI & Automation
+  - Python & Backend
+  - Music Technology
+  - Creative Web
+craft:
+  - systems
+  - interfaces
+  - bots
+  - tools
+status: building in public
+motto: "Less claiming. More evidence."
+```
+
+</td>
+</tr>
+</table>
 
 <div align="center">
-  <br />
-  <a href="https://aradzabeti.github.io/AradZabeti/"><img src="https://img.shields.io/badge/Portfolio-07080D?style=for-the-badge&logo=googlechrome&logoColor=67E8F9&labelColor=07080D" alt="Portfolio" /></a>
-  <a href="https://github.com/AradZabeti"><img src="https://img.shields.io/badge/GitHub-07080D?style=for-the-badge&logo=github&logoColor=FFFFFF&labelColor=07080D" alt="GitHub" /></a>
-  <a href="https://kooktools.netlify.app"><img src="https://img.shields.io/badge/KookTools-07080D?style=for-the-badge&logo=musicbrainz&logoColor=A78BFA&labelColor=07080D" alt="KookTools" /></a>
-  <a href="mailto:arad23426@gmail.com"><img src="https://img.shields.io/badge/Email-07080D?style=for-the-badge&logo=gmail&logoColor=EA4335&labelColor=07080D" alt="Email" /></a>
+<img src="https://skillicons.dev/icons?i=python,js,html,css,git,github,vscode,linux,docker,fastapi,postgres,redis&perline=6" alt="technology stack" />
 </div>
 
-<br />
+<img src="./assets/neon-divider.svg" alt="divider" width="100%" />
 
-<h2 align="center">Software × AI × Automation × Music</h2>
+## `01 / SYSTEM MAP`
 
-<p align="center">
-  I build practical software, automation systems and creative technology — with a focus on making ideas feel like real products.
-</p>
+<div align="center">
+<img src="./assets/system-map.svg" alt="Arad system map" width="100%" />
+</div>
 
-<p align="center">
-  <code>Python</code> <code>JavaScript</code> <code>Web</code> <code>AI</code> <code>n8n</code> <code>APIs</code> <code>Telegram</code> <code>Music Tech</code>
-</p>
+<img src="./assets/neon-divider.svg" alt="divider" width="100%" />
 
----
+## `02 / WHAT I BUILD`
 
-## ◈ About me
+<table>
+<tr>
+<td width="50%" valign="top">
 
-I enjoy building **systems instead of isolated demos**: interfaces, APIs, automations, bots, dashboards and music-focused tools that connect into something useful.
+### ⚙️ Software Systems
 
-My interests sit at the intersection of:
+Web experiences, APIs, backend services and developer utilities designed around real workflows rather than isolated demos.
 
-| | Focus |
-|---|---|
-| 💻 | **Software** — Python, JavaScript, web applications, APIs |
-| 🤖 | **AI & Automation** — agents, n8n, Telegram workflows, integrations |
-| 🎵 | **Music Technology** — trumpet, practice tools, audio interaction, creative software |
-| ⚙️ | **Developer Systems** — Git, GitHub, Linux, deployment and automation |
+**Typical territory:** `Python` · `JavaScript` · `APIs` · `FastAPI` · `PostgreSQL`
 
-> **Less claiming. More evidence.**
->
-> I prefer working demos, source code and shipped interfaces over a long list of buzzwords.
+</td>
+<td width="50%" valign="top">
 
----
+### 🤖 AI & Automation
 
-## ✦ Featured work
+AI-assisted workflows that connect models, messaging platforms, APIs and automation engines into repeatable systems.
+
+**Typical territory:** `n8n` · `AI Agents` · `Telegram` · `REST APIs` · `Webhooks`
+
+</td>
+</tr>
+<tr>
+<td width="50%" valign="top">
+
+### 🎵 Music Technology
+
+Software inspired by the way musicians actually practice, create and interact with sound.
+
+**Typical territory:** `Web Audio` · `MIDI` · `Practice Tools` · `Interactive Music`
+
+</td>
+<td width="50%" valign="top">
+
+### 🧪 Experimental Builds
+
+Small laboratories for testing ideas quickly, then turning the useful ones into maintainable projects.
+
+**Typical territory:** `prototypes` · `automation` · `UX` · `tooling` · `experiments`
+
+</td>
+</tr>
+</table>
+
+<img src="./assets/neon-divider.svg" alt="divider" width="100%" />
+
+## `03 / FEATURED WORK`
 
 <table>
 <tr>
@@ -51,13 +136,12 @@ My interests sit at the intersection of:
 
 ### 🎵 KookTools
 
-A music-focused web toolkit built around practical utilities and musician workflows.
+A music-focused toolkit concept for practical musician utilities and interactive workflows.
 
-**Focus**
+**Focus**  
+`music tools` `web audio` `practice` `interactive UX`
 
-`Music tools` `Interactive UI` `Web Audio` `Practice`
-
-<a href="https://kooktools.netlify.app">→ Open project</a>
+<a href="https://kooktools.netlify.app">↗ Open KookTools</a>
 
 </td>
 <td width="50%" valign="top">
@@ -66,146 +150,128 @@ A music-focused web toolkit built around practical utilities and musician workfl
 
 A music-technology workspace concept combining practice, tracking, sheet music, MIDI and intelligent assistance.
 
-**Status**
-
-`Concept / Building`
+**Status**  
+`concept / building`
 
 </td>
 </tr>
 <tr>
 <td width="50%" valign="top">
 
-### 🤖 AI & Automation Lab
+### 🤖 AI Automation Lab
 
-Experiments connecting AI, APIs, messaging platforms and automation tools into practical workflows.
+Experiments connecting AI, APIs, messaging platforms and workflow automation into useful systems.
 
-**Focus**
-
-`AI agents` `n8n` `Telegram` `APIs`
+**Focus**  
+`AI agents` `n8n` `Telegram` `integrations`
 
 </td>
 <td width="50%" valign="top">
 
 ### 🌐 Personal Portfolio
 
-A custom GitHub Pages site designed as a public technical portfolio rather than a generic template.
+This repository powers the public portfolio experience and acts as the technical résumé layer of the profile.
 
-**Focus**
-
-`Responsive UI` `Accessibility` `SEO` `GitHub`
-
-<a href="https://aradzabeti.github.io/AradZabeti/">→ Visit portfolio</a>
+<a href="https://aradzabeti.github.io/AradZabeti/">↗ Visit portfolio</a>
 
 </td>
 </tr>
 </table>
 
----
+<img src="./assets/neon-divider.svg" alt="divider" width="100%" />
 
-## ⚡ Tech stack
+## `04 / ENGINEERING STACK`
 
-### Languages & Web
+| Layer | Tools |
+| --- | --- |
+| **Languages** | `Python` · `JavaScript` · `HTML` · `CSS` |
+| **Backend** | `FastAPI` · `PostgreSQL` · `Redis` · `Celery` |
+| **Automation** | `n8n` · `Telegram Bots` · `REST APIs` · `Webhooks` |
+| **Infrastructure** | `Linux` · `Docker` · `Nginx` · `WSL` |
+| **Developer Workflow** | `Git` · `GitHub` · `VS Code` · `PyCharm` |
+| **Creative Technology** | `Web Audio` · `MIDI` · `Music Software` · `Trumpet` |
 
-![Python](https://img.shields.io/badge/Python-0B0E14?style=flat-square&logo=python&logoColor=3776AB)
-![JavaScript](https://img.shields.io/badge/JavaScript-0B0E14?style=flat-square&logo=javascript&logoColor=F7DF1E)
-![HTML](https://img.shields.io/badge/HTML5-0B0E14?style=flat-square&logo=html5&logoColor=E34F26)
-![CSS](https://img.shields.io/badge/CSS3-0B0E14?style=flat-square&logo=css3&logoColor=1572B6)
-![Node.js](https://img.shields.io/badge/Node.js-0B0E14?style=flat-square&logo=nodedotjs&logoColor=5FA04E)
+<img src="./assets/neon-divider.svg" alt="divider" width="100%" />
 
-### AI, Automation & APIs
+## `05 / GITHUB SIGNAL`
 
-![n8n](https://img.shields.io/badge/n8n-0B0E14?style=flat-square&logo=n8n&logoColor=EA4B71)
-![Telegram](https://img.shields.io/badge/Telegram-0B0E14?style=flat-square&logo=telegram&logoColor=26A5E4)
-![OpenAI](https://img.shields.io/badge/AI%20APIs-0B0E14?style=flat-square&logo=openai&logoColor=FFFFFF)
-![REST](https://img.shields.io/badge/REST%20APIs-0B0E14?style=flat-square&logo=fastapi&logoColor=67E8F9)
+<div align="center">
 
-### Infrastructure & Developer Tools
+<img src="https://github-readme-stats.vercel.app/api?username=AradZabeti&show_icons=true&hide_border=true&include_all_commits=true&count_private=true&theme=github_dark&rank_icon=github" height="165" alt="GitHub stats" />
+<img src="https://github-readme-stats.vercel.app/api/top-langs/?username=AradZabeti&layout=compact&hide_border=true&langs_count=8&theme=github_dark" height="165" alt="Top languages" />
 
-![Git](https://img.shields.io/badge/Git-0B0E14?style=flat-square&logo=git&logoColor=F05032)
-![GitHub](https://img.shields.io/badge/GitHub-0B0E14?style=flat-square&logo=github&logoColor=FFFFFF)
-![Linux](https://img.shields.io/badge/Linux-0B0E14?style=flat-square&logo=linux&logoColor=FCC624)
-![Docker](https://img.shields.io/badge/Docker-0B0E14?style=flat-square&logo=docker&logoColor=2496ED)
-![VS Code](https://img.shields.io/badge/VS%20Code-0B0E14?style=flat-square&logo=visualstudiocode&logoColor=007ACC)
+<br>
 
----
+<img src="https://streak-stats.demolab.com?user=AradZabeti&theme=github-dark-blue&hide_border=true" width="70%" alt="GitHub streak" />
 
-## ◌ How I like to build
+<br>
+
+<img src="https://github-readme-activity-graph.vercel.app/graph?username=AradZabeti&bg_color=0d1117&color=c9d1d9&line=a78bfa&point=67e8f9&area=true&hide_border=true" width="100%" alt="GitHub activity graph" />
+
+</div>
+
+<img src="./assets/neon-divider.svg" alt="divider" width="100%" />
+
+## `06 / BUILDING PHILOSOPHY`
+
+> **Make the idea visible. Make the system useful. Make the evidence speak.**
+
+I care about the full chain: **concept → implementation → interface → automation → deployment → iteration**.
+
+That is why I prefer projects that can be explored, tested, measured or extended — not just described.
 
 ```text
-        IDEA
-          │
-          ▼
-     PROTOTYPE
-          │
-          ▼
-   INTERFACE + LOGIC
-          │
-          ▼
-    APIs / AI / DATA
-          │
-          ▼
-   AUTOMATION + TOOLS
-          │
-          ▼
-       SHIP IT
+01  THINK       →  define the real problem
+02  BUILD       →  prototype the core idea
+03  CONNECT     →  APIs, data, automation
+04  POLISH      →  interaction, visuals, accessibility
+05  SHIP        →  deploy something usable
+06  ITERATE     →  learn from what actually works
 ```
 
-I like the part where separate pieces stop being separate pieces and become a system.
+<img src="./assets/neon-divider.svg" alt="divider" width="100%" />
 
----
-
-## ◉ Current direction
+## `07 / CURRENT DIRECTION`
 
 <table>
 <tr>
-<td>01</td>
-<td><b>AI automation</b><br><sub>Building practical agents, workflows and API-connected systems.</sub></td>
+<td>🧠 AI-powered automation</td>
+<td>🐍 stronger Python + backend engineering</td>
 </tr>
 <tr>
-<td>02</td>
-<td><b>Python & backend</b><br><sub>Getting stronger at reliable application logic, integrations and tooling.</sub></td>
+<td>🎵 music software + interactive audio</td>
+<td>🌐 polished, responsive web experiences</td>
 </tr>
 <tr>
-<td>03</td>
-<td><b>Music technology</b><br><sub>Exploring the intersection of trumpet practice, audio and software.</sub></td>
-</tr>
-<tr>
-<td>04</td>
-<td><b>Product-level web</b><br><sub>Turning experiments into responsive, polished and maintainable interfaces.</sub></td>
+<td>🔧 turning prototypes into systems</td>
+<td>🚀 shipping more complete products</td>
 </tr>
 </table>
 
----
+<img src="./assets/neon-divider.svg" alt="divider" width="100%" />
 
-## ⌁ GitHub activity
-
-<p align="center">
-  <img src="https://github-readme-stats.vercel.app/api?username=AradZabeti&show_icons=true&hide_border=true&bg_color=00000000&title_color=A78BFA&icon_color=67E8F9&text_color=9CA5B4&rank_icon=github&include_all_commits=true" alt="Arad's GitHub stats" height="170" />
-  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=AradZabeti&layout=compact&hide_border=true&bg_color=00000000&title_color=A78BFA&text_color=9CA5B4&langs_count=8" alt="Top languages" height="170" />
-</p>
-
-<p align="center">
-  <img src="https://streak-stats.demolab.com?user=AradZabeti&theme=transparent&hide_border=true&ring=A78BFA&fire=67E8F9&currStreakLabel=A78BFA&sideLabels=9CA5B4&currStreakNum=FFFFFF&sideNums=FFFFFF&dates=697386" alt="GitHub streak" />
-</p>
-
----
-
-## ↗ Find me
-
-<p align="center">
-  <a href="https://github.com/AradZabeti">GitHub</a>
-  &nbsp;·&nbsp;
-  <a href="https://aradzabeti.github.io/AradZabeti/">Portfolio</a>
-  &nbsp;·&nbsp;
-  <a href="https://kooktools.netlify.app">KookTools</a>
-  &nbsp;·&nbsp;
-  <a href="https://t.me/KindButSelective">Telegram</a>
-  &nbsp;·&nbsp;
-  <a href="mailto:arad23426@gmail.com">Email</a>
-</p>
-
-<br />
+## `08 / CONTACT`
 
 <div align="center">
-  <sub>Built with code, curiosity and a trumpet.</sub>
+
+<a href="https://aradzabeti.github.io/AradZabeti/">🌐 Portfolio</a> ·
+<a href="https://github.com/AradZabeti">💻 GitHub</a> ·
+<a href="https://kooktools.netlify.app">🎵 KookTools</a> ·
+<a href="https://t.me/KindButSelective">✈️ Telegram</a> ·
+<a href="mailto:arad23426@gmail.com">✉️ Email</a>
+
+<br><br>
+
+<img src="https://komarev.com/ghpvc/?username=AradZabeti&style=for-the-badge&color=111827&label=PROFILE+VIEWS" alt="profile views" />
+
+</div>
+
+<br>
+
+<div align="center">
+
+### `BUILDING SOFTWARE. AUTOMATION. MUSIC TECHNOLOGY.`
+
+<sub>Designed as a living technical profile · Updated through Git · Built in public</sub>
+
 </div>
