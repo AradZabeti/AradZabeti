@@ -1,0 +1,77 @@
+name: Repository Quality
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Validate required files
+        shell: bash
+        run: |
+          set -euo pipefail
+          test -f index.html
+          test -f resume.html
+          test -f README.md
+          test -f 404.html
+          test -f robots.txt
+          test -f sitemap.xml
+          test -f SECURITY.md
+          test -f CONTRIBUTING.md
+          test -f CODE_OF_CONDUCT.md
+
+      - name: Validate XML
+        run: python - <<'PY'
+          import xml.etree.ElementTree as ET
+          ET.parse('sitemap.xml')
+          print('sitemap.xml: valid XML')
+          PY
+
+      - name: Validate HTML structure
+        run: python - <<'PY'
+          from pathlib import Path
+          for filename in ['index.html', 'resume.html', '404.html']:
+              text = Path(filename).read_text(encoding='utf-8').lower()
+              required = ['<!doctype html>', '<html', '<head', '</head>', '<body', '</body>', '</html>']
+              missing = [item for item in required if item not in text]
+              if missing:
+                  raise SystemExit(f'{filename}: missing {missing}')
+              print(f'{filename}: basic structure OK')
+          PY
+
+      - name: Check for obvious secret patterns
+        shell: bash
+        run: |
+          set -euo pipefail
+          if grep -RInE 'AIza[0-9A-Za-z_-]{20,}|ghp_[0-9A-Za-z]{20,}|github_pat_[0-9A-Za-z_]{20,}|xoxb-[0-9-]{20,}' . \
+            --exclude-dir=.git --exclude='*.map'; then
+            echo 'Potential secret pattern detected.'
+            exit 1
+          fi
+          echo 'No obvious secret patterns detected.'
+
+      - name: Check internal links
+        run: python - <<'PY'
+          from pathlib import Path
+          import re
+          allowed = {'index.html', 'resume.html', '404.html', 'README.md', 'SECURITY.md', 'CONTRIBUTING.md', 'CODE_OF_CONDUCT.md'}
+          for filename in ['index.html', 'resume.html', '404.html']:
+              text = Path(filename).read_text(encoding='utf-8')
+              links = re.findall(r'href=["\']([^"\']+)["\']', text)
+              for link in links:
+                  if link.startswith('./'):
+                      target = link[2:].split('#', 1)[0]
+                      if target and target not in allowed and not Path(target).exists():
+                          raise SystemExit(f'{filename}: missing internal target {target}')
+          print('Internal link targets: OK')
+          PY
