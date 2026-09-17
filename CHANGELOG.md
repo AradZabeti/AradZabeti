@@ -2,6 +2,33 @@
 
 All notable profile, portfolio and repository improvements are tracked here.
 
+## 2026-09-18
+
+### Added
+
+- Advanced cPanel Terminal Bridge API (`cpanel/terminal.php`)
+- Server status, health, runtime, capability, PHP, OS, disk, web and security diagnostics
+- Terminal latency testing with `ping`
+- Live server monitoring with `watch` / `stopwatch`
+- Optional private-key protection for sensitive server diagnostics
+- cPanel deployment and security documentation
+
+### Hardened
+
+- Strict command allowlist; no arbitrary shell execution
+- JSON request size limit
+- Per-IP rate limiting
+- GitHub Pages CORS allowlist
+- HTTPS-only connection flow in the browser terminal
+- Private configuration lookup prefers a file outside `public_html`
+- Sensitive `user` and `cwd` diagnostics require a private API key
+
+### Improved
+
+- Interactive terminal toolbar and server connection state
+- API latency and health visibility
+- ARAD OS documentation and terminal command surface
+
 ## 2026-09-17
 
 ### Added
