@@ -8,6 +8,7 @@
 [![GitHub](https://img.shields.io/badge/GITHUB-ARADZABETI-0B0D12?style=for-the-badge&logo=github&logoColor=FFFFFF)](https://github.com/AradZabeti)
 [![KookTools](https://img.shields.io/badge/KOOKTOOLS-MUSIC%20TOOLKIT-0B0D12?style=for-the-badge&logo=musicbrainz&logoColor=A78BFA)](https://kooktools.netlify.app)
 [![Telegram](https://img.shields.io/badge/TELEGRAM-KIND_BUT_SELECTIVE-0B0D12?style=for-the-badge&logo=telegram&logoColor=67E8F9)](https://t.me/KindButSelective)
+[![Resume](https://img.shields.io/badge/RESUME-OPEN%20CV-0B0D12?style=for-the-badge&logo=readthedocs&logoColor=4ADE80)](https://aradzabeti.github.io/AradZabeti/resume.html)
 
 </div>
 
@@ -250,7 +251,19 @@ That is why I prefer projects that can be explored, tested, measured or extended
 
 <img src="./assets/neon-divider.svg" alt="divider" width="100%" />
 
-## `08 / CONTACT`
+## `08 / RESUME`
+
+<div align="center">
+
+### <a href="https://aradzabeti.github.io/AradZabeti/resume.html">OPEN THE FULL RESUME ↗</a>
+
+A dedicated one-page CV covering profile, capabilities, selected projects, technology stack and current direction.
+
+</div>
+
+<img src="./assets/neon-divider.svg" alt="divider" width="100%" />
+
+## `09 / CONTACT`
 
 <div align="center">
 
