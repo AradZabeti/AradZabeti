@@ -1,26 +1,38 @@
 # cPanel Terminal Bridge
 
-`cpanel/terminal.php` is a small server-side API intended for a cPanel PHP host. It is designed to let the static GitHub Pages terminal display safe server diagnostics without exposing a general-purpose shell.
+`cpanel/terminal.php` is the server-side bridge for the GitHub Pages terminal. It exposes a deliberately small diagnostic API for a cPanel PHP host. It does **not** execute arbitrary shell commands.
 
-## What it exposes
+## API surface
 
-The API accepts a JSON body such as:
+The browser sends JSON such as:
 
 ```json
 {"command":"server"}
 ```
 
-Allowed commands are:
+Public diagnostics:
 
-- `server` — PHP/SAPI/OS/web-server/time/disk summary
-- `php` — PHP version, SAPI and loaded extensions
-- `os` — operating-system family and kernel identifiers
-- `disk` — total/free disk space and usage percentage
-- `user` — PHP/server user fields
-- `cwd` — current API directory
-- `health` — lightweight health check
+- `server` — PHP/SAPI/OS/kernel/web/HTTPS/time/disk/API version
+- `status` — compact operational snapshot
+- `health` — capability and filesystem health checks
+- `runtime` — PHP runtime limits and timezone
+- `capabilities` — common PHP extensions/features
+- `php` — PHP, SAPI and Zend versions
+- `os` — operating-system identifiers
+- `disk` — total/free/used disk space
+- `web` — web-server/protocol/HTTPS details
+- `security` — transport, origin, key, rate-limit and shell posture
 
-Arbitrary shell commands are deliberately rejected.
+Private diagnostics:
+
+- `user` — PHP/server user information
+- `cwd` — API working directory
+
+`user` and `cwd` require the optional private API key.
+
+## Rate limiting and request limits
+
+The bridge has a lightweight per-IP rate limit of 45 requests per 60 seconds and rejects request bodies larger than 2 KB. The API also sends `X-Content-Type-Options: nosniff` and locks browser CORS to the GitHub Pages origin by default.
 
 ## cPanel deployment
 
@@ -28,55 +40,65 @@ Arbitrary shell commands are deliberately rejected.
 2. Create `public_html/api/` on the target domain.
 3. Upload `cpanel/terminal.php` as `public_html/api/terminal.php`.
 4. Make sure the domain uses HTTPS.
-5. Test the endpoint with a POST request containing `{"command":"health"}`.
+5. From the GitHub Pages Terminal, run:
 
-The browser origin allowed by default is:
+```text
+connect https://YOUR-DOMAIN.example/api/terminal.php
+```
 
-`https://aradzabeti.github.io`
+For this profile's current academy domain:
 
-The API also allows direct requests with no `Origin` header, which is useful for curl/Postman testing.
+```text
+connect https://arghanounacademy.ir/api/terminal.php
+```
 
 ## Optional private key
 
-For personal/private usage, create `public_html/api/terminal-config.php` on cPanel. Do not commit this file to GitHub.
+For personal/private diagnostics, create `public_html/api/terminal-config.php` on cPanel. **Do not commit this file to GitHub.**
 
 ```php
 <?php
 const ARAD_TERMINAL_KEY = 'replace-with-a-long-random-value';
 ```
 
-When this file exists, requests must include:
-
-`X-ARAD-TERMINAL-KEY: replace-with-a-long-random-value`
-
-The frontend should store the key locally on the user's device rather than putting it in the public repository.
-
-## Connecting the browser terminal
-
-After deployment, open the GitHub Pages terminal and run:
+When the key is configured, send it from the browser terminal with:
 
 ```text
-connect https://YOUR-DOMAIN.example/api/terminal.php
+token YOUR_PRIVATE_KEY
 ```
 
-Then test:
+The terminal stores the key only in browser local storage. It is never written into the GitHub repository by the client code.
+
+## Terminal commands
 
 ```text
+connect URL
+endpoint
+disconnect
+status
 server
+health
+runtime
+capabilities
 php
 os
 disk
-user
-cwd
-health
+web
+security
+ping
+watch 10
+stopwatch
+user     # private key required
+cwd      # private key required
 ```
 
-The endpoint URL is saved in browser `localStorage` on that device.
+`watch 10` refreshes server status every 10 seconds. The client clamps the interval to a safe 10–60 second range.
 
-## Security notes
+## Security model
 
-- Never put cPanel passwords, SSH private keys or API secrets in `terminal.html`.
-- Keep `terminal-config.php` out of the Git repository.
-- Do not replace the allowlist with `shell_exec($_POST['command'])` or another arbitrary command runner.
+- The API has an allowlist; unknown commands are rejected.
+- No `shell_exec`, `exec`, `system`, `passthru` or user-controlled command runner is used.
+- Never put cPanel passwords, SSH private keys or secrets in `terminal.html`.
+- Keep `terminal-config.php` out of the public Git repository.
 - Use HTTPS only.
-- The API includes a lightweight per-IP rate limit.
+- Keep the private-key mode enabled for `user` and `cwd` if those diagnostics are needed.
