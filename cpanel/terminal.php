@@ -12,6 +12,7 @@ const MAX_BODY_BYTES = 2048;
 header('Content-Type: application/json; charset=utf-8');
 header('Cache-Control: no-store, no-cache, must-revalidate, max-age=0');
 header('X-Content-Type-Options: nosniff');
+header('Referrer-Policy: no-referrer');
 
 $origin = $_SERVER['HTTP_ORIGIN'] ?? '';
 if ($origin === ALLOWED_ORIGIN) {
@@ -31,10 +32,18 @@ if ($origin !== '' && $origin !== ALLOWED_ORIGIN) {
     respond(['ok' => false, 'error' => 'origin_not_allowed'], 403);
 }
 
-$configFile = __DIR__ . '/terminal-config.php';
-if (is_file($configFile)) {
-    require_once $configFile;
+// Prefer a private config outside public_html. A same-directory config is supported for compatibility.
+$configCandidates = [
+    dirname(__DIR__, 2) . '/terminal-config.php',
+    __DIR__ . '/terminal-config.php',
+];
+foreach ($configCandidates as $configFile) {
+    if (is_file($configFile)) {
+        require_once $configFile;
+        break;
+    }
 }
+
 $requiredKey = defined('ARAD_TERMINAL_KEY') ? (string) ARAD_TERMINAL_KEY : '';
 $providedKey = (string) ($_SERVER['HTTP_X_ARAD_TERMINAL_KEY'] ?? '');
 $keyProtected = $requiredKey !== '';
@@ -65,6 +74,10 @@ if ($rate['count'] > MAX_REQUESTS) {
 $requestMethod = $_SERVER['REQUEST_METHOD'] ?? 'GET';
 $body = '';
 if ($requestMethod === 'POST') {
+    $contentType = strtolower((string) ($_SERVER['CONTENT_TYPE'] ?? ''));
+    if ($contentType !== '' && !str_contains($contentType, 'application/json')) {
+        respond(['ok' => false, 'error' => 'json_required'], 415);
+    }
     $length = (int) ($_SERVER['CONTENT_LENGTH'] ?? 0);
     if ($length > MAX_BODY_BYTES) {
         respond(['ok' => false, 'error' => 'request_too_large'], 413);
@@ -85,7 +98,7 @@ if (!in_array($command, array_merge($publicCommands, $privateCommands), true)) {
     respond(['ok' => false, 'error' => 'command_not_allowed', 'allowed' => array_merge($publicCommands, $privateCommands)], 400);
 }
 if (in_array($command, $privateCommands, true) && !$keyProtected) {
-    respond(['ok' => false, 'error' => 'private_key_required', 'hint' => 'Create terminal-config.php on cPanel and configure the terminal key.'], 403);
+    respond(['ok' => false, 'error' => 'private_key_required', 'hint' => 'Create terminal-config.php outside public_html and configure the terminal key.'], 403);
 }
 
 $disk = static function (): array {
@@ -199,12 +212,7 @@ switch ($command) {
 
     case 'status':
         $d = $disk();
-        $healthChecks = [
-            function_exists('json_encode'),
-            extension_loaded('openssl'),
-            is_readable(__DIR__),
-            is_writable(__DIR__),
-        ];
+        $healthChecks = [function_exists('json_encode'), extension_loaded('openssl'), is_readable(__DIR__), is_writable(__DIR__)];
         respond(['ok' => true, 'command' => $command, 'data' => [
             'status' => 'ONLINE',
             'health' => count(array_filter($healthChecks)) === count($healthChecks) ? 'HEALTHY' : 'CHECK',
@@ -223,9 +231,7 @@ switch ($command) {
         ]]);
 
     case 'cwd':
-        respond(['ok' => true, 'command' => $command, 'data' => [
-            'cwd' => getcwd() ?: __DIR__,
-        ]]);
+        respond(['ok' => true, 'command' => $command, 'data' => ['cwd' => getcwd() ?: __DIR__]]);
 }
 
 function respond(array $payload, int $status = 200): never
