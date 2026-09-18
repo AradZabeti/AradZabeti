@@ -88,7 +88,7 @@ $data = json_decode($body ?: '{}', true);
 $data = is_array($data) ? $data : [];
 $command = strtolower(trim((string) ($data['command'] ?? ($_GET['command'] ?? 'server'))));
 
-$publicCommands = ['server', 'php', 'os', 'disk', 'health', 'runtime', 'capabilities', 'security', 'web', 'status'];
+$publicCommands = ['server', 'php', 'os', 'disk', 'health', 'runtime', 'capabilities', 'security', 'web', 'status', 'metrics', 'stats'];
 $privateCommands = ['user', 'cwd'];
 
 if ($requestMethod === 'GET' && !in_array($command, ['health', 'status'], true)) {
@@ -118,6 +118,55 @@ $runtime = [
 ];
 
 switch ($command) {
+    case 'stats':
+        respond(['ok' => true, 'command' => $command, 'data' => [
+            'requests_in_window' => $rate['count'],
+            'limit' => MAX_REQUESTS,
+            'window_seconds' => WINDOW_SECONDS,
+            'remaining' => max(0, MAX_REQUESTS - $rate['count']),
+            'timestamp' => date(DATE_ATOM),
+        ]]);
+
+    case 'metrics':
+        $load = function_exists('sys_getloadavg') ? sys_getloadavg() : null;
+        $memTotal = null;
+        $memAvailable = null;
+        $memUsedPercent = null;
+        $meminfo = '/proc/meminfo';
+        if (is_readable($meminfo)) {
+            $rawMem = @file($meminfo, FILE_IGNORE_NEW_LINES | FILE_SKIP_EMPTY_LINES);
+            if (is_array($rawMem)) {
+                foreach ($rawMem as $line) {
+                    if (str_starts_with($line, 'MemTotal:')) {
+                        $memTotal = ((int) preg_replace('/\\D+/', '', $line)) * 1024;
+                    } elseif (str_starts_with($line, 'MemAvailable:')) {
+                        $memAvailable = ((int) preg_replace('/\\D+/', '', $line)) * 1024;
+                    }
+                }
+            }
+        }
+        if ($memTotal !== null && $memAvailable !== null && $memTotal > 0) {
+            $memUsedPercent = round((1 - ($memAvailable / $memTotal)) * 100, 1);
+        }
+        $uptimeSeconds = null;
+        if (is_readable('/proc/uptime')) {
+            $uptimeRaw = @file_get_contents('/proc/uptime');
+            if (is_string($uptimeRaw) && preg_match('/^([0-9.]+)/', $uptimeRaw, $m)) {
+                $uptimeSeconds = (float) $m[1];
+            }
+        }
+        respond(['ok' => true, 'command' => $command, 'data' => [
+            'load_average' => is_array($load) ? array_map(static fn($v) => round((float) $v, 2), $load) : null,
+            'uptime_seconds' => $uptimeSeconds,
+            'memory_total_bytes' => $memTotal,
+            'memory_available_bytes' => $memAvailable,
+            'memory_used_percent' => $memUsedPercent,
+            'php_memory_usage_bytes' => memory_get_usage(true),
+            'php_memory_peak_bytes' => memory_get_peak_usage(true),
+            'source' => 'host diagnostics where permitted',
+            'timestamp' => date(DATE_ATOM),
+        ]]);
+
     case 'server':
         $d = $disk();
         respond(['ok' => true, 'command' => $command, 'data' => [
@@ -131,7 +180,7 @@ switch ($command) {
             'host' => $_SERVER['HTTP_HOST'] ?? null,
             'time' => date(DATE_ATOM),
             'disk' => $d,
-            'api_version' => '1.1.0',
+            'api_version' => '1.2.0',
         ]]);
 
     case 'php':
@@ -198,7 +247,7 @@ switch ($command) {
             'private_key_enabled' => $keyProtected,
             'rate_limit' => MAX_REQUESTS . ' requests / ' . WINDOW_SECONDS . 's / IP',
             'arbitrary_shell' => false,
-            'api_version' => '1.1.0',
+            'api_version' => '1.2.0',
         ]]);
 
     case 'web':
@@ -220,7 +269,7 @@ switch ($command) {
             'https' => !empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] !== 'off',
             'disk_used_percent' => $d['used_percent'],
             'private_key_enabled' => $keyProtected,
-            'api_version' => '1.1.0',
+            'api_version' => '1.2.0',
             'time' => date(DATE_ATOM),
         ]]);
 
