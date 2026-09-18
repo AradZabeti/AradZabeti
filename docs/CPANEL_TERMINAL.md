@@ -87,6 +87,8 @@ disconnect
 status
 server
 health
+metrics
+stats
 runtime
 capabilities
 php
@@ -96,7 +98,17 @@ web
 security
 ping
 watch 10
+monitor
+alerts
+stopalerts
 stopwatch
+dashboard
+diagnose
+sites
+explorer
+deploy
+sysinfo
+music
 user     # private key required
 cwd      # private key required
 ```
@@ -111,3 +123,7 @@ cwd      # private key required
 - Keep `terminal-config.php` out of the public Git repository.
 - Use HTTPS only.
 - Keep the private-key mode enabled for `user` and `cwd` if those diagnostics are needed.
+
+## ARAD OS command layer
+
+The public terminal now exposes a unified control surface: `dashboard`, `monitor`, `alerts`, `diagnose`, `metrics`, `stats`, `sites`, `explorer`, `deploy`, `sysinfo`, and `music`. `explorer` is intentionally limited to the known profile tree; `deploy` is a readiness/dry-run view and does not execute deployment or shell commands from the public page.
