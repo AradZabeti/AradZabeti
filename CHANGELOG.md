@@ -1,3 +1,15 @@
+## 2026-09-19
+
+### Added
+- Added a GitHub Live Center to the interactive terminal.
+- Added a Project Manager with per-project inspection commands.
+- Added the ARAD OS live Server Command Center with cPanel telemetry.
+- Added safe dashboard, diagnostics, monitoring and API statistics surfaces.
+- Upgraded the cPanel bridge protocol to 1.2.0 with safe host metrics and request statistics.
+
+### Safety
+- Server browsing remains allowlisted and read-only; no arbitrary shell execution or public deploy action was added.
+
 # Changelog
 
 All notable profile, portfolio and repository improvements are tracked here.
