@@ -95,7 +95,9 @@ arad@profile:~$ help
 about          who I am and what I build
 whoami         identity summary
 neofetch       profile system card
-projects       selected projects + links
+projects       project manager + statuses
+project NAME   inspect one project
+github         live public GitHub center
 stack          technologies and tools
 music          music technology + trumpet
 pwd / ls       virtual profile shell
@@ -103,6 +105,13 @@ cat about.txt  read profile notes
 coffee         developer fuel
 matrix         profile matrix easter egg
 sudo hire-arad collaboration mode
+server/status  live cPanel diagnostics
+dashboard      unified server control
+monitor/alerts live health monitoring
+metrics/stats  telemetry + API usage
+diagnose       full safe diagnostics
+sites/explorer public surfaces + safe tree
+deploy/sysinfo ARAD OS system views
 resume         open the full CV
 contact        links + email
 clear          clear terminal
@@ -126,6 +135,8 @@ ARAD OS
 ├── Project Explorer
 ├── Filesystem Map
 ├── Live GitHub Signal
+├── Live Server Command Center
+├── Project Manager
 ├── Music Mode
 ├── Command Palette  (Ctrl/Cmd + K)
 └── Terminal Bridge
@@ -257,8 +268,8 @@ This repository is maintained as more than a profile page. It includes a dedicat
 | --- | --- |
 | `README.md` | Public identity, projects, stack and links |
 | `index.html` | Interactive portfolio |
-| `terminal.html` | Interactive shell-style profile |
-| `os.html` | ARAD OS project explorer + signal hub |
+| `terminal.html` | Interactive shell-style profile + GitHub/server control surface |
+| `os.html` | ARAD OS project explorer, GitHub signal and live server command center |
 | `resume.html` | One-page CV with print/PDF layout |
 | `404.html` | Interactive recovery page |
 | `assets/` | Branded SVG visual system |
