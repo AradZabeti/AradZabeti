@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="description" content="Arad Zabeti — Developer resume. Python, AI automation, web systems, music technology and creative software.">
-<meta name="theme-color" content="#08090d">
+<meta name="theme-color" content="#08090d"><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Inter:wght@400;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
 <title>Arad Zabeti — Resume</title>
 <style>
 :root{--bg:#07080d;--paper:#0f1219;--panel:#121722;--line:#28303d;--text:#f7f8fb;--muted:#929bab;--soft:#cbd2de;--purple:#a78bfa;--cyan:#67e8f9;--green:#4ade80;--max:1050px}
@@ -12,7 +12,24 @@
 @media(max-width:800px){.body{grid-template-columns:1fr}.side{border-left:0;border-top:1px solid var(--line);padding:30px}.head{padding:38px 28px 32px}.main{padding:30px 28px 38px}.footer{padding:16px 28px;display:block}.footer span{display:block;margin-top:6px}}
 @media print{body{background:white;color:#111}.shell{width:100%;margin:0}.topbar,.actions{display:none}.resume{border:0;border-radius:0;box-shadow:none;background:white}.head{padding:0 0 20px;border-bottom:2px solid #111}.head:after{display:none}.eyebrow,.kicker,.link,.pill,.skill,.project a,.accent{color:#111}.name{font-size:45px}.role,.summary,.section p,.project p,.side,.side *,.footer{color:#333}.links{gap:4px}.link{background:none;border-color:#aaa}.body{display:grid;grid-template-columns:1.55fr .9fr}.main{padding:22px 22px 0 0}.side{padding:22px 0 0 22px;border-left:1px solid #bbb;background:white}.section{break-inside:avoid;margin-bottom:22px}.project{padding:11px 0}.footer{padding:12px 0;border-top:1px solid #aaa}.btn{display:none}}
 </style>
-</head>
+<style id="resume-polish">
+:root{--gold:#d4b06a;--gold2:#9c7a3e}
+body{background:radial-gradient(850px 560px at 80% -8%,rgba(167,139,250,.14),transparent 58%),radial-gradient(650px 500px at 12% 90%,rgba(103,232,249,.07),transparent 60%),var(--bg)}
+.resume{position:relative;border-color:rgba(255,255,255,.09);box-shadow:0 45px 140px rgba(0,0,0,.58),0 0 80px rgba(167,139,250,.06),inset 0 1px 0 rgba(255,255,255,.03)}
+.resume:before{content:"";position:absolute;inset:0;pointer-events:none;background:linear-gradient(120deg,rgba(255,255,255,.035),transparent 24%,transparent 76%,rgba(167,139,250,.025))}
+.topbar{position:sticky;top:18px;z-index:10;padding:11px 13px;border:1px solid rgba(255,255,255,.07);border-radius:13px;background:rgba(8,11,16,.72);backdrop-filter:blur(16px);box-shadow:0 15px 45px rgba(0,0,0,.18)}
+.head{background:linear-gradient(145deg,rgba(18,22,31,.96),rgba(9,12,18,.96))}
+.head:before{content:"";position:absolute;left:58px;top:0;width:180px;height:1px;background:linear-gradient(90deg,var(--cyan),transparent);opacity:.65}
+.name{background:linear-gradient(110deg,#fff 8%,#dfd7ff 52%,#8ceefa 100%);-webkit-background-clip:text;background-clip:text;color:transparent}
+.links .link{transition:.2s;box-shadow:inset 0 1px 0 rgba(255,255,255,.02)}
+.links .link:hover{transform:translateY(-2px);box-shadow:0 10px 25px rgba(0,0,0,.2)}
+.main,.side{position:relative}
+.side{background:linear-gradient(180deg,rgba(9,12,18,.94),rgba(11,14,20,.92))}
+.project{transition:.2s}.project:hover{padding-left:8px;border-top-color:#465163}
+.skill{transition:.2s}.skill:hover{transform:translateY(-2px);border-color:#465163;box-shadow:0 12px 25px rgba(0,0,0,.18)}
+.note{box-shadow:inset 0 1px 0 rgba(255,255,255,.03),0 12px 30px rgba(0,0,0,.16)}
+@media(max-width:800px){.topbar{position:static}.head:before{left:28px}}
+</style></head>
 <body>
 <div class="shell">
   <div class="topbar"><span>ARAD ZABETI / RESUME</span><div class="actions"><a class="btn" href="./index.html">Portfolio</a><button class="btn" onclick="window.print()">Print / Save PDF</button></div></div>
