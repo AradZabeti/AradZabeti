@@ -163,9 +163,7 @@ const progress=$('#scrollProgress');
 const revealObserver=new IntersectionObserver(entries=>entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('in-view')}),{threshold:.12});
 document.querySelectorAll('main section').forEach(s=>revealObserver.observe(s));
 addEventListener('scroll',()=>{const max=document.documentElement.scrollHeight-innerHeight;progress.style.width=(max>0?(scrollY/max)*100:0)+'%'},{passive:true});
-document.body.classList.add('reveal-ready');
-const progress=$('#scrollProgress');const revealObserver=new IntersectionObserver(entries=>entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('in-view')}),{threshold:.12});document.querySelectorAll('main section').forEach(s=>revealObserver.observe(s));
-addEventListener('scroll',()=>{const max=document.documentElement.scrollHeight-innerHeight;progress.style.width=(max>0?(scrollY/max)*100:0)+'%'},{passive:true});
+
 addEventListener('pointermove',e=>{document.documentElement.style.setProperty('--mx',e.clientX+'px');document.documentElement.style.setProperty('--my',e.clientY+'px')},{passive:true});
 const sections=[...document.querySelectorAll('main section[id]')],links=[...document.querySelectorAll('.navlinks a')];
 addEventListener('scroll',()=>{let id='';sections.forEach(s=>{if(scrollY>=s.offsetTop-180)id=s.id});links.forEach(a=>a.classList.toggle('active',a.hash==='#'+id))},{passive:true});
