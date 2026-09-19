@@ -6,6 +6,22 @@
 <style>
 :root{--bg:#07080d;--line:#252c39;--text:#f7f8fb;--muted:#7c8799;--cyan:#67e8f9;--purple:#a78bfa;--green:#4ade80}*{box-sizing:border-box}body{margin:0;min-height:100vh;display:grid;place-items:center;background:radial-gradient(circle at 20% 10%,#251742,transparent 35%),radial-gradient(circle at 90% 90%,#07313a,transparent 28%),var(--bg);color:var(--text);font-family:ui-monospace,monospace}.box{width:min(760px,calc(100% - 28px));border:1px solid var(--line);border-radius:18px;background:#090d14e8;box-shadow:0 35px 110px #000b;padding:32px}.top{color:var(--muted);font-size:11px}.prompt{color:var(--green)}h1{font:700 clamp(55px,14vw,110px)/.85 system-ui;margin:25px 0;letter-spacing:-.09em}.grad{background:linear-gradient(110deg,#fff,#d9d0ff,#72edf8);-webkit-background-clip:text;color:transparent}.msg{color:#98a3b4;line-height:1.8;font:14px system-ui}.cmds{display:flex;gap:8px;flex-wrap:wrap;margin-top:25px}.cmds a{padding:10px 12px;border:1px solid var(--line);border-radius:9px;color:#d8dfea;text-decoration:none;font-size:10px}.cmds a:hover{border-color:#566174;color:#fff}.hint{margin-top:20px;color:#667286;font-size:10px}.hint b{color:var(--cyan)}
 </style>
-</head>
+<style id="404-polish">
+body{background:
+radial-gradient(760px 520px at 18% 10%,rgba(139,92,246,.18),transparent 60%),
+radial-gradient(720px 520px at 90% 88%,rgba(34,211,238,.08),transparent 62%),
+var(--bg);overflow:hidden}
+body:before{content:"";position:fixed;inset:0;background-image:linear-gradient(rgba(255,255,255,.035) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.035) 1px,transparent 1px);background-size:64px 64px;mask-image:linear-gradient(to bottom,#000,transparent 80%);opacity:.28;pointer-events:none}
+.box{position:relative;border-color:rgba(255,255,255,.09);background:linear-gradient(145deg,rgba(11,15,22,.9),rgba(7,10,15,.94));backdrop-filter:blur(18px);box-shadow:0 50px 150px rgba(0,0,0,.66),0 0 90px rgba(139,92,246,.08),inset 0 1px 0 rgba(255,255,255,.03);overflow:hidden}
+.box:before{content:"";position:absolute;inset:-35%;background:conic-gradient(from 0deg,transparent 0 68%,rgba(103,232,249,.07) 74%,transparent 81%,rgba(167,139,250,.06) 88%,transparent 94%);animation:spin404 18s linear infinite}
+.box:after{content:"";position:absolute;left:-10%;right:-10%;top:82px;height:1px;background:linear-gradient(90deg,transparent,var(--purple),var(--cyan),transparent);opacity:.45}
+.top,.box h1,.msg,.cmds,.hint{position:relative;z-index:1}
+h1{text-shadow:0 0 55px rgba(167,139,250,.14)}
+.cmds a{background:rgba(10,14,21,.62);transition:.22s;box-shadow:inset 0 1px 0 rgba(255,255,255,.025)}
+.cmds a:hover{transform:translateY(-3px);border-color:#566174;box-shadow:0 15px 35px rgba(0,0,0,.22)}
+.hint{padding-top:4px}
+@keyframes spin404{to{transform:rotate(360deg)}}
+@media(prefers-reduced-motion:reduce){.box:before{animation:none}}
+</style></head>
 <body><main class="box"><div class="top"><span class="prompt">arad@profile:~$</span> route.lookup --current</div><h1><span class="grad">404</span></h1><p class="msg">This route doesn't exist. The signal is fine — the path is just wrong.</p><div class="cmds"><a href="/AradZabeti/">↩ Portfolio</a><a href="/AradZabeti/os.html">◈ ARAD OS</a><a href="/AradZabeti/terminal.html">⌘ Terminal</a><a href="/AradZabeti/resume.html">▣ Resume</a><a href="https://github.com/AradZabeti" target="_blank" rel="noopener noreferrer">◈ GitHub</a></div><div class="hint">Try <b>ARAD OS</b> for the project explorer, GitHub signal and music mode.</div></main></body>
 </html>
