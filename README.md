@@ -7,6 +7,9 @@
 <a href="https://aradzabeti.github.io/AradZabeti/">
   <img src="https://img.shields.io/badge/EXPLORE-PORTFOLIO-0D1117?style=for-the-badge&logo=googlechrome&logoColor=67E8F9" />
 </a>
+<a href="https://aradzabeti.github.io/AradZabeti/about.html">
+  <img src="https://img.shields.io/badge/EXPLORE-3D_ABOUT_ME-0D1117?style=for-the-badge&logo=threedotjs&logoColor=EAA994" />
+</a>
 <a href="https://aradzabeti.github.io/AradZabeti/os.html">
   <img src="https://img.shields.io/badge/OPEN-ARAD_OS-0D1117?style=for-the-badge&logo=electron&logoColor=A78BFA" />
 </a>
@@ -110,6 +113,10 @@ resume      full CV
 contact     links
 clear       clear terminal
 ```
+
+### ✳ [INTERACTIVE 3D ABOUT ME ↗](https://aradzabeti.github.io/AradZabeti/about.html)
+
+A bilingual, animated personal introduction with a draggable 3D sculpture, selected projects, and links.
 
 ### ◈ [OPEN ARAD OS ↗](https://aradzabeti.github.io/AradZabeti/os.html)
 
@@ -247,6 +254,7 @@ This profile repository is more than a README. It is a small public system with 
 | :--- | :--- |
 | `README.md` | Public identity, projects, stack and links |
 | `index.html` | Interactive portfolio |
+| `about.html` | Bilingual interactive 3D About Me page |
 | `terminal.html` | Shell-style profile interface |
 | `os.html` | ARAD OS project explorer |
 | `resume.html` | Printable CV / résumé |
@@ -257,6 +265,7 @@ This profile repository is more than a README. It is a small public system with 
 
 <div align="center">
 
+[**3D ABOUT ME ↗**](https://aradzabeti.github.io/AradZabeti/about.html) ·
 [**OPEN ARAD OS ↗**](https://aradzabeti.github.io/AradZabeti/os.html) ·
 [**OPEN TERMINAL ↗**](https://aradzabeti.github.io/AradZabeti/terminal.html) ·
 [**VIEW RESUME ↗**](https://aradzabeti.github.io/AradZabeti/resume.html)
@@ -288,6 +297,7 @@ This profile repository is more than a README. It is a small public system with 
 
 <div align="center">
 
+[✳ **3D About Me**](https://aradzabeti.github.io/AradZabeti/about.html) ·
 [🌐 **Portfolio**](https://aradzabeti.github.io/AradZabeti/) ·
 [◈ **ARAD OS**](https://aradzabeti.github.io/AradZabeti/os.html) ·
 [⌨️ **Terminal**](https://aradzabeti.github.io/AradZabeti/terminal.html) ·
