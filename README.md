@@ -7,8 +7,8 @@
 <a href="https://aradzabeti.github.io/AradZabeti/">
   <img src="https://img.shields.io/badge/EXPLORE-PORTFOLIO-0D1117?style=for-the-badge&logo=googlechrome&logoColor=67E8F9" />
 </a>
-<a href="https://aradzabeti.github.io/AradZabeti/studio.html">
-  <img src="https://img.shields.io/badge/EXPLORE-PREMIUM_STUDIO-0D1117?style=for-the-badge&logo=googlechrome&logoColor=D9F66F" alt="Open the premium studio portfolio" />
+<a href="https://aradzabeti.github.io/AradZabeti/studio-luxe.html">
+  <img src="https://img.shields.io/badge/EXPLORE-LUXURY_STUDIO-0D1117?style=for-the-badge&logo=googlechrome&logoColor=D4A09C" alt="Open the premium studio portfolio" />
 </a>
 <a href="https://aradzabeti.github.io/AradZabeti/about.html">
   <img src="https://img.shields.io/badge/EXPLORE-3D_ABOUT_ME-0D1117?style=for-the-badge&logo=threedotjs&logoColor=EAA994" />
@@ -117,9 +117,9 @@ contact     links
 clear       clear terminal
 ```
 
-### ✹ [ARAD PREMIUM STUDIO ↗](https://aradzabeti.github.io/AradZabeti/studio.html)
+### ✹ [ARAD LUXURY STUDIO ↗](https://aradzabeti.github.io/AradZabeti/studio-luxe.html)
 
-An editorial, animated portfolio with a real-time WebGL sculpture, kinetic typography, bilingual interaction, and a fully responsive project showcase.
+A luxury editorial portfolio with a rose, sage and ivory palette, real-time WebGL sculpture, refined motion and bilingual responsive layouts.
 
 ### ✳ [INTERACTIVE 3D ABOUT ME ↗](https://aradzabeti.github.io/AradZabeti/about.html)
 
@@ -262,7 +262,7 @@ This profile repository is more than a README. It is a small public system with 
 | `README.md` | Public identity, projects, stack and links |
 | `index.html` | Interactive portfolio |
 | `about.html` | Bilingual interactive 3D About Me page |
-| `studio.html` | Premium editorial site with animated WebGL hero and featured work |
+| `studio.html` | Previous dark editorial studio portfolio |\n| `studio-luxe.html` | Luxury editorial site with rose, sage and ivory palette and animated WebGL hero |
 | `terminal.html` | Shell-style profile interface |
 | `os.html` | ARAD OS project explorer |
 | `resume.html` | Printable CV / résumé |
@@ -273,7 +273,7 @@ This profile repository is more than a README. It is a small public system with 
 
 <div align="center">
 
-[**PREMIUM STUDIO ↗**](https://aradzabeti.github.io/AradZabeti/studio.html) ·
+[**PREMIUM STUDIO ↗**](https://aradzabeti.github.io/AradZabeti/studio-luxe.html) ·
 [**3D ABOUT ME ↗**](https://aradzabeti.github.io/AradZabeti/about.html) ·
 [**OPEN ARAD OS ↗**](https://aradzabeti.github.io/AradZabeti/os.html) ·
 [**OPEN TERMINAL ↗**](https://aradzabeti.github.io/AradZabeti/terminal.html) ·
@@ -306,7 +306,7 @@ This profile repository is more than a README. It is a small public system with 
 
 <div align="center">
 
-[✹ **Premium Studio**](https://aradzabeti.github.io/AradZabeti/studio.html) ·
+[✹ **Luxury Studio**](https://aradzabeti.github.io/AradZabeti/studio-luxe.html) ·
 [✳ **3D About Me**](https://aradzabeti.github.io/AradZabeti/about.html) ·
 [🌐 **Portfolio**](https://aradzabeti.github.io/AradZabeti/) ·
 [◈ **ARAD OS**](https://aradzabeti.github.io/AradZabeti/os.html) ·
