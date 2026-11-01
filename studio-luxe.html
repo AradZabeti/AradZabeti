@@ -1,0 +1,256 @@
+<!doctype html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#171316">
+<meta name="description" content="Arad Zabeti — independent developer creating thoughtful digital experiences with code, interaction, automation and music.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Arad Zabeti — Ideas into Experiences">
+<meta property="og:description" content="An editorial digital portfolio shaped by craft, curiosity and motion.">
+<meta property="og:url" content="https://aradzabeti.github.io/AradZabeti/studio-luxe.html">
+<title>Arad Zabeti — Ideas into Experiences</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:wght@400;500;600;700;800;900&family=Instrument+Serif:ital@0;1&family=Vazirmatn:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{--ink:#171316;--ink2:#211a1e;--paper:#f3eee8;--paper2:#e9e2d9;--rose:#d4a09c;--rose-deep:#b87d7c;--sage:#aab7a1;--sage-deep:#71816e;--gold:#c6ad83;--muted:#a9a09d;--line:rgba(255,255,255,.16);--darkline:rgba(34,27,29,.19);--sans:'DM Sans',Arial,sans-serif;--serif:'Instrument Serif',Georgia,serif;--mono:'DM Mono',monospace}
+*,*:before,*:after{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:90px}
+body{margin:0;background:var(--ink);color:var(--paper);font-family:var(--sans);-webkit-font-smoothing:antialiased;overflow-x:hidden}
+a{color:inherit;text-decoration:none}button{font:inherit;cursor:pointer}::selection{background:var(--rose);color:var(--ink)}
+:focus-visible{outline:2px solid var(--sage);outline-offset:5px}
+.skip{position:absolute;left:-9999px;top:8px;z-index:999;background:var(--paper);color:var(--ink);padding:10px}.skip:focus{left:10px}
+#progress{position:fixed;top:0;left:0;width:0;height:2px;background:linear-gradient(90deg,var(--rose),var(--gold),var(--sage));z-index:300;box-shadow:0 0 12px #d4a09c66;pointer-events:none}
+.wrap{width:calc(100% - 104px);max-width:1460px;margin-inline:auto}
+#loader{position:fixed;inset:0;z-index:500;background:var(--paper);color:var(--ink);display:flex;flex-direction:column;justify-content:space-between;padding:34px 4vw;transition:transform 1s cubic-bezier(.77,0,.18,1);will-change:transform}
+#loader.out{transform:translateY(-102%);pointer-events:none}
+.load-row{display:flex;justify-content:space-between;gap:20px;font:500 10px var(--mono);letter-spacing:.12em;text-transform:uppercase}
+.load-mark{align-self:center;font:700 clamp(110px,24vw,340px)/.75 var(--sans);letter-spacing:-.12em;color:var(--rose-deep);transform:translateX(-.05em)}
+.load-track{height:1px;background:#17131633;margin:0 0 13px}.load-fill{height:100%;width:0;background:var(--ink);transition:width .1s linear}
+#cursor{position:fixed;z-index:290;left:0;top:0;width:12px;height:12px;border-radius:50%;background:var(--rose);pointer-events:none;opacity:0;transform:translate(-50%,-50%);mix-blend-mode:difference;transition:width .25s,height .25s,opacity .2s}
+#cursor.show{opacity:1}#cursor.big{width:54px;height:54px}
+nav{position:fixed;z-index:200;top:0;left:0;width:100%;height:88px;border-bottom:1px solid rgba(255,255,255,.12);background:rgba(23,19,22,.56);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);transition:height .3s,background .3s}
+nav.compact{height:72px;background:rgba(23,19,22,.91)}
+.nav-inner{height:100%;display:flex;align-items:center;justify-content:space-between;gap:25px}
+.brand{display:flex;align-items:center;gap:10px;font:800 22px var(--sans);letter-spacing:-.1em;white-space:nowrap}
+.brand-mark{width:32px;height:32px;border:1px solid #d4a09c88;border-radius:50%;display:grid;place-items:center;color:var(--rose);font:400 19px var(--serif);letter-spacing:0}
+.brand sup{font:500 9px var(--mono);letter-spacing:0;margin-left:2px}
+.nav-links{display:flex;align-items:center;gap:34px;margin-left:auto}
+.nav-links a{font:500 10px var(--mono);letter-spacing:.07em;color:#d4cbc6;transition:color .2s;position:relative}
+.nav-links a:after{content:'';position:absolute;bottom:-8px;left:0;width:0;height:1px;background:var(--rose);transition:width .25s}
+.nav-links a:hover{color:var(--rose)}.nav-links a:hover:after{width:100%}
+.nav-actions{display:flex;align-items:center;gap:12px}
+.lang{border:1px solid #ffffff38;border-radius:99px;background:transparent;color:var(--paper);padding:9px 13px;font:500 10px var(--mono);transition:.2s}.lang:hover{border-color:var(--rose);color:var(--rose)}
+.nav-contact{display:flex;align-items:center;gap:22px;background:var(--paper);color:var(--ink);border-radius:99px;padding:12px 17px;font:600 11px var(--sans);transition:transform .25s,background .25s}
+.nav-contact:hover{transform:translateY(-2px);background:var(--rose)}
+.menu{display:none;border:1px solid #ffffff44;background:transparent;color:var(--paper);border-radius:50%;width:42px;height:42px}
+.menu i{display:block;width:15px;height:1px;background:currentColor;margin:5px auto}
+.hero{min-height:850px;height:100svh;max-height:1150px;position:relative;display:flex;align-items:center;overflow:hidden;isolation:isolate;background:radial-gradient(ellipse 620px 560px at 74% 50%,#795c6033,transparent 75%),linear-gradient(120deg,#171316 0%,#21191e 60%,#1b1a17 100%)}
+.hero:before{content:'';position:absolute;inset:0;z-index:-1;opacity:.18;background-image:linear-gradient(rgba(243,238,232,.08) 1px,transparent 1px),linear-gradient(90deg,rgba(243,238,232,.08) 1px,transparent 1px);background-size:90px 90px;mask-image:linear-gradient(90deg,transparent,#000 85%)}
+.hero:after{content:'';position:absolute;inset:0;z-index:-1;pointer-events:none;background:radial-gradient(ellipse at 0% 100%,#aab7a11a,transparent 45%)}
+#orb{position:absolute;width:min(66vw,960px);height:min(66vw,960px);min-width:600px;min-height:600px;right:-1%;top:49%;transform:translateY(-48%);z-index:0;pointer-events:none}
+.orb-fallback{position:absolute;right:8%;top:50%;width:min(48vw,670px);aspect-ratio:1;transform:translateY(-48%);border-radius:48% 52% 58% 42%/50% 40% 60% 50%;background:radial-gradient(circle at 27% 24%,#f4d9c9 0%,#d5a09b 21%,#9a7274 43%,#4a393c 69%,#21191e 100%);box-shadow:inset -48px -54px 100px #120e12aa,0 0 120px #d4a09c20;animation:morph 9s ease-in-out infinite;z-index:-1}
+.hero.webgl .orb-fallback{display:none}
+@keyframes morph{50%{border-radius:58% 42% 44% 56%/42% 59% 41% 58%;transform:translateY(-51%) rotate(12deg)}}
+.hero-content{position:relative;z-index:3;padding-top:70px;pointer-events:none}
+.hero-content a,.hero-content button{pointer-events:auto}
+.eyebrow{display:flex;align-items:center;gap:12px;color:#d8b7ae;font:500 10px var(--mono);letter-spacing:.15em;text-transform:uppercase;margin-bottom:34px}
+.eyebrow i{width:7px;height:7px;border-radius:50%;background:var(--sage);box-shadow:0 0 15px #aab7a177}
+.hero h1{font:800 clamp(76px,11vw,166px)/.83 var(--sans);letter-spacing:-.105em;text-transform:uppercase;margin:0;max-width:1060px}
+.hero h1 span{display:block;white-space:nowrap}
+.hero h1 .second{padding-left:9%}
+.hero h1 em{font:400 .91em var(--serif);letter-spacing:-.045em;text-transform:none;color:var(--rose);margin-left:.025em}
+.hero-bottom{display:flex;align-items:end;justify-content:space-between;gap:30px;max-width:940px;margin-top:55px}
+.hero-bottom p{max-width:440px;color:#c9bfba;font-size:16px;line-height:1.9;margin:0}
+.scroll-link{display:flex;align-items:center;gap:15px;font:500 10px var(--mono);letter-spacing:.08em;white-space:nowrap}
+.scroll-circle{width:54px;height:54px;border:1px solid #ffffff55;border-radius:50%;display:grid;place-items:center;font-size:20px;transition:transform .3s,border .3s,color .3s}
+.scroll-link:hover .scroll-circle{transform:translateY(5px);border-color:var(--rose);color:var(--rose)}
+.orb-caption{position:absolute;z-index:4;right:8%;top:24%;font:500 9px var(--mono);letter-spacing:.16em;color:#cbbab5;writing-mode:vertical-rl}
+.orb-caption.bottom{right:auto;left:54%;top:auto;bottom:14%;writing-mode:horizontal-tb}
+.hero-meta{position:absolute;bottom:24px;left:50%;transform:translateX(-50%);display:flex;justify-content:space-between;gap:20px;color:#a79b98;font:500 9px var(--mono);letter-spacing:.1em}
+.hero-meta span:last-child{display:flex;gap:22px}
+.ticker{background:var(--rose);color:var(--ink);padding:22px 0;overflow:hidden;position:relative;z-index:5;transform:rotate(-1deg) scale(1.025)}
+.ticker-track{display:flex;align-items:center;gap:32px;width:max-content;white-space:nowrap;animation:marquee 34s linear infinite;font:700 clamp(26px,3.4vw,48px)/1 var(--sans);letter-spacing:-.07em}
+.ticker-track b{font:400 1.25em var(--serif);color:#f3eee8}
+@keyframes marquee{to{transform:translateX(-50%)}}
+.about{background:var(--paper);color:var(--ink);padding:145px 0 130px}
+.section-label{display:flex;justify-content:space-between;align-items:center;gap:25px;border-bottom:1px solid currentColor;padding-bottom:15px;font:500 10px var(--mono);letter-spacing:.1em;text-transform:uppercase}
+.section-label .left{display:flex;align-items:center;gap:11px}.section-label i{width:7px;height:7px;border-radius:50%;background:var(--rose-deep)}
+.about-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:70px;align-items:end;padding-top:75px}
+.about h2{font:700 clamp(57px,7.4vw,110px)/.94 var(--sans);letter-spacing:-.085em;margin:0}
+.about h2 em{font:400 1.07em var(--serif);color:var(--rose-deep);letter-spacing:-.04em}
+.about-copy{max-width:440px;justify-self:end}
+.about-copy .symbol{font:400 39px var(--serif);color:var(--sage-deep);display:block;margin-bottom:20px}
+.about-copy p{font-size:15px;line-height:1.95;color:#56504c;margin:0 0 26px}
+.under-link{display:inline-flex;align-items:center;gap:38px;border-bottom:1px solid #2a2522;padding-bottom:10px;font:600 11px var(--sans);transition:gap .25s}
+.under-link:hover{gap:54px}
+.metrics{display:grid;grid-template-columns:repeat(3,1fr);border-top:1px solid var(--darkline);margin-top:95px}
+.metric{padding:27px 26px 0 0;min-height:125px}.metric+.metric{border-left:1px solid var(--darkline);padding-left:30px}
+.metric strong{font:600 17px var(--sans);letter-spacing:-.04em;display:block}.metric span{display:block;margin-top:10px;color:#746d66;font:500 10px/1.7 var(--mono);max-width:230px}
+.work{background:#e5e8df;color:var(--ink);padding:145px 0 160px}
+.work .section-label i{background:var(--sage-deep)}
+.work-head{display:flex;justify-content:space-between;align-items:end;gap:35px;margin:65px 0 75px}
+.work h2{font:800 clamp(75px,11.5vw,170px)/.83 var(--sans);letter-spacing:-.105em;margin:0;text-transform:uppercase}
+.work h2 em{font:400 .9em var(--serif);color:#71816e;text-transform:none;letter-spacing:-.04em}
+.work-intro{max-width:270px;color:#5c6259;font-size:13px;line-height:1.8;margin:0 0 6px}
+.projects{display:grid;grid-template-columns:1fr 1fr;gap:65px 28px}
+.project{display:block;min-width:0}.project:nth-child(even){margin-top:105px}
+.project-visual{height:clamp(370px,43vw,600px);position:relative;overflow:hidden;border-radius:5px;display:grid;place-items:center;isolation:isolate;transform:translateZ(0);transition:filter .3s}
+.project:hover .project-visual{filter:saturate(1.08)}
+.project-number,.project-state{position:absolute;top:25px;z-index:5;font:500 9px var(--mono);letter-spacing:.1em}
+.project-number{left:25px}.project-state{right:25px;border:1px solid currentColor;border-radius:99px;padding:7px 10px}
+.project-arrow{position:absolute;right:20px;bottom:20px;z-index:5;width:49px;height:49px;border-radius:50%;display:grid;place-items:center;background:var(--paper);color:var(--ink);font-size:19px;transform:rotate(-45deg);transition:transform .3s,background .3s}
+.project:hover .project-arrow{transform:rotate(0);background:var(--rose)}
+.project-info{display:flex;justify-content:space-between;align-items:start;gap:18px;border-bottom:1px solid #242b2233;padding:18px 0}
+.project-info h3{font:700 clamp(24px,2.5vw,36px)/1.1 var(--sans);letter-spacing:-.06em;margin:0 0 7px}
+.project-info p{font-size:12px;line-height:1.7;color:#62665e;margin:0;max-width:410px}
+.project-info>span{font:500 9px var(--mono);color:#72766c;white-space:nowrap;padding-top:5px}
+.visual-record{background:radial-gradient(ellipse at 55% 67%,#6b8271 0%,transparent 53%),#28332e;color:#e3eddf}
+.vinyl{width:68%;aspect-ratio:1;border-radius:50%;background:repeating-radial-gradient(circle,#17211c 0 3px,#3e5548 4px 5px,#17231d 6px 8px);border:12px solid #17231d;box-shadow:25px 35px 90px #0c130f88,inset 0 0 35px #000b;transform:perspective(700px) rotateX(18deg) rotateY(-17deg) rotateZ(-14deg);position:relative;animation:vinylspin 24s linear infinite}
+.vinyl:before{content:'KOOK\A TOOLS';white-space:pre;position:absolute;inset:31%;border-radius:50%;display:grid;place-items:center;text-align:center;background:#d6a09a;color:#30252a;border:5px solid #e5bdb0;font:800 clamp(16px,2.8vw,37px)/1 var(--sans);letter-spacing:-.08em}
+.vinyl:after{content:'';position:absolute;width:11px;height:11px;left:calc(50% - 5px);top:calc(50% - 5px);border-radius:50%;background:#19221c}
+@keyframes vinylspin{to{transform:perspective(700px) rotateX(18deg) rotateY(-17deg) rotateZ(346deg)}}
+.eq{position:absolute;left:28px;bottom:28px;display:flex;align-items:end;gap:4px;height:35px}.eq i{width:4px;border-radius:4px;background:#d5aaa2;animation:eq 1.25s ease-in-out infinite alternate}.eq i:nth-child(2n){animation-delay:.3s}.eq i:nth-child(3n){animation-delay:.6s}
+@keyframes eq{from{height:5px}to{height:32px}}
+.visual-phone{background:#d3b7ae;color:#251d1e}
+.phone{width:57%;max-width:310px;height:76%;border:9px solid #262022;border-radius:34px;background:#18171a;box-shadow:25px 35px 85px #533e3d66;transform:rotate(-11deg) translateY(14px);padding:27px 18px;color:#f3eee8;overflow:hidden;position:relative}
+.phone:before{content:'';position:absolute;top:0;left:34%;width:32%;height:13px;border-radius:0 0 12px 12px;background:#262022}
+.phone-head{display:flex;justify-content:space-between;margin:17px 0 25px;font:600 10px var(--sans)}
+.phone-label{font:500 9px var(--mono);color:#b7a8a1}.phone-balance{font:600 clamp(25px,3.1vw,42px) var(--sans);letter-spacing:-.07em;margin:8px 0 24px}
+.phone-chart{height:31%;display:flex;align-items:end;gap:6px;border-bottom:1px solid #ffffff22}.phone-chart i{flex:1;border-radius:4px 4px 0 0;background:linear-gradient(#d4a09c,#71816e)}
+.phone-row{display:flex;justify-content:space-between;padding:12px 0;border-bottom:1px solid #ffffff19;font:500 9px var(--sans);color:#e1d8d2}
+.visual-browser{background:linear-gradient(145deg,#b8c3b2,#8f9c8a);color:#252725}
+.browser{width:79%;height:67%;background:#171719;border:7px solid #333136;border-radius:13px;overflow:hidden;box-shadow:24px 35px 85px #27332966;transform:perspective(900px) rotateY(-12deg) rotateX(7deg) rotateZ(3deg)}
+.browser-top{height:26px;background:#353238;display:flex;align-items:center;gap:6px;padding-left:13px}.browser-top i{width:6px;height:6px;border-radius:50%;background:#b6a5a0}
+.browser-body{padding:20px;color:#f3eee8}.browser-small{font:500 9px var(--mono);color:#b8b0aa}.browser-title{font:800 clamp(26px,4.8vw,64px)/.93 var(--sans);letter-spacing:-.1em;margin-top:27px}.browser-title b{color:#d4a09c}.browser-blocks{display:flex;gap:9px;margin-top:25px}.browser-blocks i{height:65px;flex:1;border-radius:7px;background:linear-gradient(135deg,#42353d,#242227);border:1px solid #ffffff18}
+.visual-ai{background:radial-gradient(circle at 50% 45%,#e8c5bb,#c89b91 49%,#a57f79 100%);color:#35272a}
+.ai-orb{width:62%;aspect-ratio:1;border-radius:50%;position:relative;background:repeating-conic-gradient(from 12deg,#f0d9c8 0deg 5deg,#b98682 6deg 10deg,#765b61 11deg 14deg);box-shadow:inset 0 0 65px #543b3b77,20px 30px 90px #583e3c66;transform:perspective(650px) rotateX(19deg) rotateY(24deg);animation:float 7s ease-in-out infinite}
+.ai-orb:after{content:'';position:absolute;inset:25%;border-radius:50%;background:radial-gradient(circle at 28% 23%,#f6e3d5,#b87d7c 62%,#68494e);box-shadow:inset 9px 9px 24px #54383d,inset -8px -8px 20px #f0c3b188}
+@keyframes float{50%{transform:perspective(650px) rotateX(8deg) rotateY(43deg) translateY(-16px)}}
+.process{background:var(--ink);color:var(--paper);padding:145px 0 155px}
+.process .section-label i{background:var(--sage)}
+.process-head{display:grid;grid-template-columns:1fr .7fr;gap:60px;align-items:end;margin:72px 0 85px}
+.process h2{font:800 clamp(65px,9vw,130px)/.88 var(--sans);letter-spacing:-.1em;margin:0}
+.process h2 em{font:400 .95em var(--serif);color:var(--rose);letter-spacing:-.04em}
+.process-intro{font-size:15px;line-height:1.9;color:#bdb2ae;max-width:420px;margin:0 0 7px}
+.step{display:grid;grid-template-columns:90px 1fr 350px;gap:25px;align-items:center;border-top:1px solid var(--line);padding:34px 5px;transition:padding .25s,background .25s}
+.step:last-child{border-bottom:1px solid var(--line)}.step:hover{padding-inline:18px;background:#ffffff08}
+.step .n{font:500 10px var(--mono);color:var(--rose)}
+.step h3{font:600 clamp(26px,3.3vw,46px)/1 var(--sans);letter-spacing:-.06em;margin:0}
+.step p{font-size:12px;line-height:1.8;color:#b5aaa6;margin:0}
+.statement{background:var(--sage);color:#1c211b;padding:130px 0 125px;overflow:hidden}
+.statement h2{font:800 clamp(70px,12vw,180px)/.88 var(--sans);letter-spacing:-.11em;text-transform:uppercase;margin:62px 0}
+.statement h2 em{font:400 .91em var(--serif);text-transform:none;color:#4c614b;letter-spacing:-.045em}
+.statement-bottom{display:flex;justify-content:space-between;align-items:end;gap:25px}
+.statement-bottom p{font-size:17px;line-height:1.8;max-width:470px;margin:0}
+.stamp{width:125px;height:125px;border:1px dashed #28312699;border-radius:50%;display:grid;place-items:center;text-align:center;font:500 9px/1.8 var(--mono);transform:rotate(-13deg)}
+.contact{background:var(--paper);color:var(--ink);padding:145px 0 105px}
+.contact .section-label i{background:var(--rose-deep)}
+.contact h2{font:800 clamp(75px,12vw,180px)/.85 var(--sans);letter-spacing:-.11em;text-transform:uppercase;margin:75px 0 65px}
+.contact h2 em{font:400 .91em var(--serif);text-transform:none;color:var(--rose-deep);letter-spacing:-.045em}
+.contact-bottom{border-top:1px solid var(--darkline);padding-top:28px;display:flex;justify-content:space-between;align-items:center;gap:30px}
+.contact-bottom p{font-size:13px;line-height:1.8;color:#655d58;max-width:360px;margin:0}
+.contact-links{display:flex;gap:12px;flex-wrap:wrap}
+.contact-link{border:1px solid #25201f55;border-radius:99px;padding:13px 18px;font:600 11px var(--sans);transition:background .25s,color .25s,border .25s}
+.contact-link:hover{background:var(--ink);color:var(--paper);border-color:var(--ink)}
+footer{background:var(--ink);color:var(--paper);padding:32px 0 40px;border-top:1px solid var(--line)}
+.footer-inner{display:flex;align-items:center;justify-content:space-between;gap:25px;font:500 9px var(--mono);letter-spacing:.08em;color:#b7aaa6}
+.footer-links{display:flex;gap:23px}.footer-links a:hover{color:var(--rose)}
+.reveal{opacity:0;transform:translateY(28px);transition:opacity .8s ease,transform .8s cubic-bezier(.2,.65,.2,1)}
+.reveal.visible{opacity:1;transform:translateY(0)}
+html[lang=fa] body{font-family:'Vazirmatn',Arial,sans-serif}
+html[lang=fa] .hero h1,html[lang=fa] .about h2,html[lang=fa] .work h2,html[lang=fa] .process h2,html[lang=fa] .statement h2,html[lang=fa] .contact h2{font-family:'Vazirmatn',Arial,sans-serif;letter-spacing:-.055em;line-height:1.25}
+html[lang=fa] .hero h1 .second{padding-left:0;padding-right:8%}
+html[lang=fa] .hero-bottom,html[lang=fa] .about-grid,html[lang=fa] .metrics,html[lang=fa] .work-head,html[lang=fa] .project-info,html[lang=fa] .process-head,html[lang=fa] .step,html[lang=fa] .statement-bottom,html[lang=fa] .contact-bottom{direction:rtl}
+html[lang=fa] .hero-bottom p,html[lang=fa] .about-copy p,html[lang=fa] .work-intro,html[lang=fa] .project-info p,html[lang=fa] .process-intro,html[lang=fa] .step p,html[lang=fa] .statement-bottom p,html[lang=fa] .contact-bottom p{text-align:right;font-family:'Vazirmatn',Arial,sans-serif}
+html[lang=fa] .about-copy{justify-self:start}
+html[lang=fa] .metric+.metric{border-left:0;border-right:1px solid var(--darkline);padding-left:0;padding-right:30px}
+html[lang=fa] .hero-meta{direction:ltr}
+@media(max-width:1050px){.wrap{width:calc(100% - 66px)}.nav-links{gap:20px}.hero h1{font-size:clamp(76px,11.3vw,135px)}.about-grid{gap:40px}.step{grid-template-columns:65px 1fr 280px}}
+@media(max-width:760px){.wrap{width:calc(100% - 38px)}nav{height:74px}.nav-links{display:none;position:absolute;top:73px;left:0;right:0;background:#211a1e;padding:26px 22px;border-bottom:1px solid var(--line);flex-direction:column;align-items:flex-start;gap:22px}.nav-links.open{display:flex}.nav-links a{font-size:13px}.nav-contact{display:none}.menu{display:block}.hero{height:auto;min-height:740px;padding:145px 0 105px}.hero h1{font-size:clamp(66px,12vw,105px)}.hero h1 .second{padding-left:2%}#orb{width:100vw;height:100vw;min-width:590px;min-height:590px;right:-40%;top:34%;opacity:.82}.orb-fallback{width:76%;right:-20%;top:34%}.orb-caption{right:4%;top:21%}.orb-caption.bottom{left:8%;bottom:15%;top:auto}.hero-bottom{display:block;margin-top:38px}.hero-bottom p{font-size:14px;max-width:360px}.scroll-link{margin-top:26px}.hero-meta{font-size:8px;bottom:17px}.about,.work,.process,.statement,.contact{padding:88px 0}.about-grid,.process-head{grid-template-columns:1fr;gap:28px;padding-top:48px}.about-copy{justify-self:start}.about h2{font-size:clamp(58px,10vw,88px)}.metrics{margin-top:55px}.metric{padding-right:12px}.metric+.metric{padding-left:15px}.work-head{display:block;margin:50px 0}.work h2{font-size:clamp(73px,12vw,110px)}.work-intro{margin-top:22px;max-width:390px}.projects{grid-template-columns:1fr;gap:38px}.project:nth-child(even){margin-top:0}.project-visual{height:clamp(370px,83vw,580px)}.process-head{margin:50px 0}.process-intro{max-width:500px}.step{grid-template-columns:48px 1fr;gap:15px;padding:25px 3px}.step p{grid-column:2}.statement h2{font-size:clamp(70px,12vw,115px)}.contact h2{font-size:clamp(72px,12vw,118px)}.contact-bottom{display:block}.contact-bottom p{margin-top:22px}.footer-inner{flex-wrap:wrap}}
+@media(max-width:480px){.wrap{width:calc(100% - 32px)}.hero{min-height:680px;padding-top:128px}.eyebrow{font-size:8px;letter-spacing:.1em}.hero h1{font-size:clamp(55px,12.4vw,76px)}.hero-bottom p{font-size:13px}.hero-meta{font-size:7px}.about h2{font-size:54px}.metrics{grid-template-columns:1fr}.metric{padding:18px 0;min-height:auto}.metric+.metric{border-left:0;border-top:1px solid var(--darkline);padding:18px 0}.project-visual{height:390px}.phone{width:63%}.work h2{font-size:68px}.process h2{font-size:61px}.step h3{font-size:28px}.statement h2,.contact h2{font-size:60px}.stamp{width:88px;height:88px;font-size:7px}.statement-bottom p{font-size:14px}.contact-links{margin-top:24px}.footer-inner{font-size:8px}.footer-links{gap:13px}}
+@media(hover:none){#cursor{display:none}.project:hover .project-arrow{transform:rotate(-45deg)}}
+@media(prefers-reduced-motion:reduce){*,*:before,*:after{scroll-behavior:auto!important;animation:none!important;transition:none!important}.reveal{opacity:1;transform:none}#loader{display:none!important}.orb-fallback{animation:none}}
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<div id="progress" aria-hidden="true"></div><div id="cursor" aria-hidden="true"></div>
+<div id="loader" aria-label="Loading"><div class="load-row"><span>ARAD ZABETI / DIGITAL CRAFT</span><span>EST. 2026</span></div><div class="load-mark">AZ.</div><div><div class="load-track"><div class="load-fill" id="load-fill"></div></div><div class="load-row"><span>MADE WITH INTENTION</span><span id="load-count">000%</span></div></div></div>
+<nav id="nav"><div class="wrap nav-inner">
+<a class="brand" href="#home"><span class="brand-mark">A</span><span>ARAD<sup>®</sup></span></a>
+<div class="nav-links" id="links"><a href="#about" data-en="ABOUT" data-fa="درباره من">ABOUT</a><a href="#work" data-en="SELECTED WORK" data-fa="پروژه‌ها">SELECTED WORK</a><a href="#process" data-en="APPROACH" data-fa="روش کار">APPROACH</a><a href="#contact" data-en="CONTACT" data-fa="ارتباط">CONTACT</a></div>
+<div class="nav-actions"><button class="lang" id="lang" type="button" aria-label="Switch to Persian">FA / EN</button><a class="nav-contact" href="https://github.com/AradZabeti" target="_blank" rel="noopener noreferrer"><span data-en="LET'S CONNECT" data-fa="در ارتباط باشیم">LET'S CONNECT</span><span>↗</span></a><button class="menu" id="menu" type="button" aria-label="Open menu" aria-controls="links" aria-expanded="false"><i></i><i></i></button></div>
+</div></nav>
+<main id="main">
+<section class="hero" id="home"><div class="orb-fallback" aria-hidden="true"></div><canvas id="orb" role="img" aria-label="Animated three-dimensional rose and sage liquid sculpture"></canvas>
+<div class="wrap hero-content"><div class="eyebrow"><i></i><span data-en="INDEPENDENT DEVELOPER · CREATIVE THINKER" data-fa="توسعه‌دهنده مستقل · ذهن خلاق">INDEPENDENT DEVELOPER · CREATIVE THINKER</span></div>
+<h1><span data-en="IDEAS INTO" data-fa="ایده‌ها،">IDEAS INTO</span><span class="second"><span data-en="EXPERIENCES" data-fa="تجربه‌های">EXPERIENCES</span><em>.</em></span></h1>
+<div class="hero-bottom"><p data-en="I create thoughtful digital experiences where technology meets imagination — shaped by code, interaction and an obsession with the details." data-fa="تجربه‌های دیجیتالی خلاقانه می‌سازم؛ جایی که فناوری با تخیل، کدنویسی با تعامل و جزئیات با زیبایی به هم می‌رسند.">I create thoughtful digital experiences where technology meets imagination — shaped by code, interaction and an obsession with the details.</p><a class="scroll-link" href="#about"><span data-en="SCROLL TO DISCOVER" data-fa="برای کشف بیشتر اسکرول کن">SCROLL TO DISCOVER</span><span class="scroll-circle">↓</span></a></div>
+</div><span class="orb-caption" aria-hidden="true">FORM / LIGHT / MOTION</span><span class="orb-caption bottom" aria-hidden="true">01 — A DIGITAL INTRODUCTION</span><div class="wrap hero-meta"><span>ARAD ZABETI · 2026</span><span><span>DESIGN × ENGINEERING</span><span>SCROLL ↓</span></span></div></section>
+<div class="ticker" aria-hidden="true"><div class="ticker-track"><span>THOUGHTFUL DESIGN</span><b>✳</b><span>CREATIVE DEVELOPMENT</span><b>✳</b><span>SOFTWARE WITH SOUL</span><b>✳</b><span>AI & AUTOMATION</span><b>✳</b><span>THOUGHTFUL DESIGN</span><b>✳</b><span>CREATIVE DEVELOPMENT</span><b>✳</b><span>SOFTWARE WITH SOUL</span><b>✳</b><span>AI & AUTOMATION</span><b>✳</b></div></div>
+<section class="about" id="about"><div class="wrap">
+<div class="section-label"><span class="left"><i></i><span data-en="01 / A LITTLE ABOUT ME" data-fa="۰۱ / کمی درباره من">01 / A LITTLE ABOUT ME</span></span><span>ARAD ZABETI / 2026</span></div>
+<div class="about-grid"><h2 class="reveal"><span data-en="CURIOUS BY" data-fa="کنجکاو،">CURIOUS BY</span><br><em data-en="nature." data-fa="به ذات.">nature.</em></h2><div class="about-copy reveal"><span class="symbol">✳</span><p data-en="I'm Arad — an independent developer interested in the space between technology and creativity. I explore web development, Python and JavaScript, AI-connected automation, bots and tools inspired by music. I enjoy turning ambitious ideas into experiences that feel simple, useful and alive." data-fa="من آراد هستم؛ توسعه‌دهنده‌ای مستقل که به مرز مشترک فناوری و خلاقیت علاقه دارد. در زمینه توسعه وب، Python و JavaScript، اتوماسیون هوشمند، ربات‌ها و ابزارهای الهام‌گرفته از موسیقی تجربه می‌کنم. از تبدیل ایده‌های بزرگ به تجربه‌هایی ساده، کاربردی و زنده لذت می‌برم.">I'm Arad — an independent developer interested in the space between technology and creativity. I explore web development, Python and JavaScript, AI-connected automation, bots and tools inspired by music. I enjoy turning ambitious ideas into experiences that feel simple, useful and alive.</p><a class="under-link" href="about.html"><span data-en="DISCOVER MY STORY" data-fa="بیشتر درباره من">DISCOVER MY STORY</span><span>↗</span></a></div></div>
+<div class="metrics"><div class="metric reveal"><strong>CODE × DESIGN</strong><span data-en="Making useful technology feel intuitive and considered." data-fa="تبدیل فناوری کاربردی به تجربه‌ای ساده و سنجیده.">Making useful technology feel intuitive and considered.</span></div><div class="metric reveal"><strong>AI × AUTOMATION</strong><span data-en="Connecting models, APIs and better workflows." data-fa="اتصال مدل‌ها، APIها و جریان‌های کاری بهتر.">Connecting models, APIs and better workflows.</span></div><div class="metric reveal"><strong>MUSIC × TECHNOLOGY</strong><span data-en="Exploring sound, rhythm and expressive software." data-fa="کشف صدا، ریتم و نرم‌افزارهای خلاقانه.">Exploring sound, rhythm and expressive software.</span></div></div>
+</div></section>
+<section class="work" id="work"><div class="wrap">
+<div class="section-label"><span class="left"><i></i><span data-en="02 / SELECTED PROJECTS" data-fa="۰۲ / پروژه‌های منتخب">02 / SELECTED PROJECTS</span></span><span>EXPERIMENTS & BUILDS</span></div>
+<div class="work-head"><h2 class="reveal"><span data-en="SELECTED" data-fa="پروژه‌های">SELECTED</span><br><em data-en="work." data-fa="منتخب.">work.</em></h2><p class="work-intro reveal" data-en="A few projects and explorations across music, software, personal tools and creative technology." data-fa="چند پروژه و تجربه در زمینه موسیقی، نرم‌افزار، ابزارهای شخصی و فناوری خلاقانه.">A few projects and explorations across music, software, personal tools and creative technology.</p></div>
+<div class="projects">
+<a class="project reveal" href="https://kooktools.netlify.app/" target="_blank" rel="noopener noreferrer" aria-label="Visit KookTools"><div class="project-visual visual-record"><span class="project-number">01 / KOOKTOOLS</span><span class="project-state">LIVE</span><div class="vinyl"></div><div class="eq"><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div><span class="project-arrow">↗</span></div><div class="project-info"><div><h3>KookTools</h3><p data-en="Interactive digital tools and utilities inspired by musicians and creative workflows." data-fa="ابزارهای دیجیتال تعاملی با الهام از نوازندگان و جریان‌های کاری خلاقانه.">Interactive digital tools and utilities inspired by musicians and creative workflows.</p></div><span>01 — 04</span></div></a>
+<div class="project reveal"><div class="project-visual visual-phone"><span class="project-number">02 / MONEY FLOW</span><span class="project-state">IN DEVELOPMENT</span><div class="phone"><div class="phone-head"><span>MONEY FLOW</span><span>•••</span></div><span class="phone-label">TOTAL BALANCE</span><div class="phone-balance">42,850,000</div><span class="phone-label">MONTHLY ACTIVITY</span><div class="phone-chart"><i style="height:35%"></i><i style="height:55%"></i><i style="height:45%"></i><i style="height:75%"></i><i style="height:63%"></i><i style="height:84%"></i><i style="height:52%"></i><i style="height:95%"></i><i style="height:71%"></i><i style="height:85%"></i></div><div class="phone-row"><span>PERSONAL</span><span>ACTIVE</span></div><div class="phone-row"><span>BUSINESS</span><span>ACTIVE</span></div></div></div><div class="project-info"><div><h3>Money Flow</h3><p data-en="A personal and business finance app concept. The visual is a design mockup, not a live product screenshot." data-fa="ایده اپلیکیشن مدیریت مالی شخصی و کسب‌وکار؛ تصویر، ماکاپ طراحی است و اسکرین‌شات محصول نهایی نیست.">A personal and business finance app concept. The visual is a design mockup, not a live product screenshot.</p></div><span>02 — 04</span></div></div>
+<a class="project reveal" href="index.html" aria-label="Explore personal portfolio"><div class="project-visual visual-browser"><span class="project-number">03 / PERSONAL PORTFOLIO</span><span class="project-state">LIVE</span><div class="browser"><div class="browser-top"><i></i><i></i><i></i></div><div class="browser-body"><span class="browser-small">WELCOME TO MY DIGITAL SPACE</span><div class="browser-title">BUILD<br>WITH <b>IDEAS.</b></div><div class="browser-blocks"><i></i><i></i><i></i></div></div></div><span class="project-arrow">↗</span></div><div class="project-info"><div><h3>Personal Portfolio</h3><p data-en="A growing digital home for my work, experiments and developer identity." data-fa="خانه دیجیتالی در حال توسعه برای نمایش پروژه‌ها، تجربه‌ها و هویت برنامه‌نویسی من.">A growing digital home for my work, experiments and developer identity.</p></div><span>03 — 04</span></div></a>
+<div class="project reveal"><div class="project-visual visual-ai"><span class="project-number">04 / AI AUTOMATION LAB</span><span class="project-state">EXPLORATION</span><div class="ai-orb"></div></div><div class="project-info"><div><h3>AI Automation Lab</h3><p data-en="Experiments with AI models, messaging bots, APIs and useful automation workflows." data-fa="تجربه‌هایی با مدل‌های هوش مصنوعی، ربات‌های پیام‌رسان، APIها و فرایندهای خودکار کاربردی.">Experiments with AI models, messaging bots, APIs and useful automation workflows.</p></div><span>04 — 04</span></div></div>
+</div></div></section>
+<section class="process" id="process"><div class="wrap">
+<div class="section-label"><span class="left"><i></i><span data-en="03 / THE APPROACH" data-fa="۰۳ / روش کار">03 / THE APPROACH</span></span><span>THINK · MAKE · REFINE</span></div>
+<div class="process-head"><h2 class="reveal"><span data-en="THINK." data-fa="فکر کن.">THINK.</span><br><span data-en="MAKE." data-fa="بساز.">MAKE.</span><br><em data-en="Refine." data-fa="بهتر کن.">Refine.</em></h2><p class="process-intro reveal" data-en="A beautiful interface is only the beginning. I care about the idea, the system behind it and how naturally everything works together." data-fa="رابط کاربری زیبا فقط شروع ماجراست. ایده، ساختار پشت آن و هماهنگی طبیعی تمام اجزا به یک اندازه اهمیت دارند.">A beautiful interface is only the beginning. I care about the idea, the system behind it and how naturally everything works together.</p></div>
+<div class="step reveal"><span class="n">/ 01</span><h3 data-en="Understand the idea" data-fa="شناخت ایده">Understand the idea</h3><p data-en="Find the purpose, audience and the problem worth solving." data-fa="شناخت هدف، مخاطب و مسئله‌ای که ارزش حل‌کردن دارد.">Find the purpose, audience and the problem worth solving.</p></div>
+<div class="step reveal"><span class="n">/ 02</span><h3 data-en="Shape the experience" data-fa="شکل‌دادن به تجربه">Shape the experience</h3><p data-en="Bring visual direction, interaction and structure into focus." data-fa="هماهنگ‌کردن مسیر بصری، تعامل و ساختار.">Bring visual direction, interaction and structure into focus.</p></div>
+<div class="step reveal"><span class="n">/ 03</span><h3 data-en="Build with purpose" data-fa="ساخت هدفمند">Build with purpose</h3><p data-en="Turn the concept into clear, maintainable and useful code." data-fa="تبدیل ایده به کدی روشن، کاربردی و قابل نگهداری.">Turn the concept into clear, maintainable and useful code.</p></div>
+<div class="step reveal"><span class="n">/ 04</span><h3 data-en="Polish every detail" data-fa="پرداخت جزئیات">Polish every detail</h3><p data-en="Test, refine and make the experience feel effortless." data-fa="تست، اصلاح و ساده‌کردن تجربه نهایی.">Test, refine and make the experience feel effortless.</p></div>
+</div></section>
+<section class="statement"><div class="wrap"><div class="section-label"><span class="left"><i></i><span data-en="04 / A SIMPLE BELIEF" data-fa="۰۴ / یک باور ساده">04 / A SIMPLE BELIEF</span></span><span>CRAFT OVER NOISE</span></div><h2 class="reveal"><span data-en="MAKE IT" data-fa="چیزی">MAKE IT</span><br><em data-en="matter." data-fa="معنادار بساز.">matter.</em></h2><div class="statement-bottom"><p data-en="The best digital work doesn't shout for attention. It earns it through clarity, character and care." data-fa="بهترین تجربه‌های دیجیتال برای جلب توجه فریاد نمی‌زنند؛ با وضوح، شخصیت و دقت، توجه را به دست می‌آورند.">The best digital work doesn't shout for attention. It earns it through clarity, character and care.</p><div class="stamp">MADE WITH<br>INTENTION<br>✳</div></div></div></section>
+<section class="contact" id="contact"><div class="wrap"><div class="section-label"><span class="left"><i></i><span data-en="05 / THE NEXT CHAPTER" data-fa="۰۵ / فصل بعدی">05 / THE NEXT CHAPTER</span></span><span>LET'S CONNECT</span></div><h2 class="reveal"><span data-en="HAVE AN" data-fa="ایده‌ای">HAVE AN</span><br><em data-en="idea?" data-fa="داری؟">idea?</em><br><span data-en="LET'S TALK." data-fa="گفت‌وگو کنیم.">LET'S TALK.</span></h2><div class="contact-bottom"><div class="contact-links"><a class="contact-link" href="https://github.com/AradZabeti" target="_blank" rel="noopener noreferrer">GITHUB ↗</a><a class="contact-link" href="about.html">ABOUT ME ↗</a><a class="contact-link" href="resume.html">RÉSUMÉ ↗</a></div><p data-en="For project conversations, collaborations and interesting ideas, find me on GitHub." data-fa="برای گفت‌وگو درباره پروژه‌ها، همکاری‌ها و ایده‌های جذاب، از طریق گیت‌هاب با من در ارتباط باش.">For project conversations, collaborations and interesting ideas, find me on GitHub.</p></div></div></section>
+</main>
+<footer><div class="wrap footer-inner"><a class="brand" href="#home"><span class="brand-mark">A</span><span>ARAD<sup>®</sup></span></a><span>© 2026 / MADE WITH INTENTION</span><div class="footer-links"><a href="https://github.com/AradZabeti" target="_blank" rel="noopener noreferrer">GITHUB ↗</a><a href="about.html">ABOUT ↗</a><a href="resume.html">RÉSUMÉ ↗</a></div></div></footer>
+<script>
+(function(){
+'use strict';
+const root=document.documentElement,body=document.body,reduced=matchMedia('(prefers-reduced-motion: reduce)').matches;
+let language='en';try{language=localStorage.getItem('arad-luxe-language')==='fa'?'fa':'en'}catch(e){}
+function applyLanguage(){root.lang=language;root.dir=language==='fa'?'rtl':'ltr';document.querySelectorAll('[data-en][data-fa]').forEach(el=>{el.textContent=el.getAttribute('data-'+language)});const b=document.getElementById('lang');b.textContent=language==='en'?'FA / EN':'EN / FA';b.setAttribute('aria-label',language==='en'?'Switch to Persian':'Switch to English');document.title=language==='en'?'Arad Zabeti — Ideas into Experiences':'آراد ضابطی — ایده‌ها تا تجربه‌ها'}
+document.getElementById('lang').addEventListener('click',()=>{language=language==='en'?'fa':'en';try{localStorage.setItem('arad-luxe-language',language)}catch(e){}applyLanguage()});applyLanguage();
+const menu=document.getElementById('menu'),links=document.getElementById('links');menu.addEventListener('click',()=>{const open=links.classList.toggle('open');menu.setAttribute('aria-expanded',String(open));menu.setAttribute('aria-label',open?'Close menu':'Open menu')});links.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{links.classList.remove('open');menu.setAttribute('aria-expanded','false')}));
+addEventListener('keydown',e=>{if(e.key==='Escape'){links.classList.remove('open');menu.setAttribute('aria-expanded','false')}});
+const loader=document.getElementById('loader'),fill=document.getElementById('load-fill'),count=document.getElementById('load-count');let done=false;
+function finish(){if(done)return;done=true;fill.style.width='100%';count.textContent='100%';setTimeout(()=>loader.classList.add('out'),reduced?0:120);setTimeout(()=>{loader.style.display='none'},reduced?0:1250)}
+if(reduced)finish();else{let start=performance.now();function tick(now){const v=Math.min(100,Math.round((now-start)/10));fill.style.width=v+'%';count.textContent=String(v).padStart(3,'0')+'%';if(v<100)requestAnimationFrame(tick);else finish()}requestAnimationFrame(tick);setTimeout(finish,1800)}
+const nav=document.getElementById('nav'),progress=document.getElementById('progress');let pending=false;
+function onScroll(){nav.classList.toggle('compact',scrollY>35);const max=document.documentElement.scrollHeight-innerHeight;progress.style.width=(max>0?Math.min(100,scrollY/max*100):0)+'%';pending=false}
+addEventListener('scroll',()=>{if(!pending){requestAnimationFrame(onScroll);pending=true}},{passive:true});onScroll();
+if('IntersectionObserver'in window&&!reduced){const io=new IntersectionObserver(entries=>entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');io.unobserve(e.target)}}),{threshold:.08});document.querySelectorAll('.reveal').forEach(el=>io.observe(el))}else document.querySelectorAll('.reveal').forEach(el=>el.classList.add('visible'));
+if(matchMedia('(hover:hover) and (pointer:fine)').matches&&!reduced){const c=document.getElementById('cursor');let x=0,y=0,cx=0,cy=0,active=false;addEventListener('pointermove',e=>{x=e.clientX;y=e.clientY;if(!active){active=true;c.classList.add('show')}},{passive:true});document.querySelectorAll('a,button,.project-visual').forEach(el=>{el.addEventListener('pointerenter',()=>c.classList.add('big'));el.addEventListener('pointerleave',()=>c.classList.remove('big'))});function follow(){cx+=(x-cx)*.2;cy+=(y-cy)*.2;c.style.left=cx+'px';c.style.top=cy+'px';requestAnimationFrame(follow)}requestAnimationFrame(follow)}
+if(matchMedia('(hover:hover) and (pointer:fine)').matches&&!reduced){document.querySelectorAll('.project-visual').forEach(el=>{let raf=0;el.addEventListener('pointermove',e=>{cancelAnimationFrame(raf);raf=requestAnimationFrame(()=>{const r=el.getBoundingClientRect(),x=(e.clientX-r.left)/r.width-.5,y=(e.clientY-r.top)/r.height-.5;el.style.transform='perspective(1100px) rotateX('+(-y*3.5)+'deg) rotateY('+(x*3.5)+'deg) scale(1.008)'})});el.addEventListener('pointerleave',()=>{cancelAnimationFrame(raf);el.style.transform=''})})}
+const canvas=document.getElementById('orb'),hero=document.querySelector('.hero');let gl;
+try{gl=canvas.getContext('webgl',{alpha:true,antialias:false,depth:false,stencil:false,powerPreference:'low-power'})}catch(e){}
+if(!gl)return;
+const vertex='attribute vec2 p;void main(){gl_Position=vec4(p,0.,1.);}';
+const fragment='precision highp float;uniform vec2 r;uniform vec2 m;uniform float t;mat2 R(float a){float c=cos(a),s=sin(a);return mat2(c,-s,s,c);}float scene(vec3 p){p.xy*=R(.24*sin(t*.2)+m.x*.22);p.yz*=R(.4+.12*cos(t*.18)-m.y*.2);float a=atan(p.y,p.x),b=atan(p.z,length(p.xy));float ripple=.075*sin(a*5.+t*.22)*cos(b*7.-t*.18)+.045*sin(p.x*4.+p.z*3.+t*.3);float detail=.035*sin(p.y*8.-t*.3)*sin(p.x*7.+t*.2);return length(p)-1.2-ripple-detail;}vec3 norm(vec3 p){float e=.0025;return normalize(vec3(scene(p+vec3(e,0,0))-scene(p-vec3(e,0,0)),scene(p+vec3(0,e,0))-scene(p-vec3(0,e,0)),scene(p+vec3(0,0,e))-scene(p-vec3(0,0,e))));}void main(){vec2 uv=(gl_FragCoord.xy-.5*r)/min(r.x,r.y);vec3 ro=vec3(0.,0.,4.1),rd=normalize(vec3(uv,-1.75)),p;float d=0.,h=0.;bool hit=false;for(int i=0;i<72;i++){p=ro+rd*d;h=scene(p);if(h<.003){hit=true;break;}d+=max(h*.72,.012);if(d>8.)break;}if(!hit){gl_FragColor=vec4(0.);return;}vec3 n=norm(p),v=normalize(ro-p),l=normalize(vec3(-.55,1.1,2.));float dif=max(dot(n,l),0.),fres=pow(1.-max(dot(n,v),0.),2.3),spec=pow(max(dot(reflect(-l,n),v),0.),45.);float grain=sin(p.x*3.+p.y*4.+t*.12)*.5+.5;vec3 rose=vec3(.72,.43,.43),sage=vec3(.43,.54,.43),cream=vec3(.91,.79,.69);float blend=clamp(.48+.26*sin(p.y*2.8+t*.14)+.19*grain,0.,1.);vec3 base=mix(sage,rose,blend);base=mix(base,cream,.15+fres*.4);vec3 col=base*(.34+.83*dif)+spec*.8+fres*vec3(.24,.18,.14);col=pow(col,vec3(.9));gl_FragColor=vec4(col,1.);}';
+function makeShader(type,source){const sh=gl.createShader(type);gl.shaderSource(sh,source);gl.compileShader(sh);if(!gl.getShaderParameter(sh,gl.COMPILE_STATUS))throw Error(gl.getShaderInfoLog(sh));return sh}
+let program;try{program=gl.createProgram();gl.attachShader(program,makeShader(gl.VERTEX_SHADER,vertex));gl.attachShader(program,makeShader(gl.FRAGMENT_SHADER,fragment));gl.linkProgram(program);if(!gl.getProgramParameter(program,gl.LINK_STATUS))throw Error(gl.getProgramInfoLog(program))}catch(e){console.warn('WebGL unavailable; CSS artwork fallback active.',e.message);return}
+gl.useProgram(program);const buffer=gl.createBuffer();gl.bindBuffer(gl.ARRAY_BUFFER,buffer);gl.bufferData(gl.ARRAY_BUFFER,new Float32Array([-1,-1,1,-1,-1,1,1,-1,1,1,-1,1]),gl.STATIC_DRAW);const loc=gl.getAttribLocation(program,'p');gl.enableVertexAttribArray(loc);gl.vertexAttribPointer(loc,2,gl.FLOAT,false,0,0);
+const ur=gl.getUniformLocation(program,'r'),um=gl.getUniformLocation(program,'m'),ut=gl.getUniformLocation(program,'t');let w=0,h=0,visible=true,raf=0,clock=0,last=0,mx=0,my=0,ax=0,ay=0;
+function resize(){const box=canvas.getBoundingClientRect(),scale=Math.min(devicePixelRatio||1,matchMedia('(max-width:760px)').matches?.8:1.15),nw=Math.max(2,Math.round(box.width*scale)),nh=Math.max(2,Math.round(box.height*scale));if(w!==nw||h!==nh){w=canvas.width=nw;h=canvas.height=nh;gl.viewport(0,0,w,h)}}
+resize();if('ResizeObserver'in window)new ResizeObserver(resize).observe(canvas);else addEventListener('resize',resize);
+addEventListener('pointermove',e=>{const b=canvas.getBoundingClientRect();ax=Math.max(-1,Math.min(1,((e.clientX-b.left)/b.width-.5)*2));ay=Math.max(-1,Math.min(1,((e.clientY-b.top)/b.height-.5)*2))},{passive:true});
+function draw(now){raf=0;if(!visible||document.hidden)return;if(now-last<34&&!reduced){raf=requestAnimationFrame(draw);return}const dt=last?Math.min(.06,(now-last)/1000):0;last=now;if(!reduced)clock+=dt;mx+=(ax-mx)*.035;my+=(ay-my)*.035;gl.uniform2f(ur,w,h);gl.uniform2f(um,mx,my);gl.uniform1f(ut,clock);gl.clearColor(0,0,0,0);gl.clear(gl.COLOR_BUFFER_BIT);gl.drawArrays(gl.TRIANGLES,0,6);if(!reduced)raf=requestAnimationFrame(draw)}
+function play(){if(raf)cancelAnimationFrame(raf);raf=0;last=0;if(visible&&!document.hidden)raf=requestAnimationFrame(draw)}
+if('IntersectionObserver'in window)new IntersectionObserver(entries=>{visible=entries[0].isIntersecting;play()},{threshold:.01}).observe(canvas);
+document.addEventListener('visibilitychange',play);play();
+})();
+</script>
+</body>
+</html>
