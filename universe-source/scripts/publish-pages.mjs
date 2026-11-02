@@ -1,0 +1,10 @@
+import {cp,mkdir,writeFile,readFile} from 'node:fs/promises';
+import {fileURLToPath} from 'node:url';
+import {join} from 'node:path';
+const source=fileURLToPath(new URL('../out/',import.meta.url));
+const root=fileURLToPath(new URL('../../',import.meta.url));
+const html=await readFile(join(source,'index.html'),'utf8');
+if(!html.includes('/AradZabeti/_next/'))throw Error('Build with NEXT_PUBLIC_BASE_PATH=/AradZabeti before publishing to this GitHub Pages repository.');
+await cp(source,root,{recursive:true,force:true});
+await writeFile(join(root,'.nojekyll'),'');
+console.log('Static export copied to repository root. Existing legacy pages retained.');

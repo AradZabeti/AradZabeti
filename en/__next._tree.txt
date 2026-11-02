@@ -1,0 +1,5 @@
+:HL["/AradZabeti/_next/static/css/b1e2bfa729aaca9a.css","style"]
+:HL["https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Vazirmatn:wght@400;500;600;700;800&display=swap","style"]
+2:[["children",{"s":"__PAGE__","h":160}]]
+1:[["children",{"s":{"n":"lang","t":"d","k":"en","s":["_not-found","_global-error","robots.txt","sitemap.xml"]},"h":96,"c":"$Q2"}]]
+0:{"b":"BFEWC5zFuQaTYtaBBU1U5","t":{"t":{"s":"","h":80,"c":"$Q1"}}}

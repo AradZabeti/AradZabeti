@@ -1,0 +1,5 @@
+import type { Metadata } from 'next';
+import '../styles/globals.css';
+import { profile } from '@/data/portfolio';
+export const metadata: Metadata = { metadataBase: new URL(profile.siteUrl), title: 'Arad Zabeti — Creative Developer', description: 'Independent developer working across web experiences, AI automation and music technology.', openGraph: { title:'Arad Zabeti — Digital Universe', description:'Code. Craft. Curiosity.', type:'website', images:[{url:profile.siteUrl+'/images/social.png',width:1200,height:630}] }, twitter:{card:'summary_large_image',title:'Arad Zabeti — Digital Universe'} };
+export default function Layout({children}:{children:React.ReactNode}) { return <html lang="en" suppressHydrationWarning><head><link rel="icon" href={`${process.env.NEXT_PUBLIC_BASE_PATH||''}/favicon.svg`} type="image/svg+xml"/><link rel="preconnect" href="https://fonts.googleapis.com"/><link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous"/><link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Vazirmatn:wght@400;500;600;700;800&display=swap" rel="stylesheet"/></head><body>{children}</body></html> }

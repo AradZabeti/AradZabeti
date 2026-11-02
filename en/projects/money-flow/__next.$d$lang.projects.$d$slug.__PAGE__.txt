@@ -1,0 +1,33 @@
+1:"$Sreact.fragment"
+2:I[7121,[],""]
+3:I[4581,[],""]
+e:"static/chunks/app/%5Blang%5D/projects/%5Bslug%5D/page-a297dddc39ce3f10.js"
+f:I[209,["54","$e"],"default"]
+10:I[484,[],"OutletBoundary"]
+11:"$Sreact.suspense"
+14:"ViewportBoundary"
+15:I[484,[],"$14"]
+16:"MetadataBoundary"
+17:I[484,[],"$16"]
+:HL["/AradZabeti/_next/static/css/b1e2bfa729aaca9a.css","style"]
+:HL["https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Vazirmatn:wght@400;500;600;700;800&display=swap","style"]
+:HL["/AradZabeti/images/moneyflow.svg","image"]
+5:X
+8:X
+8:C
+d:[["children",{"s":"__PAGE__","h":160,"d":{"r":["$","$1","c",{"children":[["$","main",null,{"className":"case-page wrap","lang":"en","dir":"ltr","children":[["$","a",null,{"className":"backlink","href":"/AradZabeti/en/#projects","children":[["$","$Lf",null,{"icon":{"name":"arrow-left","size":24,"node":[["path",{"d":"m12 19-7-7 7-7","key":"1l729n"}],["path",{"d":"M19 12H5","key":"x3x0zl"}]]},"size":17}],"All selected work"]}],["$","div",null,{"className":"eyebrow","children":["PRIVATE BUILD"," ",["$","span",null,{"children":[" / ","2026"]}]]}],["$","h1",null,{"children":"Money Flow"}],["$","p",null,{"className":"case-lead","children":"Every expense, in perspective. An offline-first finance app with a Persian interface."}],["$","div",null,{"className":"tags","children":[["$","span","Android",{"children":"Android"}],["$","span","Offline data",{"children":"Offline data"}],["$","span","Persian RTL",{"children":"Persian RTL"}]]}],["$","img",null,{"className":"case-image","src":"/AradZabeti/images/moneyflow.svg","alt":"Concept interface illustration for Money Flow","width":"1200","height":"750"}],["$","small",null,{"className":"muted","children":"Concept artwork, not a product screenshot."}],["$","div",null,{"className":"case-content","children":[["$","section","challenge",{"children":[["$","h2",null,{"children":"The challenge"}],["$","p",null,{"children":"Keep personal and business spending understandable in a Persian mobile workflow."}]]}],["$","section","solution",{"children":[["$","h2",null,{"children":"The approach"}],["$","p",null,{"children":"An Android build with Persian RTL layouts, local records, spending reports and backups."}]]}],["$","section","architecture",{"children":[["$","h2",null,{"children":"Architecture"}],["$","p",null,{"children":"Android interface → personal / business records → local storage → reports and backups."}]]}],["$","section","result",{"children":[["$","h2",null,{"children":"Status & outcome"}],["$","p",null,{"children":"A private development build. There is no public download or verified release to link."}]]}]]}],["$","div",null,{"className":"actions","children":[null,null]}],["$","footer",null,{"className":"case-footer","children":["Arad Zabeti"," · ","Built with intention"]}]]}],null,["$","$L10",null,{"children":["$","$11",null,{"name":"Next.MetadataOutlet","children":"$@12"}]}]]}],"p":"$@13","v":null,"s":"$5"}}]]
+b:[["children",{"s":{"n":"slug","t":"d","k":"money-flow","s":[]},"h":96,"d":{"r":["$","$1","c",{"children":[null,["$","$L2",null,{"parallelRouterKey":"children","template":["$","$L3",null,{}]}]]}],"p":"$@c","v":"$8","s":"$5"},"c":"$Qd"}]]
+9:[["children",{"s":"projects","h":96,"d":{"r":["$","$1","c",{"children":[null,["$","$L2",null,{"parallelRouterKey":"children","template":["$","$L3",null,{}]}]]}],"p":"$@a","v":"$8","s":"$5"},"c":"$Qb"}]]
+6:[["children",{"s":{"n":"lang","t":"d","k":"en","s":["_not-found","_global-error","robots.txt","sitemap.xml"]},"h":96,"d":{"r":["$","$1","c",{"children":[null,["$","$L2",null,{"parallelRouterKey":"children","template":["$","$L3",null,{}]}]]}],"p":"$@7","v":"$8","s":"$5"},"c":"$Q9"}]]
+0:{"t":{"t":{"s":"","h":80,"d":{"r":["$","$1","c",{"children":[[["$","link","0",{"rel":"stylesheet","href":"/AradZabeti/_next/static/css/b1e2bfa729aaca9a.css","precedence":"next"}]],["$","html",null,{"lang":"en","suppressHydrationWarning":true,"children":[["$","head",null,{"children":[["$","link",null,{"rel":"icon","href":"/AradZabeti/favicon.svg","type":"image/svg+xml"}],["$","link",null,{"rel":"preconnect","href":"https://fonts.googleapis.com"}],["$","link",null,{"rel":"preconnect","href":"https://fonts.gstatic.com","crossOrigin":"anonymous"}],["$","link",null,{"href":"https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Vazirmatn:wght@400;500;600;700;800&display=swap","rel":"stylesheet"}]]}],["$","body",null,{"children":["$","$L2",null,{"parallelRouterKey":"children","template":["$","$L3",null,{}],"notFound":[["$","main",null,{"className":"not-found","children":[["$","span",null,{"className":"eyebrow","children":"SIGNAL LOST / 404"}],["$","h1",null,{"children":["Outside",["$","br",null,{}],"the universe."]}],["$","p",null,{"children":"This coordinate does not exist. Let’s find your way back."}],["$","a",null,{"className":"button primary","href":"/AradZabeti/","children":"Return to orbit ↗"}]]}],[]]}]}]]}]]}],"p":"$@4","v":null,"s":"$5"},"c":"$Q6"},"h":{"r":["$","$1","h",{"children":[null,["$","$L15",null,{"children":[["$","meta","0",{"charSet":"utf-8"}],["$","meta","1",{"name":"viewport","content":"width=device-width, initial-scale=1"}]]}],["$","$L17",null,{"children":[["$","div",null,{"hidden":true,"children":["$","$11",null,{"name":"Next.Metadata","children":[["$","title","0",{"children":"Money Flow — Arad Zabeti"}],["$","meta","1",{"name":"description","content":"Every expense, in perspective. An offline-first finance app with a Persian interface."}],["$","meta","2",{"property":"og:title","content":"Arad Zabeti — Digital Universe"}],["$","meta","3",{"property":"og:description","content":"Code. Craft. Curiosity."}],["$","meta","4",{"property":"og:image","content":"https://aradzabeti.github.io/AradZabeti/images/social.png"}],["$","meta","5",{"property":"og:image:width","content":"1200"}],["$","meta","6",{"property":"og:image:height","content":"630"}],["$","meta","7",{"property":"og:type","content":"website"}],["$","meta","8",{"name":"twitter:card","content":"summary_large_image"}],["$","meta","9",{"name":"twitter:title","content":"Arad Zabeti — Digital Universe"}],["$","meta","10",{"name":"twitter:description","content":"Code. Craft. Curiosity."}],["$","meta","11",{"name":"twitter:image","content":"https://aradzabeti.github.io/AradZabeti/images/social.png"}],["$","meta","12",{"name":"twitter:image:width","content":"1200"}],["$","meta","13",{"name":"twitter:image:height","content":"630"}]]}]}],null]}],null]}],"p":"$@18","v":null,"s":"$5"}},"a":"$@19","u":"$@1a","b":"BFEWC5zFuQaTYtaBBU1U5"}
+12:null
+5:300
+1a:true
+5:C
+19:0
+c:"$undefined"
+a:"$undefined"
+7:"$undefined"
+4:"$undefined"
+18:"$undefined"
+13:"$undefined"

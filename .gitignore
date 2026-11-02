@@ -29,3 +29,11 @@ coverage/
 dist/
 build/
 *.log
+
+# Portfolio development
+universe-source/node_modules/
+universe-source/.next/
+universe-source/out/
+universe-source/*.tsbuildinfo
+.openai/
+preview/

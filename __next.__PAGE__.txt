@@ -1,0 +1,26 @@
+1:"$Sreact.fragment"
+2:I[7121,[],""]
+3:I[4581,[],""]
+7:"static/chunks/689-c1115c0d424eba28.js"
+8:"static/chunks/389-fb82cdc5c6736749.js"
+9:"static/chunks/app/page-758996bbf8f72c32.js"
+a:I[653,["689","$7","389","$8","974","$9"],"default"]
+b:I[484,[],"OutletBoundary"]
+c:"$Sreact.suspense"
+f:"ViewportBoundary"
+10:I[484,[],"$f"]
+11:"MetadataBoundary"
+12:I[484,[],"$11"]
+:HL["/AradZabeti/_next/static/css/b1e2bfa729aaca9a.css","style"]
+:HL["https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Vazirmatn:wght@400;500;600;700;800&display=swap","style"]
+5:X
+6:[["children",{"s":"__PAGE__","h":160,"d":{"r":["$","$1","c",{"children":[["$","$La",null,{"lang":"en"}],null,["$","$Lb",null,{"children":["$","$c",null,{"name":"Next.MetadataOutlet","children":"$@d"}]}]]}],"p":"$@e","v":null,"s":"$5"}}]]
+0:{"t":{"t":{"s":"","h":80,"d":{"r":["$","$1","c",{"children":[[["$","link","0",{"rel":"stylesheet","href":"/AradZabeti/_next/static/css/b1e2bfa729aaca9a.css","precedence":"next"}]],["$","html",null,{"lang":"en","suppressHydrationWarning":true,"children":[["$","head",null,{"children":[["$","link",null,{"rel":"icon","href":"/AradZabeti/favicon.svg","type":"image/svg+xml"}],["$","link",null,{"rel":"preconnect","href":"https://fonts.googleapis.com"}],["$","link",null,{"rel":"preconnect","href":"https://fonts.gstatic.com","crossOrigin":"anonymous"}],["$","link",null,{"href":"https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Vazirmatn:wght@400;500;600;700;800&display=swap","rel":"stylesheet"}]]}],["$","body",null,{"children":["$","$L2",null,{"parallelRouterKey":"children","template":["$","$L3",null,{}],"notFound":[["$","main",null,{"className":"not-found","children":[["$","span",null,{"className":"eyebrow","children":"SIGNAL LOST / 404"}],["$","h1",null,{"children":["Outside",["$","br",null,{}],"the universe."]}],["$","p",null,{"children":"This coordinate does not exist. Let’s find your way back."}],["$","a",null,{"className":"button primary","href":"/AradZabeti/","children":"Return to orbit ↗"}]]}],[]]}]}]]}]]}],"p":"$@4","v":null,"s":"$5"},"c":"$Q6"},"h":{"r":["$","$1","h",{"children":[null,["$","$L10",null,{"children":[["$","meta","0",{"charSet":"utf-8"}],["$","meta","1",{"name":"viewport","content":"width=device-width, initial-scale=1"}]]}],["$","$L12",null,{"children":[["$","div",null,{"hidden":true,"children":["$","$c",null,{"name":"Next.Metadata","children":[["$","title","0",{"children":"Arad Zabeti — Creative Developer"}],["$","meta","1",{"name":"description","content":"Independent developer working across web experiences, AI automation and music technology."}],["$","meta","2",{"property":"og:title","content":"Arad Zabeti — Digital Universe"}],["$","meta","3",{"property":"og:description","content":"Code. Craft. Curiosity."}],["$","meta","4",{"property":"og:image","content":"https://aradzabeti.github.io/AradZabeti/images/social.png"}],["$","meta","5",{"property":"og:image:width","content":"1200"}],["$","meta","6",{"property":"og:image:height","content":"630"}],["$","meta","7",{"property":"og:type","content":"website"}],["$","meta","8",{"name":"twitter:card","content":"summary_large_image"}],["$","meta","9",{"name":"twitter:title","content":"Arad Zabeti — Digital Universe"}],["$","meta","10",{"name":"twitter:description","content":"Code. Craft. Curiosity."}],["$","meta","11",{"name":"twitter:image","content":"https://aradzabeti.github.io/AradZabeti/images/social.png"}],["$","meta","12",{"name":"twitter:image:width","content":"1200"}],["$","meta","13",{"name":"twitter:image:height","content":"630"}]]}]}],null]}],null]}],"p":"$@13","v":null,"s":"$5"}},"a":"$@14","u":"$@15","b":"BFEWC5zFuQaTYtaBBU1U5"}
+d:null
+5:300
+15:true
+5:C
+14:0
+4:"$undefined"
+13:"$undefined"
+e:"$undefined"

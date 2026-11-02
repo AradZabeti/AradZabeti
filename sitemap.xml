@@ -1,8 +1,47 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url>
-    <loc>https://aradzabeti.github.io/AradZabeti/</loc>
-    <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
-  </url>
+<url>
+<loc>https://aradzabeti.github.io/AradZabeti/</loc>
+<priority>1</priority>
+</url>
+<url>
+<loc>https://aradzabeti.github.io/AradZabeti/en/</loc>
+<priority>0.9</priority>
+</url>
+<url>
+<loc>https://aradzabeti.github.io/AradZabeti/en/projects/kooktools/</loc>
+<priority>0.7</priority>
+</url>
+<url>
+<loc>https://aradzabeti.github.io/AradZabeti/en/projects/money-flow/</loc>
+<priority>0.7</priority>
+</url>
+<url>
+<loc>https://aradzabeti.github.io/AradZabeti/en/projects/digital-universe/</loc>
+<priority>0.7</priority>
+</url>
+<url>
+<loc>https://aradzabeti.github.io/AradZabeti/en/projects/automation-lab/</loc>
+<priority>0.7</priority>
+</url>
+<url>
+<loc>https://aradzabeti.github.io/AradZabeti/fa/</loc>
+<priority>0.9</priority>
+</url>
+<url>
+<loc>https://aradzabeti.github.io/AradZabeti/fa/projects/kooktools/</loc>
+<priority>0.7</priority>
+</url>
+<url>
+<loc>https://aradzabeti.github.io/AradZabeti/fa/projects/money-flow/</loc>
+<priority>0.7</priority>
+</url>
+<url>
+<loc>https://aradzabeti.github.io/AradZabeti/fa/projects/digital-universe/</loc>
+<priority>0.7</priority>
+</url>
+<url>
+<loc>https://aradzabeti.github.io/AradZabeti/fa/projects/automation-lab/</loc>
+<priority>0.7</priority>
+</url>
 </urlset>
