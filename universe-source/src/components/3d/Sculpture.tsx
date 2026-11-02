@@ -2,8 +2,8 @@
 import {useEffect,useRef} from 'react';
 import * as THREE from 'three';
 import {RoomEnvironment} from 'three/addons/environments/RoomEnvironment.js';
-export default function Sculpture({lowMotion,onReady}:{lowMotion:boolean;onReady:()=>void}){
- const host=useRef<HTMLDivElement>(null); const ready=useRef(onReady);ready.current=onReady;
+export default function Sculpture({lowMotion,onReady,pose}:{lowMotion:boolean;onReady:()=>void;pose:{x:number;y:number}}){
+ const host=useRef<HTMLDivElement>(null); const ready=useRef(onReady),orientation=useRef(pose),motion=useRef(lowMotion);ready.current=onReady;orientation.current=pose;motion.current=lowMotion;
  useEffect(()=>{
   const container=host.current;if(!container)return;
   let renderer:THREE.WebGLRenderer;
@@ -23,14 +23,15 @@ export default function Sculpture({lowMotion,onReady}:{lowMotion:boolean;onReady
   const ro=new ResizeObserver(resize);ro.observe(container);
   const move=(e:PointerEvent)=>{const b=container.getBoundingClientRect();ax=Math.max(-1,Math.min(1,(e.clientX-b.left)/b.width*2-1));ay=Math.max(-1,Math.min(1,(e.clientY-b.top)/b.height*2-1));};
   window.addEventListener('pointermove',move,{passive:true});
-  const draw=(now:number)=>{frame=0;if(disposed||!visible||document.hidden)return;if(now-last<32&&!lowMotion){frame=requestAnimationFrame(draw);return;}time+=Math.min((now-last)/1000,.05);last=now;mx+=(ax-mx)*.04;my+=(ay-my)*.04;
-   group.rotation.y=-.3+(lowMotion?0:time*.12+mx*.23);group.rotation.x=.2+(lowMotion?0:Math.sin(time*.23)*.15+my*.13);group.position.y=lowMotion?0:Math.sin(time*.65)*.07;group.rotation.z=-.4+(lowMotion?0:Math.min(scrollY/innerHeight,1)*.24);renderer.render(scene,camera);if(!lowMotion)frame=requestAnimationFrame(draw);
+  const draw=(now:number)=>{frame=0;if(disposed||!visible||document.hidden)return;if(now-last<32&&!motion.current){frame=requestAnimationFrame(draw);return;}if(!motion.current)time+=Math.min((now-last)/1000,.05);last=now;mx+=(ax-mx)*.04;my+=(ay-my)*.04;
+   group.rotation.y=-.3+orientation.current.y+time*.12+(motion.current?0:mx*.12);group.rotation.x=.2+orientation.current.x+Math.sin(time*.23)*.15+(motion.current?0:my*.08);group.position.y=Math.sin(time*.65)*.07;group.rotation.z=-.4+(motion.current?0:Math.min(scrollY/innerHeight,1)*.24);renderer.render(scene,camera);if(!motion.current)frame=requestAnimationFrame(draw);
   };
   const play=()=>{cancelAnimationFrame(frame);frame=requestAnimationFrame(draw);};
   const io=new IntersectionObserver(([e])=>{visible=e.isIntersecting;if(visible)play();else cancelAnimationFrame(frame);});io.observe(container);document.addEventListener('visibilitychange',play);
   const lost=(e:Event)=>{e.preventDefault();visible=false;cancelAnimationFrame(frame);renderer.domElement.remove();};renderer.domElement.addEventListener('webglcontextlost',lost);
-  play();ready.current();
-  return()=>{disposed=true;cancelAnimationFrame(frame);ro.disconnect();io.disconnect();window.removeEventListener('pointermove',move);document.removeEventListener('visibilitychange',play);renderer.domElement.removeEventListener('webglcontextlost',lost);geo.dispose();mat.dispose();target.dispose();pmrem.dispose();env.dispose();renderer.dispose();renderer.domElement.remove();};
- },[lowMotion]);
+  const redraw=()=>{play()};window.addEventListener('az-sculpture-pose',redraw);play();ready.current();
+  return()=>{disposed=true;window.removeEventListener('az-sculpture-pose',redraw);cancelAnimationFrame(frame);ro.disconnect();io.disconnect();window.removeEventListener('pointermove',move);document.removeEventListener('visibilitychange',play);renderer.domElement.removeEventListener('webglcontextlost',lost);geo.dispose();mat.dispose();target.dispose();pmrem.dispose();env.dispose();renderer.dispose();renderer.domElement.remove();};
+ },[]);
+ useEffect(()=>{window.dispatchEvent(new Event('az-sculpture-pose'))},[pose,lowMotion]);
  return <div className="sculpture-canvas" ref={host} aria-hidden="true"/>;
 }

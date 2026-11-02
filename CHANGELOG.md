@@ -1,3 +1,11 @@
+# Digital Universe · Edition 04 · 2026-11-02
+
+- Added keyboard/pointer sculpture controls with pause, reset and interactive fallback.
+- Rebuilt selected work with an editorial featured project and grid/list layouts.
+- Added an accessible four-step method section and richer project detail navigation.
+- Self-hosted variable fonts; improved locale, theme and reduced-motion initialization.
+- Added project search and static-export reference verification.
+
 ## 2026-09-19
 
 ### Added

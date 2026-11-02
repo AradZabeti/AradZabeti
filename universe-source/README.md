@@ -63,3 +63,16 @@ Semantic sections, focus styles, skip navigation, keyboard-operable controls, a 
 ## Verification
 
 Production static build and strict TypeScript checks pass. Desktop and 390px Persian mobile layouts, project filtering, command search, mobile menu, technology selection and project routes were inspected in the preview browser. The test browser disables WebGL, so the live GPU-rendered sculpture could not be visually verified there; fallback behavior was verified instead. No Lighthouse score is claimed. Before future releases also inspect 360, 768, 1440 and 1920px, keyboard order, reduced motion, external links and the email-app handoff on a real device.
+
+
+## Edition 04 improvements
+
+- Keyboard and pointer rotation, pause and reset for the sculpture, including a working perspective interaction in the WebGL fallback.
+- Editorial featured project, grid/list layouts, category filters and live result announcements.
+- Four accessible method tabs with arrow-key, Home and End navigation.
+- Project detail pages with contents navigation, project facts, language switching, related contact and next-project links.
+- Self-hosted, variable Inter, Space Grotesk and Vazirmatn fonts. Font licenses are retained under `src/fonts/`.
+- Theme and locale preferences applied before paint; expanded command search includes projects.
+- `npm run verify:export` checks internal files, fragment targets and CSS font references. Run after the GitHub Pages build.
+
+New controls and mobile layouts were inspected in preview at 360, 390 and 768px. WebGL rendering remains unverified in this environment because the preview browser disables GPU contexts; keyboard rotation, pause/reset and the fallback composition were verified.
