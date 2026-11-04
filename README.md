@@ -7,22 +7,22 @@
 <br><br>
 
 <a href="https://aradzabeti.github.io/AradZabeti/">
-  <img src="https://img.shields.io/badge/EXPLORE-PORTFOLIO-0D1117?style=for-the-badge&logo=googlechrome&logoColor=67E8F9" />
+  <img src="https://img.shields.io/badge/EXPLORE-PORTFOLIO-0D1117?style=for-the-badge&logo=googlechrome&logoColor=67E8F9" alt="Explore portfolio" />
 </a>
 <a href="https://aradzabeti.github.io/AradZabeti/studio-luxe.html">
   <img src="https://img.shields.io/badge/EXPLORE-LUXURY_STUDIO-0D1117?style=for-the-badge&logo=googlechrome&logoColor=D4A09C" alt="Open the premium studio portfolio" />
 </a>
 <a href="https://aradzabeti.github.io/AradZabeti/about.html">
-  <img src="https://img.shields.io/badge/EXPLORE-3D_ABOUT_ME-0D1117?style=for-the-badge&logo=threedotjs&logoColor=EAA994" />
+  <img src="https://img.shields.io/badge/EXPLORE-3D_ABOUT_ME-0D1117?style=for-the-badge&logo=threedotjs&logoColor=EAA994" alt="Explore 3D About Me" />
 </a>
 <a href="https://aradzabeti.github.io/AradZabeti/os.html">
-  <img src="https://img.shields.io/badge/OPEN-ARAD_OS-0D1117?style=for-the-badge&logo=electron&logoColor=A78BFA" />
+  <img src="https://img.shields.io/badge/OPEN-ARAD_OS-0D1117?style=for-the-badge&logo=electron&logoColor=A78BFA" alt="Open ARAD OS" />
 </a>
 <a href="https://aradzabeti.github.io/AradZabeti/terminal.html">
-  <img src="https://img.shields.io/badge/ENTER-TERMINAL-0D1117?style=for-the-badge&logo=gnubash&logoColor=4ADE80" />
+  <img src="https://img.shields.io/badge/ENTER-TERMINAL-0D1117?style=for-the-badge&logo=gnubash&logoColor=4ADE80" alt="Enter interactive terminal" />
 </a>
 <a href="https://aradzabeti.github.io/AradZabeti/resume.html">
-  <img src="https://img.shields.io/badge/VIEW-RESUME-0D1117?style=for-the-badge&logo=readthedocs&logoColor=FACC15" />
+  <img src="https://img.shields.io/badge/VIEW-RESUME-0D1117?style=for-the-badge&logo=readthedocs&logoColor=FACC15" alt="View resume" />
 </a>
 
 <br><br>
@@ -264,14 +264,16 @@ This profile repository is more than a README. It is a small public system with 
 | `README.md` | Public identity, projects, stack and links |
 | `index.html` | Interactive portfolio |
 | `about.html` | Bilingual interactive 3D About Me page |
-| `studio.html` | Previous dark editorial studio portfolio |\n| `studio-luxe.html` | Luxury editorial site with rose, sage and ivory palette and animated WebGL hero |
+| `studio.html` | Previous dark editorial studio portfolio |
+| `studio-luxe.html` | Luxury editorial site with rose, sage and ivory palette and animated WebGL hero |
 | `terminal.html` | Shell-style profile interface |
 | `os.html` | ARAD OS project explorer |
 | `resume.html` | Printable CV / résumé |
 | `404.html` | Interactive recovery page |
 | `assets/` | Branded SVG visual system |
 | `docs/` | Architecture and project documentation |
-| `.github/` | Repository standards |
+| `.github/` | Repository standards and automated integrity checks |
+| `scripts/` | Link verification tool and regression tests |
 
 <div align="center">
 
