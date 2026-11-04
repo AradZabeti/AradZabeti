@@ -24,6 +24,17 @@ Open the address printed by Next.js. `npm run typecheck` checks types. `npm run 
 - Project illustrations are clearly marked concept artwork. KookTools has a public link; private and exploratory projects do not have fabricated live links.
 - Timeline entries describe focus and goals, not invented employment history.
 
+## Automated quality checks
+
+Every pull request that changes the Next.js source runs **Portfolio source verification** on GitHub Actions:
+
+1. Install exact dependencies using `npm ci`.
+2. Build the static export with `NEXT_PUBLIC_BASE_PATH=/AradZabeti`.
+3. Run `npm run typecheck`.
+4. Verify exported local links, navigation anchors and asset references with `npm run verify:export`.
+
+The repository-root **Portfolio integrity** workflow also checks existing published HTML, local media paths and sitemap entries. Both workflows are read-only: a successful check does **not** publish changes automatically. After reviewing a successful build, follow the documented Pages publishing procedure to regenerate and commit exported files.
+
 ## GitHub Pages
 
 This repository already publishes `main` from the root via GitHub Pages. Build with its actual project path:

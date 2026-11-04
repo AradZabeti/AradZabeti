@@ -1,0 +1,27 @@
+name: Portfolio integrity
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  validate-pages:
+    name: Validate published HTML and links
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - name: Checkout exported site
+        uses: actions/checkout@v4
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Run validator unit tests
+        run: python -m unittest discover -s scripts -p 'test_*.py' -v
+      - name: Check internal HTML links and local assets
+        run: python scripts/check_site_links.py
