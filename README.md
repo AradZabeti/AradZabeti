@@ -1,4 +1,5 @@
 **[Open Digital Universe — Premium Portfolio](https://aradzabeti.github.io/AradZabeti/)** · [Source & deployment guide](./universe-source/README.md)
+[![Portfolio source verification](https://github.com/AradZabeti/AradZabeti/actions/workflows/portfolio-source.yml/badge.svg)](https://github.com/AradZabeti/AradZabeti/actions/workflows/portfolio-source.yml) [![Portfolio integrity](https://github.com/AradZabeti/AradZabeti/actions/workflows/portfolio-integrity.yml/badge.svg)](https://github.com/AradZabeti/AradZabeti/actions/workflows/portfolio-integrity.yml)
 
 <div align="center">
 
