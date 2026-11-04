@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="340" viewBox="0 0 760 340" role="img" aria-labelledby="title desc">
+<title id="title">DIGITAL UNIVERSE</title><desc id="desc">BILINGUAL CREATIVE PORTFOLIO</desc>
+<defs>
+<linearGradient id="bg" x1="0" y1="0" x2="760" y2="340" gradientUnits="userSpaceOnUse"><stop stop-color="#111327"/><stop offset=".72" stop-color="#0B1322"/><stop offset="1" stop-color="#111D2C"/></linearGradient>
+<linearGradient id="accent" x1="120" y1="30" x2="720" y2="320" gradientUnits="userSpaceOnUse"><stop stop-color="#9E80FF"/><stop offset="1" stop-color="#6BCFF3"/></linearGradient>
+<radialGradient id="light"><stop stop-color="#9E80FF" stop-opacity=".18"/><stop offset="1" stop-color="#9E80FF" stop-opacity="0"/></radialGradient>
+<pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse"><path d="M40 0H0V40" stroke="#B3C4DD" stroke-opacity=".04" fill="none"/></pattern>
+</defs>
+<rect width="760" height="340" rx="21" fill="url(#bg)"/><rect width="760" height="340" rx="21" fill="url(#grid)"/>
+<circle cx="576" cy="170" r="190" fill="url(#light)"/>
+<rect x="1.5" y="1.5" width="757" height="337" rx="19.5" stroke="#9E80FF" stroke-opacity=".23" stroke-width="2" fill="none"/>
+<path d="M32 53H728" stroke="#C7D8EF" stroke-opacity=".15"/><path d="M32 289H728" stroke="#C7D8EF" stroke-opacity=".15"/>
+<circle cx="41" cy="28" r="4" fill="#9E80FF"/>
+<text x="57" y="33" fill="#BCCADA" font-family="monospace" font-size="12" letter-spacing="2">01 / FEATURED EXPERIENCE</text>
+<text x="38" y="129" fill="#F0F4FF" font-family="Arial,Helvetica,sans-serif" font-weight="800" font-size="40" letter-spacing="-1.7">DIGITAL UNIVERSE</text>
+<text x="39" y="161" fill="#A5B7C9" font-family="monospace" font-size="13" letter-spacing=".7">BILINGUAL CREATIVE PORTFOLIO</text>
+<rect x="38" y="191" width="80" height="3" rx="2" fill="url(#accent)"/>
+<text x="39" y="241" fill="#8D9FB4" font-family="monospace" font-size="12" letter-spacing=".9">CODE  +  CRAFT  +  MOTION</text>
+
+ <g transform="translate(592 167)">
+  <circle r="118" fill="none" stroke="#BCB2FF" stroke-opacity=".15"/>
+  <circle r="100" fill="none" stroke="url(#accent)" stroke-width="2" stroke-opacity=".65" stroke-dasharray="5 8"/>
+  <ellipse rx="144" ry="54" transform="rotate(-32)" fill="none" stroke="url(#accent)" stroke-width="2" stroke-opacity=".60"/>
+  <ellipse rx="60" ry="121" transform="rotate(27)" fill="none" stroke="#ADE7F4" stroke-opacity=".52" stroke-width="2"/>
+  <circle r="58" fill="#161A36" stroke="#B1CAFF" stroke-opacity=".35"/>
+  <text x="0" y="12" fill="#E6DAFF" font-size="37" font-family="Arial,Helvetica,sans-serif" font-weight="800" text-anchor="middle">AZ</text>
+  <circle cx="116" cy="-85" r="6" fill="#B1A0FF"/><circle cx="-126" cy="62" r="5" fill="#66D9F2"/>
+ </g>
+<text x="39" y="319" fill="#B8C6D8" font-family="monospace" font-size="12" letter-spacing=".5">NEXT.JS   /   TYPESCRIPT   /   THREE.JS</text>
+<text x="719" y="320" text-anchor="end" fill="#6BCFF3" font-family="monospace" font-size="12">EXPLORE ↗</text>
+</svg>

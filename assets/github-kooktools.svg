@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="340" viewBox="0 0 760 340" role="img" aria-labelledby="title desc">
+<title id="title">KOOKTOOLS</title><desc id="desc">INTERACTIVE TOOLS FOR MUSICIANS</desc>
+<defs>
+<linearGradient id="bg" x1="0" y1="0" x2="760" y2="340" gradientUnits="userSpaceOnUse"><stop stop-color="#0C2023"/><stop offset=".72" stop-color="#0B1322"/><stop offset="1" stop-color="#111D2C"/></linearGradient>
+<linearGradient id="accent" x1="120" y1="30" x2="720" y2="320" gradientUnits="userSpaceOnUse"><stop stop-color="#75E1DB"/><stop offset="1" stop-color="#F5D18C"/></linearGradient>
+<radialGradient id="light"><stop stop-color="#75E1DB" stop-opacity=".18"/><stop offset="1" stop-color="#75E1DB" stop-opacity="0"/></radialGradient>
+<pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse"><path d="M40 0H0V40" stroke="#B3C4DD" stroke-opacity=".04" fill="none"/></pattern>
+</defs>
+<rect width="760" height="340" rx="21" fill="url(#bg)"/><rect width="760" height="340" rx="21" fill="url(#grid)"/>
+<circle cx="576" cy="170" r="190" fill="url(#light)"/>
+<rect x="1.5" y="1.5" width="757" height="337" rx="19.5" stroke="#75E1DB" stroke-opacity=".23" stroke-width="2" fill="none"/>
+<path d="M32 53H728" stroke="#C7D8EF" stroke-opacity=".15"/><path d="M32 289H728" stroke="#C7D8EF" stroke-opacity=".15"/>
+<circle cx="41" cy="28" r="4" fill="#75E1DB"/>
+<text x="57" y="33" fill="#BCCADA" font-family="monospace" font-size="12" letter-spacing="2">02 / CREATIVE UTILITY</text>
+<text x="38" y="129" fill="#F0F4FF" font-family="Arial,Helvetica,sans-serif" font-weight="800" font-size="49" letter-spacing="-1.7">KOOKTOOLS</text>
+<text x="39" y="161" fill="#A5B7C9" font-family="monospace" font-size="13" letter-spacing=".7">INTERACTIVE TOOLS FOR MUSICIANS</text>
+<rect x="38" y="191" width="80" height="3" rx="2" fill="url(#accent)"/>
+<text x="39" y="241" fill="#8D9FB4" font-family="monospace" font-size="12" letter-spacing=".9">PRACTICE  +  CREATIVITY</text>
+
+ <g transform="translate(575 177)" fill="none">
+   <circle r="125" fill="#0F252A" stroke="#81D6CF" stroke-opacity=".30"/>
+   <circle r="86" stroke="url(#accent)" stroke-opacity=".55" stroke-width="2"/>
+   <path d="M-156 -72H164M-156 -36H164M-156 0H164M-156 36H164M-156 72H164" stroke="#E2F4F1" stroke-opacity=".22" stroke-width="2"/>
+   <path d="M-111 68C-47 2 20 -75 94 -28C133 -3 115 65 66 60C12 52 39 -13 94 -28" stroke="url(#accent)" stroke-width="4" stroke-linecap="round"/>
+   <circle cx="-111" cy="68" r="12" fill="#8BE6CE"/>
+   <circle cx="94" cy="-28" r="12" fill="#F5D18C"/>
+   <path d="M-99 68V-10M106 -28V-93" stroke="#B4F9E8" stroke-width="5" stroke-linecap="round"/>
+ </g>
+<text x="39" y="319" fill="#B8C6D8" font-family="monospace" font-size="12" letter-spacing=".5">MUSIC TOOLS   /   WEB INTERACTION   /   AUDIO</text>
+<text x="719" y="320" text-anchor="end" fill="#F5D18C" font-family="monospace" font-size="12">EXPLORE ↗</text>
+</svg>
