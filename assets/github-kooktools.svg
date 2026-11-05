@@ -1,31 +1,32 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="760" height="340" viewBox="0 0 760 340" role="img" aria-labelledby="title desc">
-<title id="title">KOOKTOOLS</title><desc id="desc">INTERACTIVE TOOLS FOR MUSICIANS</desc>
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="340" viewBox="0 0 760 340" role="img" aria-labelledby="cardTitle cardDescription">
+<title id="cardTitle">KOOKTOOLS</title><desc id="cardDescription">INTERACTIVE TOOLS FOR MUSICIANS</desc>
 <defs>
-<linearGradient id="bg" x1="0" y1="0" x2="760" y2="340" gradientUnits="userSpaceOnUse"><stop stop-color="#0C2023"/><stop offset=".72" stop-color="#0B1322"/><stop offset="1" stop-color="#111D2C"/></linearGradient>
-<linearGradient id="accent" x1="120" y1="30" x2="720" y2="320" gradientUnits="userSpaceOnUse"><stop stop-color="#75E1DB"/><stop offset="1" stop-color="#F5D18C"/></linearGradient>
-<radialGradient id="light"><stop stop-color="#75E1DB" stop-opacity=".18"/><stop offset="1" stop-color="#75E1DB" stop-opacity="0"/></radialGradient>
-<pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse"><path d="M40 0H0V40" stroke="#B3C4DD" stroke-opacity=".04" fill="none"/></pattern>
+ <linearGradient id="bg" x1="0" y1="0" x2="760" y2="340" gradientUnits="userSpaceOnUse"><stop stop-color="#080D20"/><stop offset=".65" stop-color="#101830"/><stop offset="1" stop-color="#061D2C"/></linearGradient>
+ <linearGradient id="line" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#A894FF"/><stop offset="1" stop-color="#66E2F3"/></linearGradient>
+ <radialGradient id="light"><stop stop-color="#6EE9DD" stop-opacity=".21"/><stop offset="1" stop-color="#6EE9DD" stop-opacity="0"/></radialGradient>
+ <pattern id="grid" width="38" height="38" patternUnits="userSpaceOnUse"><path d="M38 0H0V38" stroke="#C7DAF6" stroke-opacity=".065" fill="none"/></pattern>
 </defs>
-<rect width="760" height="340" rx="21" fill="url(#bg)"/><rect width="760" height="340" rx="21" fill="url(#grid)"/>
-<circle cx="576" cy="170" r="190" fill="url(#light)"/>
-<rect x="1.5" y="1.5" width="757" height="337" rx="19.5" stroke="#75E1DB" stroke-opacity=".23" stroke-width="2" fill="none"/>
-<path d="M32 53H728" stroke="#C7D8EF" stroke-opacity=".15"/><path d="M32 289H728" stroke="#C7D8EF" stroke-opacity=".15"/>
-<circle cx="41" cy="28" r="4" fill="#75E1DB"/>
-<text x="57" y="33" fill="#BCCADA" font-family="monospace" font-size="12" letter-spacing="2">02 / CREATIVE UTILITY</text>
-<text x="38" y="129" fill="#F0F4FF" font-family="Arial,Helvetica,sans-serif" font-weight="800" font-size="49" letter-spacing="-1.7">KOOKTOOLS</text>
-<text x="39" y="161" fill="#A5B7C9" font-family="monospace" font-size="13" letter-spacing=".7">INTERACTIVE TOOLS FOR MUSICIANS</text>
-<rect x="38" y="191" width="80" height="3" rx="2" fill="url(#accent)"/>
-<text x="39" y="241" fill="#8D9FB4" font-family="monospace" font-size="12" letter-spacing=".9">PRACTICE  +  CREATIVITY</text>
-
- <g transform="translate(575 177)" fill="none">
-   <circle r="125" fill="#0F252A" stroke="#81D6CF" stroke-opacity=".30"/>
-   <circle r="86" stroke="url(#accent)" stroke-opacity=".55" stroke-width="2"/>
-   <path d="M-156 -72H164M-156 -36H164M-156 0H164M-156 36H164M-156 72H164" stroke="#E2F4F1" stroke-opacity=".22" stroke-width="2"/>
-   <path d="M-111 68C-47 2 20 -75 94 -28C133 -3 115 65 66 60C12 52 39 -13 94 -28" stroke="url(#accent)" stroke-width="4" stroke-linecap="round"/>
-   <circle cx="-111" cy="68" r="12" fill="#8BE6CE"/>
-   <circle cx="94" cy="-28" r="12" fill="#F5D18C"/>
-   <path d="M-99 68V-10M106 -28V-93" stroke="#B4F9E8" stroke-width="5" stroke-linecap="round"/>
+<rect width="760" height="340" rx="21" fill="url(#bg)"/>
+<rect width="760" height="340" rx="21" fill="url(#grid)"/>
+<circle cx="600" cy="168" r="210" fill="url(#light)"/>
+<rect x="1.5" y="1.5" width="757" height="337" rx="19.5" fill="none" stroke="#6EE9DD" stroke-opacity=".36" stroke-width="1.5"/>
+<path d="M28 53H732M28 290H732" fill="none" stroke="#A7BEE0" stroke-opacity=".23"/>
+<circle cx="38" cy="28" r="4.5" fill="#6EE9DD"/>
+<text x="54" y="33" fill="#B5C7E1" font-family="monospace" letter-spacing="2" font-size="12">02 / CREATIVE TECHNOLOGY</text>
+<text x="37" y="130" fill="#F2F7FF" font-family="Arial,Helvetica,sans-serif" font-weight="800" letter-spacing="-1.3" font-size="44">KOOKTOOLS</text>
+<text x="39" y="164" fill="#BDD0EA" font-family="monospace" font-size="12.5" letter-spacing=".5">INTERACTIVE TOOLS FOR MUSICIANS</text>
+<rect x="39" y="191" width="93" height="3" rx="2" fill="url(#line)"/>
+<text x="40" y="244" fill="#88A6CB" font-family="monospace" font-size="11.4" letter-spacing=".4">WEB AUDIO  /  MUSIC UTILITIES  /  INTERACTION</text>
+<text x="38" y="316" fill="#A4B9D6" font-family="monospace" font-size="11" letter-spacing="2">ARAD / SELECTED WORK</text>
+<circle cx="510" cy="49" r="1.5" fill="#B8E9FF" opacity=".33"/><circle cx="519" cy="68" r="0.8" fill="#B8E9FF" opacity=".33"/><circle cx="528" cy="125" r="0.8" fill="#B8E9FF" opacity=".33"/><circle cx="537" cy="220" r="1.5" fill="#B8E9FF" opacity=".33"/><circle cx="546" cy="118" r="0.8" fill="#B8E9FF" opacity=".33"/><circle cx="555" cy="54" r="0.8" fill="#B8E9FF" opacity=".33"/><circle cx="564" cy="263" r="1.5" fill="#B8E9FF" opacity=".33"/><circle cx="573" cy="275" r="0.8" fill="#B8E9FF" opacity=".33"/><circle cx="582" cy="90" r="0.8" fill="#B8E9FF" opacity=".33"/><circle cx="591" cy="178" r="1.5" fill="#B8E9FF" opacity=".33"/><circle cx="600" cy="69" r="0.8" fill="#B8E9FF" opacity=".33"/><circle cx="609" cy="233" r="0.8" fill="#B8E9FF" opacity=".33"/><circle cx="618" cy="200" r="1.5" fill="#B8E9FF" opacity=".33"/><circle cx="627" cy="205" r="0.8" fill="#B8E9FF" opacity=".33"/><circle cx="636" cy="248" r="0.8" fill="#B8E9FF" opacity=".33"/><circle cx="645" cy="94" r="1.5" fill="#B8E9FF" opacity=".33"/><circle cx="654" cy="213" r="0.8" fill="#B8E9FF" opacity=".33"/><circle cx="663" cy="135" r="0.8" fill="#B8E9FF" opacity=".33"/><circle cx="672" cy="95" r="1.5" fill="#B8E9FF" opacity=".33"/>
+<g transform="translate(594 174)">
+ <circle r="115" fill="none" stroke="#6EE9DD" stroke-opacity=".20"/>
+ <circle r="80" fill="none" stroke="#BDA7FF" stroke-opacity=".24" stroke-dasharray="2 9"/>
+ <circle r="58" fill="#0E2532" stroke="#6EE9DD" stroke-opacity=".44"/>
+ <circle r="37" fill="none" stroke="#A8E0E8" stroke-opacity=".33"/>
+ <path d="M-152 12C-135 12 -133 -31 -116 -31S-93 60 -75 60S-48 -81 -27 -81S-5 77 16 77S38 -46 60 -46S84 31 104 31S130 -12 152 -12" fill="none" stroke="#70F2E7" stroke-width="3" stroke-linecap="round"/>
+ <path d="M-147 12C-126 12 -120 0 -100 0S-68 20 -50 20S-8 -22 7 -22S48 20 64 20S110 0 147 0" fill="none" stroke="#B79DFB" stroke-opacity=".55" stroke-width="1.8"/>
+ <circle cx="16" cy="77" r="6" fill="#76F3DF"/><circle cx="-27" cy="-81" r="5" fill="#C5A1FD"/>
+ <text y="-4" text-anchor="middle" fill="#D9FDF5" font-family="monospace" font-size="13">AUDIO</text>
  </g>
-<text x="39" y="319" fill="#B8C6D8" font-family="monospace" font-size="12" letter-spacing=".5">MUSIC TOOLS   /   WEB INTERACTION   /   AUDIO</text>
-<text x="719" y="320" text-anchor="end" fill="#F5D18C" font-family="monospace" font-size="12">EXPLORE ↗</text>
 </svg>
