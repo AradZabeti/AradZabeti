@@ -87,3 +87,22 @@ Production static build and strict TypeScript checks pass. Desktop and 390px Per
 - `npm run verify:export` checks internal files, fragment targets and CSS font references. Run after the GitHub Pages build.
 
 New controls and mobile layouts were inspected in preview at 360, 390 and 768px. WebGL rendering remains unverified in this environment because the preview browser disables GPU contexts; keyboard rotation, pause/reset and the fallback composition were verified.
+
+
+## Edition 05 — Futuristic AI web phase 3 (review branch)
+
+The original Three.js sculpture remains interactive, with an additional **deterministic SVG neural field** behind it. This visual is decorative: it does not suggest that the site runs a neural network. The landing hero has bilingual future-facing copy and refined hierarchy; the new CSS lives in `src/styles/futuristic.css` and is imported after the existing styles.
+
+**WebGL performance budget:** the scene is dynamically imported only when close to the viewport and when motion/data preferences allow it. The GPU renderer caps pixel ratio to 1 on coarse/small devices and 1.4 elsewhere, runs at a maximum of 24 / 30 FPS respectively, and uses simpler torus-knot geometry on mobile. Mobile skips the costly environment-map precomputation. The static image still supports keyboard rotation and serves as a fallback when WebGL2 is unavailable or its context is lost. The SVG neural field is always available without WebGL and its CSS animation respects both reduced motion and the low-motion setting.
+
+### Review / static release workflow
+
+1. Open the phase-3 PR and inspect both the **Portfolio source verification** and **Portfolio integrity** check results.
+2. Download the GitHub Actions artifact named `digital-universe-phase3-preview` from the source verification run. It contains a built `out/` directory for review. The build uses `NEXT_PUBLIC_BASE_PATH=/AradZabeti`.
+3. Inspect English, Persian RTL, 360–390px mobile, desktop, dark/light mode, keyboard controls and reduced-motion behavior on a real browser. The CI validates compilation and link targets, **not** screenshots or GPU behavior.
+4. **Merging source code alone does not update the root GitHub Pages HTML.** After owner approval, regenerate and check in the static export using `npm run build && npm run publish:pages`, then verify the Pages deployment. Avoid committing a source-only redesign as if it were already published.
+5. Do not merge security PR #6 as part of the design PR. That separate PR needs its own review.
+
+### Scope
+
+This phase does not add AI runtime functionality, third-party analytics, a backend, external rendering libraries or an automatic production deployment action. The visual identity is the product here; existing projects and data remain intact.
