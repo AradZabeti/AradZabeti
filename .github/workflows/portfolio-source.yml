@@ -38,6 +38,8 @@ jobs:
           cache-dependency-path: universe-source/package-lock.json
       - name: Install locked dependencies
         run: npm ci
+      - name: Check standalone Futuristic AI JavaScript syntax
+        run: node --check public/assets/futuristic-phase3.js
       - name: Build static GitHub Pages export
         run: npm run build
         env:
