@@ -1,23 +1,27 @@
 <div align="center">
 
 <a href="https://aradzabeti.github.io/AradZabeti/">
-  <img src="./assets/github-cover.svg" width="100%" alt="Arad Zabeti — Creative Developer. Software, automation and music technology." />
+  <img src="./assets/github-cover.svg" width="100%" alt="Arad Zabeti — software engineer and creative developer, with a futuristic AI neural-network visual." />
 </a>
 
 <br/>
 
-**CREATIVE DEVELOPER &nbsp; / &nbsp; SOFTWARE ENGINEERING &nbsp; / &nbsp; DIGITAL EXPERIENCES**
+### DESIGN-LED ENGINEERING. GROUNDED IN REAL CODE.
 
-I build thoughtful digital products — from reliable application logic to interactive web experiences.
+**SOFTWARE ENGINEERING &nbsp; / &nbsp; AI AUTOMATION &nbsp; / &nbsp; INTERACTIVE SYSTEMS**
+
+I turn ambitious ideas into usable software — combining reliable application logic, clear interfaces and thoughtful interaction.
+
+<sub>Node.js &nbsp; · &nbsp; Python &nbsp; · &nbsp; React &nbsp; · &nbsp; TypeScript &nbsp; · &nbsp; Creative Technology</sub>
 
 <p>
-  <a href="https://aradzabeti.github.io/AradZabeti/"><strong>Explore Portfolio</strong></a>
+  <a href="https://aradzabeti.github.io/AradZabeti/"><strong>Explore the portfolio</strong></a>
   &nbsp; · &nbsp;
   <a href="https://aradzabeti.github.io/AradZabeti/fa/"><strong>نسخه فارسی</strong></a>
   &nbsp; · &nbsp;
-  <a href="https://aradzabeti.github.io/AradZabeti/resume.html"><strong>Résumé</strong></a>
+  <a href="https://aradzabeti.github.io/AradZabeti/resume.html"><strong>View résumé</strong></a>
   &nbsp; · &nbsp;
-  <a href="mailto:arad23426@gmail.com"><strong>Contact</strong></a>
+  <a href="mailto:arad23426@gmail.com"><strong>Get in touch</strong></a>
 </p>
 
 <a href="https://github.com/AradZabeti/AradZabeti/actions/workflows/portfolio-source.yml"><img src="https://github.com/AradZabeti/AradZabeti/actions/workflows/portfolio-source.yml/badge.svg" alt="Next.js source checks" /></a>
@@ -26,6 +30,16 @@ I build thoughtful digital products — from reliable application logic to inter
 </div>
 
 <br/>
+
+### 00 / THE MISSION
+
+**Build useful systems. Make complexity feel simple.**
+
+I'm interested in the intersection of backend engineering, intelligent automation and expressive frontends. My work spans portfolio experiences, web utilities and practical experiments, with each showcased project tied to source code, a real demo or an explicitly labeled exploration.
+
+| BUILD | CREATE | VERIFY |
+|:--|:--|:--|
+| APIs, application logic and integrations | Responsive interfaces and interaction | Automated checks, documented behavior and accessibility |
 
 ### 01 / SELECTED WORK
 
@@ -48,9 +62,9 @@ I build thoughtful digital products — from reliable application logic to inter
   </tr>
 </table>
 
-### 02 / EXPLORE THE LAB
+### 02 / INTERACTIVE SYSTEMS LAB
 
-More than a static résumé — these are interactive parts of the same portfolio.
+Beyond a static résumé: these are interactive experiences included in the existing portfolio.
 
 <table>
   <tr>
@@ -69,7 +83,7 @@ More than a static résumé — these are interactive parts of the same portfoli
   </tr>
 </table>
 
-### 03 / WHAT I WORK WITH
+### 03 / ENGINEERING STACK
 
 <table>
   <tr>
@@ -102,7 +116,7 @@ More than a static résumé — these are interactive parts of the same portfoli
   <img src="https://skillicons.dev/icons?i=js,ts,nodejs,python,react,nextjs,html,css,git,github,linux,vscode&perline=12" alt="Development technologies: JavaScript, TypeScript, Node.js, Python, React, Next.js, HTML, CSS, Git, GitHub, Linux and VS Code" />
 </div>
 
-### 04 / HOW I BUILD
+### 04 / SYSTEMS THINKING
 
 <a href="https://aradzabeti.github.io/AradZabeti/"><img src="./assets/system-map.svg" width="100%" alt="System map: idea, code, automation and product iteration" /></a>
 
@@ -110,12 +124,13 @@ More than a static résumé — these are interactive parts of the same portfoli
 
 I care about **what the product does** just as much as **how it feels to use**. Good software should be maintainable behind the scenes and effortless at the surface.
 
-### 05 / GITHUB & SOURCE
+### 05 / SOURCE, PROOF & MAINTENANCE
 
-This profile repository contains the full source for Digital Universe, the published static site, experimental pages, design assets and documentation.
+This profile repository includes the Digital Universe source, the published static site, experimental pages and technical documentation. The visual identity is intentionally built from lightweight local SVGs, with no external scripts embedded in the artwork.
 
 - **[Portfolio source](./universe-source/)** — Next.js, React, TypeScript and Three.js.
-- **[Architecture & technical notes](./docs/ARCHITECTURE.md)** — how the project is structured.
+- **[Architecture & technical notes](./docs/ARCHITECTURE.md)** — repository structure and deployment boundaries.
+- **[Futuristic AI design system](./docs/FUTURISTIC_AI_DESIGN.md)** — colors, typography, accessibility and visual identity.
 - **[Project repository](https://github.com/AradZabeti/AradZabeti)** — code, issues and revision history.
 - **[Automated checks](./.github/workflows/)** — source build, TypeScript verification and site integrity.
 
@@ -133,9 +148,9 @@ This profile repository contains the full source for Digital Universe, the publi
 
 <div align="center">
 
-### LET'S BUILD SOMETHING MEANINGFUL.
+### BUILD WITH INTENTION. SHIP WITH CONFIDENCE.
 
-**Have a project, a technical challenge or an interesting idea?**
+**Have a technical challenge, an idea or a thoughtful collaboration in mind?**
 
 <a href="mailto:arad23426@gmail.com"><strong>Email me</strong></a> &nbsp; · &nbsp;
 <a href="https://github.com/AradZabeti"><strong>GitHub</strong></a> &nbsp; · &nbsp;
@@ -143,6 +158,6 @@ This profile repository contains the full source for Digital Universe, the publi
 
 <br/>
 
-<sub>Built with curiosity. Refined through iteration. — Arad Zabeti</sub>
+<sub>Design × Engineering × Verification — Arad Zabeti</sub>
 
 </div>
