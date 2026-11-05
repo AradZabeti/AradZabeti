@@ -1,70 +1,65 @@
-# Repository Architecture
+# Repository architecture
 
 ## Purpose
 
-`AradZabeti/AradZabeti` is the public identity, portfolio, and technical résumé layer for Arad Zabeti.
+`AradZabeti/AradZabeti` is the public GitHub profile and bilingual developer portfolio.
+The public Pages site is a **static export**. It does not require the optional cPanel bridge.
 
-It intentionally stays lightweight: static HTML/CSS, GitHub Pages, local SVG assets, and documentation. There is no application server or runtime dependency required for the public site.
-
-## Surface map
+## Actual repository layout
 
 ```text
-profile README
-     │
-     ├── identity + skills + featured work
-     ├── GitHub activity signals
-     └── links to live portfolio + resume
+README.md                          GitHub profile, featured work, links
+assets/                            Original SVG artwork and profile graphics
+universe-source/                   Next.js / React / TypeScript / Three.js source
+  package.json                     Build, typecheck and export-verification commands
+  scripts/publish-pages.mjs        Copies a verified export to the repository root
+index.html, about.html, ...        Published static Pages and editorial experiments
+en/, fa/, resume/                 Localized pages and résumé routes
+_next/, images/                    Exported static assets
+cpanel/terminal.php                Optional PHP diagnostics endpoint (NOT on GitHub Pages)
+terminal.html, os.html             Static client interfaces for opt-in diagnostics
+scripts/check_site_links.py        Published-site local link validator
+scripts/check_profile_readme.py    README / SVG validator
+scripts/test_*.py                  Regression tests, including cPanel security tests
+.github/workflows/
+  portfolio-integrity.yml          Python tests, link checks, PHP syntax/security checks
+  portfolio-source.yml             npm ci, Next.js build, TypeScript and export checks
+.github/dependabot.yml             Weekly dependency maintenance
+SECURITY.md                        Disclosure and safe bridge deployment
+```
 
-GitHub Pages
-     │
-     ├── index.html   → interactive portfolio
-     ├── resume.html  → printable CV
-     └── 404.html     → branded fallback page
+## Deployment boundaries
 
-assets/
-     │
-     ├── profile-hero.svg
-     ├── system-map.svg
-     └── neon-divider.svg
+- **GitHub Pages** serves static HTML, CSS, JavaScript and assets from the project Pages site.
+- **Next.js source** lives in `universe-source/`; the checked-in root also contains its static output. Source changes require a fresh verified export before deployment.
+- **The optional PHP bridge** is **not** executed by GitHub Pages. Deploying `cpanel/terminal.php` to a separate cPanel host is a manual, separately approved step.
+- The cPanel bridge is read-only and allowlisted, never an arbitrary shell.
+- The bridge must remain inaccessible until a secret of at least 32 characters has been configured, and HTTPS must be available.
+- The browser terminal stores a bridge key in **tab-scoped sessionStorage** to support ARAD OS in the same tab. A key is not placed in Git, query strings or long-lived localStorage. Browser-side secrets still carry XSS risk; never use a key with wider server privileges.
 
-repository health
-     │
-     ├── SECURITY.md
-     ├── CONTRIBUTING.md
-     ├── CODE_OF_CONDUCT.md
-     └── .github/
-          ├── ISSUE_TEMPLATE/
-          ├── pull_request_template.md
-          └── workflows/quality.yml
+## Validation flow
+
+```text
+feature/security branch
+   |
+   +-- scripts/test_*.py (security + link regressions)
+   +-- PHP lint (cpanel/terminal.php)
+   +-- check_site_links.py / check_profile_readme.py
+   +-- universe-source npm build + TypeScript + export checks (when source changes)
+   |
+   +-- review Pull Request and Actions results
+   |
+   +-- human-approved merge to main
+   |
+   +-- GitHub Pages deployment
 ```
 
 ## Design principles
 
-### Evidence over hype
-Project descriptions should be traceable to a demo, source code, documentation, or a clearly stated concept/building status.
+- **Evidence over hype:** show working demos, source or clearly marked work in progress.
+- **Static-first:** keep the public site fast, portable and independent of a backend.
+- **Accessible by default:** semantic markup, keyboard navigation, alt text and reduced-motion support.
+- **Security by default:** least-privilege actions, no public secrets, explicit server-side auth.
+- **Consistent visual language:** profile, résumé, portfolio and SVGs share an identity; the next visual phase is Futuristic AI.
 
-### Static-first
-The public experience should remain fast, portable, and easy to audit. Avoid unnecessary frameworks or runtime services for presentation-only features.
-
-### Accessible by default
-Use semantic HTML, keyboard-visible focus states, responsive layouts, meaningful alternative text, and reduced-motion support where animations exist.
-
-### Security by default
-No API keys or secrets belong in client-side files. External links should use safe target handling. Security concerns are documented in `SECURITY.md`.
-
-### Single source of visual truth
-The portfolio, resume, profile README, and SVG assets should share the same visual language: dark technical surfaces, restrained accent colors, strong typography, and clear hierarchy.
-
-## Change flow
-
-```text
-edit
-  ↓
-quality workflow
-  ↓
-GitHub Pages build
-  ↓
-review live output
-  ↓
-iterate
-```
+For disclosure, credentials, rollout precautions and the limits of the optional bridge, see [SECURITY.md](../SECURITY.md).
