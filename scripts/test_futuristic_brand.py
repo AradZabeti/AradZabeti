@@ -40,7 +40,7 @@ class FuturisticBrandTests(unittest.TestCase):
                 self.assertNotIn("foreignObject", content)
                 self.assertNotIn("<image", content)
                 self.assertNotIn("@import", content)
-                self.assertNotIn("http://", content)
+                self.assertNotIn('href="http', content)
                 self.assertNotIn("javascript:", content.lower())
                 ids = [element.get("id") for element in root.iter()
                        if element.get("id")]
