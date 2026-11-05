@@ -47,7 +47,7 @@ class TerminalSecurityTests(unittest.TestCase):
             "$_SERVER = [];\n"
             + assignments
             + "\nregister_shutdown_function(static function(): void {"
-              " echo '\\n__HTTP_STATUS__=' . http_response_code();"
+              " echo PHP_EOL . '__HTTP_STATUS__=' . http_response_code();"
               " });\n"
             + "require " + json.dumps(str(ENDPOINT)) + ";"
         )
@@ -62,7 +62,7 @@ class TerminalSecurityTests(unittest.TestCase):
         )
         self.assertEqual(completed.returncode, 0, completed.stderr)
         self.assertNotIn("Fatal error", completed.stdout + completed.stderr)
-        match = re.search(r"__HTTP_STATUS__=(\\d+)", completed.stdout)
+        match = re.search(r"__HTTP_STATUS__=(\d+)", completed.stdout)
         self.assertIsNotNone(match, completed.stdout + completed.stderr)
         body = completed.stdout[:match.start()].strip()
         return int(match.group(1)), json.loads(body) if body else None
