@@ -13,6 +13,9 @@ header('Content-Type: application/json; charset=utf-8');
 header('Cache-Control: no-store, no-cache, must-revalidate, max-age=0');
 header('X-Content-Type-Options: nosniff');
 header('Referrer-Policy: no-referrer');
+header('X-Frame-Options: DENY');
+header("Content-Security-Policy: default-src 'none'");
+header('Vary: Origin');
 
 $origin = $_SERVER['HTTP_ORIGIN'] ?? '';
 if ($origin === ALLOWED_ORIGIN) {
@@ -23,33 +26,39 @@ if ($origin === ALLOWED_ORIGIN) {
     header('Access-Control-Max-Age: 600');
 }
 
+if ($origin !== '' && $origin !== ALLOWED_ORIGIN) {
+    respond(['ok' => false, 'error' => 'origin_not_allowed'], 403);
+}
 if (($_SERVER['REQUEST_METHOD'] ?? 'GET') === 'OPTIONS') {
     http_response_code(204);
     exit;
 }
 
-if ($origin !== '' && $origin !== ALLOWED_ORIGIN) {
-    respond(['ok' => false, 'error' => 'origin_not_allowed'], 403);
+// Never expose host diagnostics over plaintext HTTP.
+$https = (!empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] !== 'off')
+    || ((int) ($_SERVER['SERVER_PORT'] ?? 0) === 443);
+if (!$https) {
+    respond(['ok' => false, 'error' => 'https_required'], 403);
 }
 
-// Prefer a private config outside public_html. A same-directory config is supported for compatibility.
-$configCandidates = [
-    dirname(__DIR__, 2) . '/terminal-config.php',
-    __DIR__ . '/terminal-config.php',
-];
-foreach ($configCandidates as $configFile) {
-    if (is_file($configFile)) {
-        require_once $configFile;
-        break;
-    }
+// Fail closed: load a secret from the environment or a file outside public_html.
+// A config in cpanel/ inside the web root is deliberately ignored.
+$configPath = dirname(__DIR__, 2) . '/terminal-config.php';
+if (is_file($configPath)) {
+    require_once $configPath;
 }
-
-$requiredKey = defined('ARAD_TERMINAL_KEY') ? (string) ARAD_TERMINAL_KEY : '';
+$envKey = getenv('ARAD_TERMINAL_KEY');
+$requiredKey = defined('ARAD_TERMINAL_KEY')
+    ? (string) ARAD_TERMINAL_KEY
+    : (is_string($envKey) ? $envKey : '');
+if (strlen($requiredKey) < 32) {
+    respond(['ok' => false, 'error' => 'service_unavailable'], 503);
+}
 $providedKey = (string) ($_SERVER['HTTP_X_ARAD_TERMINAL_KEY'] ?? '');
-$keyProtected = $requiredKey !== '';
-if ($keyProtected && ($providedKey === '' || !hash_equals($requiredKey, $providedKey))) {
+if ($providedKey === '' || !hash_equals($requiredKey, $providedKey)) {
     respond(['ok' => false, 'error' => 'unauthorized'], 401);
 }
+$keyProtected = true;
 
 $ip = $_SERVER['REMOTE_ADDR'] ?? 'unknown';
 $rateFile = rtrim(sys_get_temp_dir(), DIRECTORY_SEPARATOR) . DIRECTORY_SEPARATOR . 'arad_terminal_' . hash('sha256', $ip) . '.json';
@@ -72,33 +81,33 @@ if ($rate['count'] > MAX_REQUESTS) {
 }
 
 $requestMethod = $_SERVER['REQUEST_METHOD'] ?? 'GET';
-$body = '';
-if ($requestMethod === 'POST') {
-    $contentType = strtolower((string) ($_SERVER['CONTENT_TYPE'] ?? ''));
-    if ($contentType !== '' && !str_contains($contentType, 'application/json')) {
-        respond(['ok' => false, 'error' => 'json_required'], 415);
-    }
-    $length = (int) ($_SERVER['CONTENT_LENGTH'] ?? 0);
-    if ($length > MAX_BODY_BYTES) {
-        respond(['ok' => false, 'error' => 'request_too_large'], 413);
-    }
-    $body = file_get_contents('php://input') ?: '';
+if ($requestMethod !== 'POST') {
+    respond(['ok' => false, 'error' => 'method_not_allowed'], 405);
 }
-$data = json_decode($body ?: '{}', true);
-$data = is_array($data) ? $data : [];
+$contentType = trim((string) ($_SERVER['CONTENT_TYPE'] ?? ''));
+if (!preg_match('~^application/json(?:\\s*;|$)~i', $contentType)) {
+    respond(['ok' => false, 'error' => 'json_required'], 415);
+}
+$length = (int) ($_SERVER['CONTENT_LENGTH'] ?? 0);
+if ($length > MAX_BODY_BYTES) {
+    respond(['ok' => false, 'error' => 'request_too_large'], 413);
+}
+// Bound the actual body read even if Content-Length is missing or inaccurate.
+$body = file_get_contents('php://input', false, null, 0, MAX_BODY_BYTES + 1);
+if (!is_string($body) || strlen($body) > MAX_BODY_BYTES) {
+    respond(['ok' => false, 'error' => 'request_too_large'], 413);
+}
+$data = json_decode($body !== '' ? $body : '{}', true);
+if (!is_array($data)) {
+    respond(['ok' => false, 'error' => 'invalid_json'], 400);
+}
 $command = strtolower(trim((string) ($data['command'] ?? ($_GET['command'] ?? 'server'))));
 
 $publicCommands = ['server', 'php', 'os', 'disk', 'health', 'runtime', 'capabilities', 'security', 'web', 'status', 'metrics', 'stats'];
 $privateCommands = ['user', 'cwd'];
 
-if ($requestMethod === 'GET' && !in_array($command, ['health', 'status'], true)) {
-    respond(['ok' => false, 'error' => 'get_not_allowed', 'hint' => 'Use POST from the browser terminal.'], 405);
-}
 if (!in_array($command, array_merge($publicCommands, $privateCommands), true)) {
     respond(['ok' => false, 'error' => 'command_not_allowed', 'allowed' => array_merge($publicCommands, $privateCommands)], 400);
-}
-if (in_array($command, $privateCommands, true) && !$keyProtected) {
-    respond(['ok' => false, 'error' => 'private_key_required', 'hint' => 'Create terminal-config.php outside public_html and configure the terminal key.'], 403);
 }
 
 $disk = static function (): array {
@@ -180,7 +189,7 @@ switch ($command) {
             'host' => $_SERVER['HTTP_HOST'] ?? null,
             'time' => date(DATE_ATOM),
             'disk' => $d,
-            'api_version' => '1.2.0',
+            'api_version' => '1.3.0',
         ]]);
 
     case 'php':
@@ -247,7 +256,7 @@ switch ($command) {
             'private_key_enabled' => $keyProtected,
             'rate_limit' => MAX_REQUESTS . ' requests / ' . WINDOW_SECONDS . 's / IP',
             'arbitrary_shell' => false,
-            'api_version' => '1.2.0',
+            'api_version' => '1.3.0',
         ]]);
 
     case 'web':
@@ -269,7 +278,7 @@ switch ($command) {
             'https' => !empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] !== 'off',
             'disk_used_percent' => $d['used_percent'],
             'private_key_enabled' => $keyProtected,
-            'api_version' => '1.2.0',
+            'api_version' => '1.3.0',
             'time' => date(DATE_ATOM),
         ]]);
 
