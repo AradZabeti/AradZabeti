@@ -1,0 +1,102 @@
+/* Edition 05 — Futuristic AI. Static-first artwork with optional lightweight WebGL.
+   Imported last on purpose so existing project pages remain unchanged. */
+[data-theme="dark"]{--violet:#a892ff;--ice:#71e3f5;--line:rgba(164,191,229,.17)}
+.hero-futuristic{isolation:isolate}
+.hero-futuristic:before{opacity:.21;background-size:68px 68px;mask-image:radial-gradient(ellipse at 79% 43%,#000 8%,transparent 72%)}
+.hero-futuristic:after{content:"";position:absolute;z-index:0;inset:3% -4% 13% 19%;pointer-events:none;
+ background:radial-gradient(ellipse at 79% 38%,rgba(131,102,242,.11),transparent 44%),radial-gradient(ellipse at 68% 64%,rgba(73,216,236,.07),transparent 43%)}
+.hero-futuristic .hero-top,.hero-futuristic .hero-copy,.hero-futuristic .hero-bottom{z-index:4}
+.hero-futuristic .hero-copy{max-width:min(820px,70%)}
+.hero-futuristic h1{font-size:clamp(70px,7.4vw,120px);line-height:1.035;text-wrap:balance}
+.hero-futuristic .hero-name{color:var(--ice);font-family:var(--mono);font-size:12px;letter-spacing:3px}
+.hero-futuristic .hero-intent{color:var(--ice);font-weight:600}
+.hero-futuristic .hero-description p{color:var(--muted);max-width:340px}
+.hero-signal{display:flex;align-items:center;gap:10px;margin-bottom:21px;width:fit-content;
+ border:1px solid rgba(125,196,242,.32);background:linear-gradient(110deg,rgba(102,86,224,.11),rgba(77,219,245,.06));
+ border-radius:100px;padding:8px 14px;color:var(--text);font-family:var(--mono);font-size:9px;letter-spacing:1.2px;max-width:100%}
+.hero-signal i{display:block;width:6px;height:6px;border-radius:50%;background:#66e7ca;box-shadow:0 0 11px rgba(102,231,202,.7);flex-shrink:0}
+.hero-futuristic .scene-stage{isolation:isolate}
+.neural-field{position:absolute;inset:4% -2% 8%;z-index:0;pointer-events:none;overflow:hidden;perspective:850px}
+.neural-field-grid{position:absolute;inset:19% 13% 8%;border-radius:50%;opacity:.55;
+ background-image:linear-gradient(rgba(110,200,246,.13) 1px,transparent 1px),
+ linear-gradient(90deg,rgba(110,200,246,.13) 1px,transparent 1px);
+ background-size:35px 35px;mask-image:radial-gradient(ellipse,#000 2%,transparent 67%);
+ transform:rotateX(64deg) rotateZ(-28deg) scale(1.13)}
+.neural-field-orbit{position:absolute;inset:16% 8%;border:1px solid rgba(142,172,249,.3);border-radius:50%;
+ transform:rotate(-25deg) scaleY(.61);box-shadow:0 0 18px rgba(100,110,240,.10),inset 0 0 15px rgba(94,201,248,.08)}
+.neural-field-orbit-b{inset:5% 19%;transform:rotate(43deg) scaleX(.66);border-color:rgba(100,224,247,.28)}
+.neural-field-map{position:absolute;inset:0;width:100%;height:100%;overflow:visible;
+ filter:drop-shadow(0 0 5px rgba(100,208,255,.18));opacity:.76;animation:neural-drift 26s ease-in-out infinite alternate}
+.neural-field-corner{position:absolute;width:20px;height:20px;border-color:rgba(136,228,251,.5);border-style:solid}
+.neural-field-corner-a{top:17%;left:20%;border-width:1px 0 0 1px}
+.neural-field-corner-b{bottom:21%;right:17%;border-width:0 1px 1px 0}
+.hero-futuristic .scene-halo{background:radial-gradient(ellipse,rgba(126,105,239,.16),transparent 68%)}
+.hero-futuristic .fallback-pose{z-index:1}
+.hero-futuristic .sculpture-canvas{z-index:2}
+.hero-futuristic .scene-side-label,.hero-futuristic .scene-controls{z-index:5}
+.hero-futuristic .scene-controls{background:linear-gradient(90deg,transparent,rgba(11,19,35,.19),transparent)}
+.hero-futuristic .scene-controls .icon-button{min-width:44px;min-height:44px}
+.hero-futuristic .scene-controls>span{color:var(--text)}
+.hero-futuristic .hero-bottom-center{color:var(--ice);letter-spacing:2.8px}
+.ticker{background:linear-gradient(90deg,transparent,rgba(135,112,240,.075),transparent)}
+.work-v4 .project-visual{border-color:rgba(135,177,229,.24)}
+.work-v4 .project-visual:focus-visible{outline-offset:4px}
+.work-v4 .project-card:hover .project-visual{border-color:rgba(120,215,245,.55)}
+@keyframes neural-drift{from{transform:rotate(-4deg) scale(.99)}to{transform:rotate(4deg) scale(1.015)}}
+[data-theme="light"] .hero-futuristic:after{opacity:.55}
+[data-theme="light"] .hero-signal{border-color:#5269b3;background:rgba(233,240,255,.9);color:#1d2f53}
+[data-theme="light"] .neural-field{opacity:.68}
+[data-theme="light"] .hero-futuristic .hero-intent,[data-theme="light"] .hero-futuristic .hero-name{color:#3650a1}
+[dir="rtl"] .hero-futuristic .hero-copy{max-width:min(820px,74%)}
+[dir="rtl"] .hero-signal{font-family:var(--font-vazir),Tahoma,sans-serif;letter-spacing:0;font-size:11px}
+[dir="rtl"] .hero-futuristic .hero-name{letter-spacing:0}
+@media(max-width:1100px){
+ .hero-futuristic .hero-copy{max-width:72%}
+ .hero-futuristic h1{font-size:clamp(60px,8.5vw,100px)}
+ .hero-futuristic .hero-art{width:69%;right:-10%;height:630px}
+}
+@media(max-width:900px){
+ .hero-futuristic .hero-copy{max-width:80%}
+ .hero-futuristic h1{font-size:clamp(58px,9vw,90px)}
+ .hero-futuristic .hero-art{width:75%;height:545px;right:-13%}
+ .hero-futuristic .hero-top .edition{font-size:7px}
+ [dir="rtl"] .hero-futuristic .hero-copy{max-width:82%}
+}
+@media(max-width:650px){
+ .hero-futuristic{min-height:0;overflow:visible}
+ .hero-futuristic .hero-top{order:0}
+ .hero-futuristic .hero-copy{order:1;max-width:100%;padding-top:32px}
+ .hero-futuristic .hero-art{order:2;position:relative!important;inset:auto!important;
+  margin:8px auto 20px;width:min(100%,520px);height:auto;aspect-ratio:1.06;max-width:100%}
+ .hero-futuristic .hero-bottom{order:3;padding-top:8px}
+ .hero-futuristic h1{font-size:clamp(44px,13.5vw,78px);letter-spacing:-3.5px;line-height:1.055}
+ .hero-futuristic h1>span:nth-child(3){font-size:inherit}
+ .hero-futuristic .hero-name{font-size:11px;margin-bottom:14px;letter-spacing:2px}
+ .hero-futuristic .hero-description{padding-top:14px}
+ .hero-futuristic .hero-description p{max-width:390px}
+ .hero-futuristic .hero-top .eyebrow{max-width:66%}
+ .hero-signal{font-size:8px;letter-spacing:.35px;margin-bottom:15px;padding:7px 11px}
+ .hero-futuristic .scene-controls{left:9%;right:9%;bottom:0;padding-top:6px}
+ .hero-futuristic .scene-controls>span{font-size:8px;letter-spacing:.4px}
+ .hero-futuristic .scene-stage .art-coordinate{font-size:6px;bottom:15%}
+ .hero-futuristic .neural-field{inset:0 0 8%}
+ .hero-futuristic .neural-field-map{opacity:.67}
+ .hero-futuristic .hero-bottom-center{display:none}
+ .hero-futuristic .hero-bottom{gap:10px}
+ [dir="rtl"] .hero-futuristic .hero-copy{max-width:100%}
+ [dir="rtl"] .hero-futuristic h1{font-size:clamp(42px,12vw,71px);letter-spacing:0;line-height:1.35}
+ [dir="rtl"] .hero-futuristic h1>span:nth-child(3){font-size:inherit}
+}
+@media(max-width:390px){
+ .hero-futuristic h1{font-size:13.2vw;letter-spacing:-2.6px}
+ .hero-signal{font-size:7px}
+ .hero-futuristic .hero-top .edition{font-size:6px}
+ .hero-futuristic .hero-art{aspect-ratio:1.11}
+ .hero-futuristic .scene-controls>span{font-size:7px}
+}
+@media(prefers-reduced-motion:reduce){
+ .neural-field-map{animation:none!important}
+ .neural-field-grid{transform:rotateX(64deg) rotateZ(-28deg)}
+}
+[data-motion="low"] .neural-field-map{animation:none!important}
+@media(prefers-contrast:more){.hero-signal{border-width:2px}.neural-field-map{opacity:.4}}
