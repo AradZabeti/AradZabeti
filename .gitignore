@@ -11,6 +11,10 @@ Thumbs.db
 .env
 .env.*
 !.env.example
+# cPanel / diagnostic credentials (always private)
+**/terminal-config.php
+**/*.pem
+**/*.key
 
 # Python
 __pycache__/
