@@ -47,3 +47,11 @@ jobs:
         run: npm run typecheck
       - name: Verify exported links and anchors
         run: npm run verify:export
+      - name: Upload reviewable static preview
+        if: github.event_name == 'pull_request'
+        uses: actions/upload-artifact@v4
+        with:
+          name: digital-universe-phase3-preview
+          path: universe-source/out/
+          if-no-files-found: error
+          retention-days: 7
