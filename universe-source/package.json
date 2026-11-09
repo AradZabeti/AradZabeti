@@ -10,7 +10,7 @@
     "verify:export": "python3 scripts/verify-export.py"
   },
   "dependencies": {
-    "next": "16.4.4",
+    "next": "16.4.5",
     "react": "19.3.1",
     "react-dom": "19.3.1",
     "three": "0.187.0",
